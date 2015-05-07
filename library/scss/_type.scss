@@ -6,6 +6,10 @@ body {
   @include font-size(1.4);
   line-height: 1.5;
   color:$grey6;
+  text-rendering: optimizeLegibility;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*********************
@@ -13,12 +17,12 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-  color: $link-color;
+  color: $color-link;
   text-decoration: none;
 
   /* on hover */
   &:hover, &:focus {
-    color: $link-hover;
+    color: $color-link-hover;
   }
 
   /* on click */
@@ -42,8 +46,7 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: $header;
-  text-rendering: optimizelegibility;
+  font-family: $font-header;
   font-weight: 200;
   text-transform: uppercase;
   color:$white;

@@ -10,7 +10,6 @@ and is called at the beginning, after that we call the rest
 of the styles inside media queries.
 ******************************************************************/
 
-
 //
 // IMPORTING STYLES
 //
@@ -22,6 +21,7 @@ of the styles inside media queries.
 // import mixins
 @import "nav";
 @import "type";
+
 /*
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If

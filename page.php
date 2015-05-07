@@ -1,27 +1,18 @@
 <?php get_header(); ?>
 
-	<div id="main" class="twelvecolcol box clearfix" role="main">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<section <?php post_class( 'pad group' ); ?> >
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="page-title"><?php the_title(); ?></h1>
 
-			<header>
-				<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-			</header>
+		<div class="entry-content group">
+			<?php the_content(); ?>
+		</div>
 
-			<section class="entry-content clearfix" itemprop="articleBody">
-				<?php the_content(); ?>
-			</section>
+	</section>
 
-			<footer class="article-footer"></footer>
-
-
-		</article>
-
-		<?php endwhile; endif; ?>
-
-	</div>
+	<?php endwhile; endif; ?>
 
 
 <?php get_footer(); ?>

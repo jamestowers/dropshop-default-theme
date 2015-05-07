@@ -15,37 +15,38 @@
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
-		<meta name="MobileOptimized" content="320">
+		<meta name="MobileOptimized" content="350">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scallable=no, minimal-ui"/>
 
-		<?php // icons & favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
-		<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/library/images/apple-icon-touch.png">
-		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
-		<!--[if IE]>
-			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
-		<![endif]-->
-		<?php // or, set /favicon.ico for IE10 win ?>
+		<!-- APPLE TAGS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- STANDARD META TAGS -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.png">
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<?php // wordpress head functions ?>
-			<?php wp_head(); ?>
-		<?php // end of wordpress head ?>
+		<script src="/library/js/vendor/modernizr.custom.js"></script>
 
-		<?php // drop Google Analytics Here ?>
-		<?php // end analytics ?>
+		<?php wp_head(); ?>
 
 	</head>
 
 	<body>
 
-		<div id="wrapper" class="">
+		<div id="wrapper" class="group">
 
-			<header class="header clearfix box" role="banner">
-				<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow"><h1><?php bloginfo('name'); ?></h1></a>
-				<?php // bloginfo('description'); ?>
+			<header class="header group pad" role="banner">
+				
+				<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow">
+					<h1><?php bloginfo('name'); ?></h1>
+				</a>
+
 				<a href="#" id="menu-toggle"><span></span></a>
+
 			</header>
 
 			<nav role="navigation" id="main-nav">

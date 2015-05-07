@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 
-	<div id="main" class="eightcol first clearfix box" role="main">
+	<div id="main" class="col8 group pad" role="main">
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+			<article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 				<header class="article-header">
 
@@ -16,7 +16,7 @@
 
 				</header>
 
-				<section class="entry-content clearfix" itemprop="articleBody">
+				<section class="entry-content group" itemprop="articleBody">
 					<?php the_content(); ?>
 				</section>
 
@@ -32,7 +32,7 @@
 
 		<?php else : ?>
 
-			<article id="post-not-found" class="hentry clearfix">
+			<article id="post-not-found" class="hentry group">
 					<header class="article-header">
 						<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 					</header>

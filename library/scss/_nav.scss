@@ -48,7 +48,7 @@ nav{
       li{
         display:inline-block;
         .page-numbers{
-          background:$color1;
+          background:$color-primary;
           color:$white;
           padding: 7px 15px;
           display:block;
@@ -56,7 +56,7 @@ nav{
             color:$white;
           }
           &.current{
-            background:$color2;
+            background:$color-secondary;
           }
         }
       }

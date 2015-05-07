@@ -1,3 +1,13 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.group:after { // (.clearfix)
+  content: "";
+  display: table;
+  clear: both;
+}
+
 html,
 body{
 	height:100%;
@@ -10,6 +20,7 @@ div#wrapper {
 	min-height:100%;
 	margin: 0 auto;
 	transition: transform 0.2s ease-out;
+
 
 	/* =========
 	Responsive slide out menu 
@@ -68,7 +79,7 @@ footer.footer {
 div#content{
 	clear:both;
 }
-.box{
+.pad{
 	padding: 20px;
 }
 .page{
@@ -167,7 +178,7 @@ form{
     border: none;
     -webkit-appearance:none; // remove shadow
     border-radius: 0;
-    font-family:$sans-serif;
+    font-family:$font-body;
     font-weight:200;
     width:100%;
     max-width:100%;
@@ -187,7 +198,7 @@ form{
   }
   input[type="submit"],
   input[type="button"]{
-    background: $color1;
+    background: $color-primary;
     border-radius: 2px;
     padding: 10px 20px;
     border:none;

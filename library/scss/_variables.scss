@@ -4,7 +4,8 @@ $color-primary: #6ED0E1;
 $color-secondary: darken($color-primary, 20);
 $color-tertiary: #07778E;
 
-$color-message: #ede3a9;
+$color-link: $color-primary;
+$color-link-hover: lighten($color-link, 7);
 
 $white: #FFF;
 $black: #000;
@@ -18,13 +19,15 @@ $grey6:     #CCC;
 $grey7:     #E8E8E8;
 $grey8:     #F5F5F5;
 
+
+$color-message: #ede3a9;
 $success-color: #8cc048;
 $error-color: #e65f5f;
 
 
 // FONTS
 
-$font-header: ostrich_sans, sans-serif;
+$font-header: 'Open Sans', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 
 $font-weight-light: 300;
@@ -41,3 +44,15 @@ $letter-spacing-header: 0;
 $padding: 30px;
 $padding-half: 15px;
 
+
+
+@mixin font-size($sizeValue: 1.6){
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem; 
+  //font-size: ($sizeValue * 0.7) + vw;
+}
+
+@mixin line-height($sizeValue: 1.6){
+  line-height: ($sizeValue*1.33)*10 + px;
+  line-height: $sizeValue*1.33 + rem;
+}

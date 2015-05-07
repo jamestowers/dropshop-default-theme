@@ -1,24 +1,19 @@
-					</div> <!-- close footer -->
+				</div> <!-- close wrapper -->
 					
-					<div id="footer-asides" class="clearfix">
+			<div id="footer-asides" class="group">
 
-			      <?php dynamic_sidebar( 'footer-sidebar' ); ?>
+			  <?php dynamic_sidebar( 'footer-sidebar' ); ?>
 
-			    </div>
+			</div>
 
-			    <footer class="footer  clearfix" role="contentinfo">
+			<footer class="footer group">
 
-					<nav role="navigation">
-						<?php dropshop_footer_links(); ?>
-					</nav>
-
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+				<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 
 			</footer>
 
 		</div> <!-- close wrapper -->
 
-		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>
 
 	</body>

@@ -15,13 +15,13 @@ single-bookmarks.php
 
 <?php get_header(); ?>
 
-			<div id="content" class="page clearfix">
+			<div id="content" class="page group">
 
-				<div id="main" class="eightcol first box clearfix" role="main">
+				<div id="main" class="col8 pad group" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+					<article id="post-<?php the_ID(); ?>" <?php post_class('group'); ?> role="article">
 
 						<header class="article-header">
 
@@ -32,7 +32,7 @@ single-bookmarks.php
 
 						</header>
 
-						<section class="entry-content clearfix">
+						<section class="entry-content group">
 
 							<?php the_content(); ?>
 
@@ -51,7 +51,7 @@ single-bookmarks.php
 
 					<?php else : ?>
 
-							<article id="post-not-found" class="hentry clearfix">
+							<article id="post-not-found" class="hentry group">
 								<header class="article-header">
 									<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
 								</header>

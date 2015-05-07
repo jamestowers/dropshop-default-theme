@@ -1,63 +1,95 @@
-# IE8 ployfill for GetComputed Style (for Responsive Script below)
-unless window.getComputedStyle
-  window.getComputedStyle = (el, pseudo) ->
-    @el = el
-    @getPropertyValue = (prop) ->
-      re = /(\-([a-z]){1})/g
-      prop = "styleFloat"  if prop is "float"
-      if re.test(prop)
-        prop = prop.replace(re, ->
-          arguments_[2].toUpperCase()
-        )
-      (if el.currentStyle[prop] then el.currentStyle[prop] else null)
+window.latestKnownScrollY = 0
 
-    this
+# transition end event name
+transEndEventNames =
+  'WebkitTransition': 'webkitTransitionEnd'
+  'MozTransition': 'transitionend'
+  'OTransition': 'oTransitionEnd'
+  'msTransition': 'MSTransitionEnd'
+  'transition': 'transitionend'
+window.transEndEventName = transEndEventNames[Modernizr.prefixed('transition')]
 
-# as the page loads, call these scripts
+$.fn.visible = (partial) ->
+  $t = $(this)
+  $w = $(window)
+  viewTop = latestKnownScrollY
+  viewBottom = viewTop + $w.height()
+  _top = $t.offset().top
+  _bottom = _top + $t.height()
+  compareTop = (if partial is true then _bottom else _top)
+  compareBottom = (if partial is true then _top else _bottom)
+  (compareBottom <= viewBottom) and (compareTop >= viewTop)
 
-window.sizes = 
-  windowWidth: $(window).width()
-  windowHeight: $(window).height()
-window.isMobile = window.sizes.windowWidth < 580
+window.spintune = new Spintune()
+window.spintune.player = new Player()
+window.spintune.interact = new Interact()
+
+## requestAnimationFrame Polyfill
+lastTime = 0
+vendors = [
+  "ms"
+  "moz"
+  "webkit"
+  "o"
+]
+x = 0
+
+while x < vendors.length and not window.requestAnimationFrame
+  window.requestAnimationFrame = window[vendors[x] + "RequestAnimationFrame"]
+  window.cancelAnimationFrame = window[vendors[x] + "CancelAnimationFrame"] or window[vendors[x] + "CancelRequestAnimationFrame"]
+  ++x
+unless window.requestAnimationFrame
+  window.requestAnimationFrame = (callback, element) ->
+    currTime = new Date().getTime()
+    timeToCall = Math.max(0, 16 - (currTime - lastTime))
+    id = window.setTimeout(->
+      callback currTime + timeToCall
+      return
+    , timeToCall)
+    lastTime = currTime + timeToCall
+    id
+unless window.cancelAnimationFrame
+  window.cancelAnimationFrame = (id) ->
+    clearTimeout id
+    return
+## end requestAnimationFrame Polyfill
+
+repeatOften = ->
+  window.globalID = requestAnimationFrame(repeatOften)
+  return
+
+# ON SCROLL EVENTS
+
+# Call requestTick on window.scroll - see bottom
+requestTick = ->
+  requestAnimationFrame twizoo.onScroll  unless window.ticking
+  window.ticking = true
+  return
+
+
+  
+
 
 $doc = $(document)
 
 $doc.on 'click', 'a#menu-toggle', ->
-  console.log 'aergwtg'
-  $('#wrapper').toggleClass 'slide-left'
+  #twizoo.$body.toggleClass 'slide-from-right'
   false
 
-# if is below 481px 
-#dothis()  if responsive_viewport < 481
-# end smallest screen 
-
-# if is larger than 481px 
-#dothis()  if responsive_viewport > 481
-# end larger than 481px 
-
-# if is above or equal to 768px 
-#dothis() if responsive_viewport >= 768
-
-# off the bat large screen actions 
-#dothis()  if responsive_viewport > 1030
-
-
-
-
 $(window).scroll ->
-  unless window.isMobile
-    if $(window).scrollTop() > 142
-      $('body').addClass 'scrolled'
-    else
-      $('body').removeClass 'scrolled'
+  window.latestKnownScrollY = window.scrollY
+  requestTick()
 
 $(window).resize ->
-  checkWidths()
+  #twizoo.setWidths()
+
+$(window).on 'statechangecomplete', ->
+  console.log '[scripts] stage change complete'
+  #twizoo.onPageLoad()
 
 
 
 
-# end of as page load scripts 
 
 
 
