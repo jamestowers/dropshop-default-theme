@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp theme bones\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/bones\n"
+"Project-Id-Version: wp theme dropshop\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/dropshop\n"
 "POT-Creation-Date: 2013-04-11 12:54:20+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
@@ -258,41 +258,41 @@ msgstr "Récemment sur Themble (Changer dans le fichier admin.php)"
 msgid ""
 "<span id=\"footer-thankyou\">Developed by <a href=\"http://yoursite.com\" "
 "target=\"_blank\">Your Site Name</a></span>. Built using <a href=\"http://"
-"themble.com/bones\" target=\"_blank\">Bones</a>."
+"themble.com/dropshop\" target=\"_blank\">dropshop</a>."
 msgstr ""
 "<span id=\"footer-thankyou\">Developpé par <a href=\"http://votresite.com\" "
 "target=\"_blank\">Votre Nom</a></span>. Thème basé sur <a href=\"http://"
-"themble.com/bones\" target=\"_blank\">Bones</a>."
+"themble.com/dropshop\" target=\"_blank\">dropshop</a>."
 
-#: library/bones.php:213 library/bones.php:230
+#: library/dropshop.php:213 library/dropshop.php:230
 msgid "The Main Menu"
 msgstr "Le Menu Principal"
 
-#: library/bones.php:214 library/bones.php:248
+#: library/dropshop.php:214 library/dropshop.php:248
 msgid "Footer Links"
 msgstr "Liens du pied de page"
 
-#: library/bones.php:300
+#: library/dropshop.php:300
 msgid "No Related Posts Yet!"
 msgstr "Aucun article en rapport"
 
-#: library/bones.php:344
+#: library/dropshop.php:344
 msgid "First"
 msgstr "Début"
 
-#: library/bones.php:361
+#: library/dropshop.php:361
 msgid "Last"
 msgstr "Fin"
 
-#: library/bones.php:380
+#: library/dropshop.php:380
 msgid "Read"
 msgstr "Lire"
 
-#: library/bones.php:380 search.php:24
+#: library/dropshop.php:380 search.php:24
 msgid "Read more &raquo;"
 msgstr "Lire la suite &raquo;"
 
-#: library/bones.php:395
+#: library/dropshop.php:395
 msgid "Posts by %s"
 msgstr "Articles par %s"
 
@@ -488,25 +488,25 @@ msgid "This is the error message in the taxonomy-custom_cat.php template."
 msgstr "Ceci est le message d'erreur de la page taxonomy-custom_cat.php."
 
 #. Theme Name of the plugin/theme
-msgid "Bones (Rename Me!)"
-msgstr "Bones (renommez moi !)"
+msgid "dropshop (Rename Me!)"
+msgstr "dropshop (renommez moi !)"
 
 #. Theme URI of the plugin/theme
-msgid "http://www.themble.com/bones"
-msgstr "http://www.themble.com/bones"
+msgid "http://www.themble.com/dropshop"
+msgstr "http://www.themble.com/dropshop"
 
 #. Description of the plugin/theme
 msgid ""
-"This site was built using the Bones Development Theme. For more information "
-"about Bones or to view documentation, you can visit the <a href=\"https://"
-"github.com/eddiemachado/bones/issues\" title=\"Bones Issues\">Bones Issues</"
+"This site was built using the dropshop Development Theme. For more information "
+"about dropshop or to view documentation, you can visit the <a href=\"https://"
+"github.com/eddiemachado/dropshop/issues\" title=\"dropshop Issues\">dropshop Issues</"
 "a> page on Github. You'll want to customize this for your clients with your "
 "own information."
 msgstr ""
-"Site construit à partir du thème de développement Bones. Pour plus "
-"d'informations à propos de Bones ou pour lire la documentation, rendez vous "
-"sur la page <a href=\"https://github.com/eddiemachado/bones/issues\" title="
-"\"Bones Issues\">Bones Issues</a> sur Github. Vous pouvez éditer le présent "
+"Site construit à partir du thème de développement dropshop. Pour plus "
+"d'informations à propos de dropshop ou pour lire la documentation, rendez vous "
+"sur la page <a href=\"https://github.com/eddiemachado/dropshop/issues\" title="
+"\"dropshop Issues\">dropshop Issues</a> sur Github. Vous pouvez éditer le présent "
 "texte pour y mettre vos propres informations à destination de vos clients."
 
 #. Author of the plugin/theme

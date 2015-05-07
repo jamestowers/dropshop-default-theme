@@ -17,7 +17,7 @@
 			</section>
 
 			<footer class="article-footer">
-				<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '' ); ?></p>
+				<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'dropshoptheme' ) . '</span> ', ', ', '' ); ?></p>
 			</footer>
 
 			<?php // comments_template(); // uncomment if you want to use them ?>
@@ -32,8 +32,8 @@
 				<?php } else { ?>
 						<nav class="wp-prev-next">
 								<ul class="group">
-									<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'bonestheme' )) ?></li>
-									<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'bonestheme' )) ?></li>
+									<li class="prev-link"><?php next_posts_link( __( '&laquo; Older Entries', 'dropshoptheme' )) ?></li>
+									<li class="next-link"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'dropshoptheme' )) ?></li>
 								</ul>
 						</nav>
 				<?php } ?>
@@ -42,13 +42,13 @@
 
 				<article id="post-not-found" class="hentry group">
 						<header class="article-header">
-							<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+							<h1><?php _e( 'Oops, Post Not Found!', 'dropshoptheme' ); ?></h1>
 					</header>
 						<section class="entry-content">
-							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'dropshoptheme' ); ?></p>
 					</section>
 					<footer class="article-footer">
-							<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
+							<p><?php _e( 'This is the error message in the index.php template.', 'dropshoptheme' ); ?></p>
 					</footer>
 				</article>
 

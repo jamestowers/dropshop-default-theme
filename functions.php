@@ -13,10 +13,10 @@ add_image_size( 'featured-image-mobile', 320, 220, true );
 add_image_size( 'featured-image-thumbnail', 400, 400, true );
 
 /*
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+<?php the_post_thumbnail( 'dropshop-thumb-300' ); ?>
 */
 
-add_filter( 'image_size_names_choose', 'bones_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'dropshop_custom_image_sizes' );
 
 function dropshop_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
@@ -45,8 +45,8 @@ function dropshop_theme_support() {
   
   register_nav_menus(
     array(
-      'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
-      'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
+      'main-nav' => __( 'The Main Menu', 'dropshoptheme' ),   // main nav in header
+      'footer-links' => __( 'Footer Links', 'dropshoptheme' ) // secondary nav in footer
     )
   );
 }
@@ -92,13 +92,13 @@ if ( !function_exists( 'core_mods' ) ) {
 function dropshop_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
   if (!is_admin()) {
-    wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
-    wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+    wp_register_style( 'dropshop-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+    wp_register_style( 'dropshop-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
     
-    wp_enqueue_style( 'bones-stylesheet' );
-    wp_enqueue_style( 'bones-ie-only' );
+    wp_enqueue_style( 'dropshop-stylesheet' );
+    wp_enqueue_style( 'dropshop-ie-only' );
 
-    $wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+    $wp_styles->add_data( 'dropshop-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
   }
 }
 
@@ -112,7 +112,7 @@ function dropshop_main_nav() {
   wp_nav_menu(array(
     'container' => false,                           // remove nav container
     'container_class' => 'menu group',           // class of container (should you choose to use it)
-    'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+    'menu' => __( 'The Main Menu', 'dropshoptheme' ),  // nav name
     'menu_class' => 'nav top-nav group',         // adding custom nav class
     'theme_location' => 'main-nav',                 // where it's located in the theme
     'before' => '',                                 // before the menu
@@ -122,7 +122,7 @@ function dropshop_main_nav() {
     'depth' => 3,                                   // limit the depth of the nav
     'fallback_cb' => 'dropshop_main_nav_fallback'      // fallback function
   ));
-} /* end bones main nav */
+} /* end dropshop main nav */
 
 // the footer menu (should you choose to use one)
 function dropshop_footer_links() {
@@ -130,7 +130,7 @@ function dropshop_footer_links() {
   wp_nav_menu(array(
     'container' => '',                              // remove nav container
     'container_class' => 'footer-links group',   // class of container (should you choose to use it)
-    'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
+    'menu' => __( 'Footer Links', 'dropshoptheme' ),   // nav name
     'menu_class' => 'nav footer-nav group',      // adding custom nav class
     'theme_location' => 'footer-links',             // where it's located in the theme
     'before' => '',                                 // before the menu
@@ -140,7 +140,7 @@ function dropshop_footer_links() {
     'depth' => 1,                                   // limit the depth of the nav
     'fallback_cb' => 'dropshop_footer_links_fallback'  // fallback function
   ));
-} /* end bones footer link */
+} /* end dropshop footer link */
 
 // this is the fallback for header menu
 function dropshop_main_nav_fallback() {
@@ -166,8 +166,8 @@ function dropshop_footer_links_fallback() {
 function dropshop_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
+		'name' => __( 'Sidebar 1', 'dropshoptheme' ),
+		'description' => __( 'The first (primary) sidebar.', 'dropshoptheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget box %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle">',
@@ -177,8 +177,8 @@ function dropshop_register_sidebars() {
 	
 	register_sidebar(array(
 		'id' => 'footer-sidebar',
-		'name' => __( 'Footer Widgets', 'bonestheme' ),
-		'description' => __( 'Room for 3 widgets just above the footer on every page', 'bonestheme' ),
+		'name' => __( 'Footer Widgets', 'dropshoptheme' ),
+		'description' => __( 'Room for 3 widgets just above the footer on every page', 'dropshoptheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget box %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widgettitle">',
@@ -194,7 +194,7 @@ RELATED POSTS FUNCTION
 
 // Related Posts Function (call using dropshop_related_posts(); )
 function dropshop_related_posts() {
-  echo '<ul id="bones-related-posts">';
+  echo '<ul id="dropshop-related-posts">';
   global $post;
   $tags = wp_get_post_tags( $post->ID );
   if($tags) {
@@ -212,12 +212,12 @@ function dropshop_related_posts() {
         <li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
       <?php endforeach; }
     else { ?>
-      <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'bonestheme' ) . '</li>'; ?>
+      <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'dropshoptheme' ) . '</li>'; ?>
     <?php }
   }
   wp_reset_query();
   echo '</ul>';
-} /* end bones related posts function */
+} /* end dropshop related posts function */
 
 /*********************
 PAGE NAVI
