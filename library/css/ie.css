@@ -1,0 +1,406 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+/* line 23, ../scss/_mixins.scss */
+.clearfix {
+  zoom: 1;
+}
+/* line 25, ../scss/_mixins.scss */
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+/* line 26, ../scss/_mixins.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/*********************
+TOOLS
+*********************/
+/* line 34, ../scss/_mixins.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 41, ../scss/_mixins.scss */
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+@font-face {
+  font-family: 'AW Conqueror Carved One';
+  src: url("../fonts/AWConquerorCarved-One.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/AWConquerorCarved-One.eot?#iefix") format("embedded-opentype"), url("../fonts/AWConquerorCarved-One.woff") format("woff"), url("../fonts/AWConquerorCarved-One.ttf") format("truetype"), url("../fonts/AWConquerorCarved-One.svg#cd57475a84672832478fd84864621757") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'AW Conqueror Sans Light';
+  src: url("../fonts/AWConquerorSans-Light.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/AWConquerorSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/AWConquerorSans-Light.woff") format("woff"), url("../fonts/AWConquerorSans-Light.ttf") format("truetype"), url("../fonts/AWConquerorSans-Light.svg#582a8743f6fe02eac759a901128e52ee") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: 200;
+}
+
+/* line 127, ../scss/_mixins.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 128, ../scss/_mixins.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 129, ../scss/_mixins.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 133, ../scss/_mixins.scss */
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+}
+
+/* line 139, ../scss/_mixins.scss */
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f;
+}
+
+/* line 145, ../scss/_mixins.scss */
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8;
+}
+
+/* line 151, ../scss/_mixins.scss */
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4;
+}
+
+/* line 157, ../scss/_mixins.scss */
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2;
+}
+
+/*********************
+TRANSITION
+*********************/
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+/* line 24, ../scss/_grid.scss */
+.col1 {
+  width: 5.801104972%;
+}
+
+/* 4.85%;  } /* grid_1  */
+/* line 25, ../scss/_grid.scss */
+.col2 {
+  width: 14.364640883%;
+}
+
+/* 13.45%; } /* grid_2  */
+/* line 26, ../scss/_grid.scss */
+.col3 {
+  width: 22.928176794%;
+}
+
+/* 22.05%; } /* grid_3  */
+/* line 27, ../scss/_grid.scss */
+.col4 {
+  width: 31.491712705%;
+}
+
+/* 30.75%; } /* grid_4  */
+/* line 28, ../scss/_grid.scss */
+.col5 {
+  width: 40.055248616%;
+}
+
+/* 39.45%; } /* grid_5  */
+/* line 29, ../scss/_grid.scss */
+.col6 {
+  width: 48.618784527%;
+}
+
+/* 48%;    } /* grid_6  */
+/* line 30, ../scss/_grid.scss */
+.col7 {
+  width: 57.182320438000005%;
+}
+
+/* 56.75%; } /* grid_7  */
+/* line 31, ../scss/_grid.scss */
+.col8 {
+  width: 65.74585634900001%;
+}
+
+/* 65.4%;  } /* grid_8  */
+/* line 32, ../scss/_grid.scss */
+.col9 {
+  width: 74.30939226%;
+}
+
+/* 74.05%; } /* grid_9  */
+/* line 33, ../scss/_grid.scss */
+.col10 {
+  width: 82.87292817100001%;
+}
+
+/* 82.7%;  } /* grid_10 */
+/* line 34, ../scss/_grid.scss */
+.col11 {
+  width: 91.436464082%;
+}
+
+/* 91.35%; } /* grid_11 */
+/* line 35, ../scss/_grid.scss */
+.col12 {
+  width: 99.999999993%;
+}
+
+/* 100%;   } /* grid_12 */
+/* line 38, ../scss/_grid.scss */
+[class^="col"], [class*=" col"] {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%;
+}
+
+/* line 44, ../scss/_grid.scss */
+.first {
+  margin-left: 0;
+}
+
+/* line 48, ../scss/_grid.scss */
+.last {
+  float: right;
+}
+
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* line 12, ../scss/_768up.scss */
+a#menu-toggle {
+  display: none;
+}
+
+/* line 16, ../scss/_768up.scss */
+nav#main-nav {
+  background: white;
+  color: #222222;
+  height: auto;
+  z-index: 1;
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+}
+/* line 26, ../scss/_768up.scss */
+nav .nav {
+  font-size: 0;
+  /* Target just the Header menu */
+}
+/* line 29, ../scss/_768up.scss */
+nav .nav li {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 32, ../scss/_768up.scss */
+nav .nav li a {
+  font-size: 1.4rem;
+}
+/* line 37, ../scss/_768up.scss */
+nav .nav#menu-header-menu li {
+  border-bottom: none;
+}
+/* line 39, ../scss/_768up.scss */
+nav .nav#menu-header-menu li:not(:last-child) {
+  border-right: 1px solid white;
+}
+/* line 42, ../scss/_768up.scss */
+nav .nav#menu-header-menu li a {
+  color: #2d2d2d;
+  padding: 10px 20px;
+}
+
+/*********************
+WIDGETS
+*********************/
+/* line 54, ../scss/_768up.scss */
+div#footer-asides {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 56, ../scss/_768up.scss */
+div#footer-asides aside {
+  background: #3f3f3f;
+  color: #afafaf;
+  border-bottom: none;
+}
+/* line 60, ../scss/_768up.scss */
+div#footer-asides aside:not(:last-child) {
+  border-right: 1px solid #505050;
+}
+/* line 63, ../scss/_768up.scss */
+div#footer-asides aside .widgettitle {
+  color: white;
+}
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+/* line 17, ../scss/_1030up.scss */
+body.scrolled header.header a#logo {
+  left: 0;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+/* line 23, ../scss/_1030up.scss */
+body.scrolled header.header a#logo h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+/* line 29, ../scss/_1030up.scss */
+body.scrolled nav#main-nav {
+  position: fixed;
+  top: 0;
+}
+/* line 33, ../scss/_1030up.scss */
+body.scrolled div#content {
+  margin-top: 100px;
+}
+
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/

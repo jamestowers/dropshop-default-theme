@@ -1,0 +1,87 @@
+html{
+  font-size:  62%;
+}
+body {
+  font-family: $font-body;
+  @include font-size(1.4);
+  line-height: 1.5;
+  color:$grey6;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+  color: $link-color;
+  text-decoration: none;
+
+  /* on hover */
+  &:hover, &:focus {
+    color: $link-hover;
+  }
+
+  /* on click */
+  &:active {
+
+  }
+
+  /* mobile tap color */
+  &:link {
+    /*
+    this highlights links on iPhones/iPads.
+    so it basically works like the :hover selector
+    for mobile devices.
+    */
+    -webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+  }
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: $header;
+  text-rendering: optimizelegibility;
+  font-weight: 200;
+  text-transform: uppercase;
+  color:$white;
+  /*
+  if you're going to use webfonts, be sure to check your weights
+  http://css-tricks.com/watch-your-font-weight/
+  */
+}
+
+h1, .h1 {
+  @include font-size(4.2);
+  line-height: 4.2rem;
+  margin: 0 0 20px;
+}
+
+h2, .h2 {
+  @include font-size(3.6);
+  line-height: 3.6rem;
+  margin: 0 0 1rem;
+}
+
+h3, .h3 {
+  @include font-size(2.4);
+  margin: 0 0 15px;
+}
+
+h4, .h4 {
+  @include font-size(1.1);
+  font-weight: 700;
+}
+
+h5, .h5 {
+  line-height: 2.09rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+} 
+
+blockquote{
+  font-style: italic;
+  @include font-size(2);
+}

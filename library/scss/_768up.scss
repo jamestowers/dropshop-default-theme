@@ -1,0 +1,67 @@
+/*********************
+HEADER STYLES
+*********************/
+
+.header {}
+
+	#logo {}
+
+/*********************
+NAVIGATION STYLES
+*********************/
+a#menu-toggle{
+	display:none;
+}
+nav{
+  &#main-nav{
+    background:$white;
+  	color:$grey7;
+  	height:auto;
+  	z-index: 1;
+  	position: relative;
+  	left: auto;
+  	top:auto;
+  	width:100%;
+  }
+	.nav {
+	  @include font-size(0); // Fighting the space betwen inline-block items
+	  /* Target just the Header menu */
+	  li {
+	    display:inline-block;
+      vertical-align: top;
+	    a {
+	      @include font-size( 1.4rem); // !!Important. Must have a size set here because of inlineblock spacing bug above
+	    }
+	  }
+	  &#menu-header-menu{
+	    li{
+        border-bottom: none;
+	      &:not(:last-child){
+	        border-right: 1px solid $white;
+	      }
+	      a{
+          color:$grey6;
+	        padding: 10px 20px;
+	      }
+	    } 
+	  }
+	}
+}
+
+/*********************
+WIDGETS
+*********************/
+div#footer-asides{
+  display: flex;
+  aside{
+    background:$grey5;
+    color:$grey3;
+    border-bottom: none;
+    &:not(:last-child){
+      border-right: 1px solid $grey4;
+    }
+    .widgettitle{
+      color:$white;
+    }
+  }
+}

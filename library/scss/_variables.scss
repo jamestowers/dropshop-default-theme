@@ -1,0 +1,43 @@
+// COLOURS
+
+$color-primary: #6ED0E1;
+$color-secondary: darken($color-primary, 20);
+$color-tertiary: #07778E;
+
+$color-message: #ede3a9;
+
+$white: #FFF;
+$black: #000;
+
+$grey1:     #111;
+$grey2:     #222;
+$grey3:     #373737;
+$grey4:     #555;
+$grey5:     #6E6E6E;
+$grey6:     #CCC;
+$grey7:     #E8E8E8;
+$grey8:     #F5F5F5;
+
+$success-color: #8cc048;
+$error-color: #e65f5f;
+
+
+// FONTS
+
+$font-header: ostrich_sans, sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$line-height-body: 1.5;
+$line-height-header: 1.5;
+
+$letter-spacing-body: 1.2px;
+$letter-spacing-header: 0;
+
+// PADDING
+$padding: 30px;
+$padding-half: 15px;
+

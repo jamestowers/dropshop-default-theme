@@ -1,0 +1,110 @@
+/* MOBILE ONLY KEEP IT SMALL!! */
+
+a#menu-toggle{
+  display:block;
+  float:right;
+  height: 24px;
+  padding: 10px;
+  span,
+  span:before,
+  span:after{
+    background:$grey6;
+    height:4px;
+    width:20px;
+    display:block;
+  }
+  span{
+    position: relative;
+    &:before,
+    &:after{
+      position: absolute;
+      left: 0;
+      content: '';
+    }
+    &:before{
+      top:-7px
+    }
+    &:after{
+      bottom: -7px;
+    }
+  }
+}
+
+nav{
+  &#main-nav{
+    color:$grey7;
+    position: fixed;
+    text-transform: uppercase;
+    height:100%;
+    right: 0;
+    top:0;
+    width:80%;
+    transition: transform 0.2s ease-out;
+    z-index: -1;
+  }
+  &.pagination{
+    ul.page-numbers{
+      padding-left:0 !important;
+      li{
+        display:inline-block;
+        .page-numbers{
+          background:$color1;
+          color:$white;
+          padding: 7px 15px;
+          display:block;
+          a{
+            color:$white;
+          }
+          &.current{
+            background:$color2;
+          }
+        }
+      }
+    }
+  }
+  .nav {
+    border-bottom: 0;
+    clear: both;
+    text-align: center;
+    ul{
+      margin: 0;
+    }
+    li {
+      display:block;
+      border-bottom: 1px solid $grey6;
+      a {
+        display: block;
+        color:$white;
+        text-decoration: none;
+        padding: 10px 10px;
+      }
+    }
+    /* Target just the Header menu */
+    &#menu-header-menu{
+      li{
+        a{
+          padding: 10px 20px;
+          &:hover{
+            background: $grey4;
+            color:$white;
+          }
+        }
+        &.menu-item-has-children{
+          /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
+          You can show the child pages there on mobiles. */
+          ul.sub-menu{
+            display:none;
+          }
+        }
+      } 
+    }
+
+    /* highlight current page */
+    li.current-menu-item,
+    li.current_page_item,
+    li.current-page-ancestor {
+      a {}
+    }  /* end current highlighters */
+
+  } /* end .nav */
+}

@@ -1,0 +1,40 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+
+body{
+
+}
+body.scrolled{
+  header.header{
+    a#logo{
+      left: 0;
+      padding: 10px;
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      h1{
+        @include font-size(2);
+        line-height: 2rem;
+      }
+    }
+  }
+  nav#main-nav{
+    position: fixed;
+    top:0;
+  }
+  div#content{
+    margin-top: 100px;
+  }
+}
+
+.pad{
+  
+}
