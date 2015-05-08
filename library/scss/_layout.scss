@@ -17,6 +17,7 @@ section{
   width:1400px;
   max-width:100%;
   margin: 0 auto;
+  clear: left;
 }
 .row{
   clear: both;
@@ -41,6 +42,10 @@ section{
 }
 .flex-column{
   flex-direction: column;
+  flex: 1;
+}
+.flex-row{
+  flex-direction: row;
   flex: 1;
 }
 
@@ -200,6 +205,7 @@ div#wrapper {
 #content{
   background:$grey8;
   display: flex;
+  flex-direction: column;
   clear:both;
   position: relative;
   padding-bottom: 140px;

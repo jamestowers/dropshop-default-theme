@@ -5,12 +5,12 @@ require ('functions-cleanup.php');
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'featured-image-tablet-retina', 2200, 720, true );
-add_image_size( 'featured-image-desktop', 1440, 380, true );
-add_image_size( 'featured-image-tablet', 1100, 340, true );
-add_image_size( 'featured-image-mobile-retina', 750, 1000, true );
-add_image_size( 'featured-image-mobile', 350, 500, true );
-add_image_size( 'featured-image-thumbnail', 400, 400, true );
+add_image_size( 'hero-image-tablet-retina', 2200, 720, true );
+add_image_size( 'hero-image-desktop', 1440, 380, true );
+add_image_size( 'hero-image-tablet', 1100, 340, true );
+add_image_size( 'hero-image-mobile-retina', 750, 1000, true );
+add_image_size( 'hero-image-mobile', 350, 500, true );
+add_image_size( 'hero-image-thumbnail', 400, 400, true );
 
 
 set_post_thumbnail_size( '400', '400', true ); 
@@ -30,12 +30,12 @@ add_filter( 'image_size_names_choose', 'dropshop_custom_image_sizes' );
 
 function dropshop_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-      'featured-image-tablet-retina' => __('2200px by 720px'),
-      'featured-image-desktop' => __('1440px by 380px'),
-      'featured-image-tablet' => __('1100px by 340px'),
-      'featured-image-mobile-retina' => __('750px by 1000px'),
-      'featured-image-mobile' => __('350px by 500px'),
-      'featured-image-thumbnail' => __('400px by 400px')
+      //'hero-image-tablet-retina' => __('2200px by 720px'),
+      'hero-image-desktop' => __('1440px by 380px'),
+      'hero-image-tablet-landscape' => __('1100px by 340px'),
+      'hero-image-mobile-retina' => __('750px by 1000px'),
+      'hero-image-mobile' => __('350px by 500px'),
+      'hero-image-thumbnail' => __('400px by 400px')
     ) );
 }
 
@@ -104,7 +104,7 @@ function dropshop_hero_image(){
     <div class="hero-container">
 
     <?php 
-      if(function_exists('get')){
+      if(function_exists('get') && get('hero_video') != '' ){
         $vid_url = get('hero_video');
         if($vid_url != ''){
 

@@ -609,29 +609,30 @@ section {
   width: 1400px;
   max-width: 100%;
   margin: 0 auto;
+  clear: left;
 }
 
-/* line 21, ../scss/_layout.scss */
+/* line 22, ../scss/_layout.scss */
 .row {
   clear: both;
 }
 
-/* line 24, ../scss/_layout.scss */
+/* line 25, ../scss/_layout.scss */
 .full-height {
   height: 100%;
 }
 
-/* line 27, ../scss/_layout.scss */
+/* line 28, ../scss/_layout.scss */
 .hide {
   display: none !important;
 }
 
-/* line 30, ../scss/_layout.scss */
+/* line 31, ../scss/_layout.scss */
 .hide-on-mobile {
   display: none;
 }
 
-/* line 33, ../scss/_layout.scss */
+/* line 34, ../scss/_layout.scss */
 .flex {
   display: -webkit-box;
   display: -webkit-flex;
@@ -642,7 +643,7 @@ section {
           flex-wrap: wrap;
 }
 
-/* line 37, ../scss/_layout.scss */
+/* line 38, ../scss/_layout.scss */
 .flex-center {
   display: -webkit-box;
   display: -webkit-flex;
@@ -658,7 +659,7 @@ section {
           justify-content: center;
 }
 
-/* line 42, ../scss/_layout.scss */
+/* line 43, ../scss/_layout.scss */
 .flex-column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -671,72 +672,85 @@ section {
           flex: 1;
 }
 
-/* line 48, ../scss/_layout.scss */
+/* line 47, ../scss/_layout.scss */
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 53, ../scss/_layout.scss */
 .bg-light {
   background: #F5F5F5;
 }
 
-/* line 51, ../scss/_layout.scss */
+/* line 56, ../scss/_layout.scss */
 .bg-dark {
   background: #222;
 }
 
-/* line 54, ../scss/_layout.scss */
+/* line 59, ../scss/_layout.scss */
 .bg-white {
   background: #FFF;
 }
 
-/* line 59, ../scss/_layout.scss */
+/* line 64, ../scss/_layout.scss */
 .clear {
   clear: both;
 }
 
-/* line 62, ../scss/_layout.scss */
+/* line 67, ../scss/_layout.scss */
 .pull-left {
   float: left !important;
 }
 
-/* line 65, ../scss/_layout.scss */
+/* line 70, ../scss/_layout.scss */
 .pull-right {
   float: right !important;
 }
 
-/* line 68, ../scss/_layout.scss */
+/* line 73, ../scss/_layout.scss */
 .pull-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 74, ../scss/_layout.scss */
+/* line 79, ../scss/_layout.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 77, ../scss/_layout.scss */
+/* line 82, ../scss/_layout.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 80, ../scss/_layout.scss */
+/* line 85, ../scss/_layout.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 85, ../scss/_layout.scss */
+/* line 90, ../scss/_layout.scss */
 .alignleft, img.alignleft {
   margin-right: 1.5em;
   display: inline;
   float: left;
 }
 
-/* line 90, ../scss/_layout.scss */
+/* line 95, ../scss/_layout.scss */
 .alignright, img.alignright {
   margin-left: 1.5em;
   display: inline;
   float: right;
 }
 
-/* line 95, ../scss/_layout.scss */
+/* line 100, ../scss/_layout.scss */
 .aligncenter, img.aligncenter {
   margin-right: auto;
   margin-left: auto;
@@ -744,38 +758,38 @@ section {
   clear: both;
 }
 
-/* line 101, ../scss/_layout.scss */
+/* line 106, ../scss/_layout.scss */
 .pad {
   padding: 30px 30px 30px 30px;
 }
 
-/* line 106, ../scss/_layout.scss */
+/* line 111, ../scss/_layout.scss */
 .border-top {
   border-top: 1px solid #CCC;
 }
 
-/* line 109, ../scss/_layout.scss */
+/* line 114, ../scss/_layout.scss */
 .border-right {
   border-right: 1px solid #CCC;
 }
 
-/* line 112, ../scss/_layout.scss */
+/* line 117, ../scss/_layout.scss */
 .border-bottom {
   border-bottom: 1px solid #CCC;
 }
 
-/* line 115, ../scss/_layout.scss */
+/* line 120, ../scss/_layout.scss */
 .border-left {
   border-left: 1px solid #CCC;
 }
 
-/* line 121, ../scss/_layout.scss */
+/* line 126, ../scss/_layout.scss */
 .thumbnail {
   float: left;
   position: relative;
 }
 
-/* line 127, ../scss/_layout.scss */
+/* line 132, ../scss/_layout.scss */
 .shaking {
   -webkit-animation: shake 0.6s linear infinite 0s;
           animation: shake 0.6s linear infinite 0s;
@@ -784,7 +798,7 @@ section {
 /*********************
 GRID
 *********************/
-/* line 135, ../scss/_layout.scss */
+/* line 140, ../scss/_layout.scss */
 .col6-sm {
   width: 50%;
   position: relative;
@@ -794,14 +808,14 @@ GRID
 /*********************
 ELEMENTS
 *********************/
-/* line 148, ../scss/_layout.scss */
+/* line 153, ../scss/_layout.scss */
 header.header,
 footer.footer {
   background: #373737;
   padding: 10px;
 }
 
-/* line 153, ../scss/_layout.scss */
+/* line 158, ../scss/_layout.scss */
 header.header {
   background: #FFF;
   text-align: center;
@@ -810,7 +824,7 @@ header.header {
   position: relative;
   z-index: 10;
 }
-/* line 160, ../scss/_layout.scss */
+/* line 165, ../scss/_layout.scss */
 header.header #logo {
   background: url("../images/logo.gif") no-repeat 50% 50%;
   background-size: contain;
@@ -821,13 +835,13 @@ header.header #logo {
   display: block;
   margin: auto;
 }
-/* line 169, ../scss/_layout.scss */
+/* line 174, ../scss/_layout.scss */
 header.header #logo img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 175, ../scss/_layout.scss */
+/* line 180, ../scss/_layout.scss */
 footer.footer {
   clear: both;
   text-align: center;
@@ -837,12 +851,12 @@ footer.footer {
   bottom: 0px;
   left: 0px;
 }
-/* line 186, ../scss/_layout.scss */
+/* line 191, ../scss/_layout.scss */
 footer.footer a {
   color: #222;
 }
 
-/* line 192, ../scss/_layout.scss */
+/* line 197, ../scss/_layout.scss */
 div#wrapper {
   width: 100%;
   min-height: 100%;
@@ -852,25 +866,30 @@ div#wrapper {
   position: relative;
 }
 
-/* line 200, ../scss/_layout.scss */
+/* line 205, ../scss/_layout.scss */
 #content {
   background: #F5F5F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   clear: both;
   position: relative;
   padding-bottom: 140px;
 }
 
-/* line 208, ../scss/_layout.scss */
+/* line 214, ../scss/_layout.scss */
 .sidebar {
   background: #E8E8E8;
   height: 100%;
 }
 
-/* line 212, ../scss/_layout.scss */
+/* line 218, ../scss/_layout.scss */
 aside {
   width: 100%;
   clear: both;
@@ -2021,89 +2040,12 @@ you can add resource intensive styles.
   HERO
   *********************/
   /* line 83, ../scss/_768up.scss */
-  a.slider-nav {
-    display: block;
-    position: absolute;
-    height: 100%;
-    top: 0;
-    opacity: 0.4;
-    z-index: 8;
-    -webkit-transition: all 0.2s ease-in;
-            transition: all 0.2s ease-in;
-    width: 100px;
-  }
-  /* line 92, ../scss/_768up.scss */
-  a.slider-nav:before, a.slider-nav:after {
-    background: #FFF;
-    height: 2px;
-    width: 50%;
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-  }
-  /* line 102, ../scss/_768up.scss */
-  a.slider-nav:before {
-    -webkit-transform: translateY(18px) translateX(20px) rotate(-45deg);
-        -ms-transform: translateY(18px) translateX(20px) rotate(-45deg);
-            transform: translateY(18px) translateX(20px) rotate(-45deg);
-  }
-  /* line 105, ../scss/_768up.scss */
-  a.slider-nav:after {
-    -webkit-transform: translateY(-17px) translateX(20px) rotate(45deg);
-        -ms-transform: translateY(-17px) translateX(20px) rotate(45deg);
-            transform: translateY(-17px) translateX(20px) rotate(45deg);
-  }
-  /* line 108, ../scss/_768up.scss */
-  a.slider-nav:hover {
-    opacity: 1;
-  }
-  /* line 110, ../scss/_768up.scss */
-  a.slider-nav:hover#slider-nav-left {
-    -webkit-transform: translateX(-20px) rotate(180deg);
-        -ms-transform: translateX(-20px) rotate(180deg);
-            transform: translateX(-20px) rotate(180deg);
-  }
-  /* line 113, ../scss/_768up.scss */
-  a.slider-nav:hover#slider-nav-right {
-    -webkit-transform: translateX(20px);
-        -ms-transform: translateX(20px);
-            transform: translateX(20px);
-  }
-  /* line 117, ../scss/_768up.scss */
-  a.slider-nav#slider-nav-left {
-    left: 0;
-    -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  /* line 121, ../scss/_768up.scss */
-  a.slider-nav#slider-nav-right {
-    right: 0;
-  }
-
-  /* line 125, ../scss/_768up.scss */
-  .banner-promo {
-    font-size: 44px;
-    font-size: 4.4rem;
-  }
-
-  /* line 128, ../scss/_768up.scss */
-  .banner-bottom-box {
-    font-size: 20px;
-    font-size: 2rem;
-  }
-  /* line 131, ../scss/_768up.scss */
-  .banner-bottom-box:hover {
-    color: #FFF;
-  }
-
-  /* line 138, ../scss/_768up.scss */
   .hero-container {
     min-height: 400px;
+    width: 100%;
   }
 
-  /* line 141, ../scss/_768up.scss */
+  /* line 87, ../scss/_768up.scss */
   .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -2116,7 +2058,7 @@ you can add resource intensive styles.
     right: -9999px;
     margin: auto;
   }
-  /* line 154, ../scss/_768up.scss */
+  /* line 100, ../scss/_768up.scss */
   .video-wrapper iframe {
     position: absolute;
     top: 0;
@@ -2128,24 +2070,24 @@ you can add resource intensive styles.
   /*********************
   WIDGETS
   *********************/
-  /* line 173, ../scss/_768up.scss */
+  /* line 119, ../scss/_768up.scss */
   div#footer-asides {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 175, ../scss/_768up.scss */
+  /* line 121, ../scss/_768up.scss */
   div#footer-asides aside {
     background: #6E6E6E;
     color: #373737;
     border-bottom: none;
   }
-  /* line 179, ../scss/_768up.scss */
+  /* line 125, ../scss/_768up.scss */
   div#footer-asides aside:not(:last-child) {
     border-right: 1px solid #555;
   }
-  /* line 182, ../scss/_768up.scss */
+  /* line 128, ../scss/_768up.scss */
   div#footer-asides aside .widgettitle {
     color: #FFF;
   }
