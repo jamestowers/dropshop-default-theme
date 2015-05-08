@@ -5,11 +5,11 @@ require ('functions-cleanup.php');
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'featured-image-desktop', 1440, 380, true );
 add_image_size( 'featured-image-tablet-retina', 2200, 720, true );
+add_image_size( 'featured-image-desktop', 1440, 380, true );
 add_image_size( 'featured-image-tablet', 1100, 340, true );
-add_image_size( 'featured-image-mobile-retina', 640, 340, true );
-add_image_size( 'featured-image-mobile', 320, 220, true );
+add_image_size( 'featured-image-mobile-retina', 750, 1000, true );
+add_image_size( 'featured-image-mobile', 350, 500, true );
 add_image_size( 'featured-image-thumbnail', 400, 400, true );
 
 
@@ -20,7 +20,7 @@ set_post_thumbnail_size( '400', '400', true );
 
 
 /*
-The function above adds the ability to use the dropdown menu to select 
+The function below adds the ability to use the dropdown menu to select 
 the new images sizes you have just created from within the media manager 
 when you add media to your content blocks. If you add more image sizes, 
 duplicate one of the lines in the array and name it according to your 
@@ -30,11 +30,11 @@ add_filter( 'image_size_names_choose', 'dropshop_custom_image_sizes' );
 
 function dropshop_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-      'featured-image-desktop' => __('1440px by 380px'),
       'featured-image-tablet-retina' => __('2200px by 720px'),
+      'featured-image-desktop' => __('1440px by 380px'),
       'featured-image-tablet' => __('1100px by 340px'),
-      'featured-image-mobile-retina' => __('640px by 340px'),
-      'featured-image-mobile' => __('320px by 220px'),
+      'featured-image-mobile-retina' => __('750px by 1000px'),
+      'featured-image-mobile' => __('350px by 500px'),
       'featured-image-thumbnail' => __('400px by 400px')
     ) );
 }
@@ -42,6 +42,115 @@ function dropshop_custom_image_sizes( $sizes ) {
 
 
 
+
+
+
+
+
+/*********************
+HERO IMAGE
+*********************/
+function dropshop_get_img_alt( $image ) {
+    $img_alt = trim( strip_tags( get_post_meta( $image, '_wp_attachment_image_alt', true ) ) );
+    return $img_alt;
+}
+
+function dropshop_get_picture_srcs( $image, $mappings ) {
+    $arr = array();
+    foreach ( $mappings as $size => $type ) {
+        $image_src = wp_get_attachment_image_src( $image, $type );
+        $arr[] = '<source srcset="'. $image_src[0] . '" media="(min-width: '. $size .'px)">';
+    }
+    return implode( array_reverse ( $arr ) );
+}
+
+function dropshop_responsive_shortcode( $atts ) {
+    extract( shortcode_atts( array(
+        'imageid'    => 1,
+        // You can add more sizes for your shortcodes here
+        'size1' => 0,
+        'size2' => 400,
+        'size3' => 800,
+        'size4' => 1200,
+    ), $atts ) );
+
+    $mappings = array(
+        $size1 => 'hero-image-mobile',
+        $size2 => 'hero-image-tablet-portrait',
+        $size3 => 'hero-image-tablet-landscape',
+        $size4 => 'hero-image-desktop',
+    );
+
+   return
+        '<picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->'
+            . dropshop_get_picture_srcs( $imageid, $mappings ) .
+            '<!--[if IE 9]></video><![endif]-->
+            <img srcset="' . wp_get_attachment_image_src( $imageid[0] ) . '" alt="' . dropshop_get_img_alt( $imageid ) . '">
+            <noscript>' . wp_get_attachment_image( $imageid, $mappings[0] ) . ' </noscript>
+        </picture>';
+}
+
+add_shortcode( 'responsive', 'dropshop_responsive_shortcode' );
+/* in post use:
+  $image_id = get_post_thumbnail_id( $post->ID );
+  echo do_shortcode('[responsive imageid="'.$image_id.'"]');
+*/
+
+function dropshop_hero_image(){
+  global $post;
+  if ( has_post_thumbnail() || function_exists('get') && get('hero_video') != '') { ?>
+    
+    <div class="hero-container">
+
+    <?php 
+      if(function_exists('get')){
+        $vid_url = get('hero_video');
+        if($vid_url != ''){
+
+          echo '<div class="video-wrapper">';
+            echo '<iframe id="vimeo-player" data-video-id="' . dropshop_get_vimeoid_from_url($vid_url) . '" src="" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+          echo '</div>';
+
+          echo '<ul class="vimeo-controls">';
+            echo '<li><a href="" class="icon-unmute no-ajaxy" title="Unmute"></a></li>';
+            echo '<li><a href="' . $vid_url . '" class="icon-vimeo no-ajaxy" title="View on Vimeo" target="_blank"></a></li>';
+          echo '</ul>';
+        }
+      }
+      if ( has_post_thumbnail() ) {
+        $image_id = get_post_thumbnail_id( $post->ID );
+        echo do_shortcode('[responsive imageid="'.$image_id.'"]');
+      }
+    ?>
+
+    </div>
+
+  <?php }
+}
+
+function dropshop_get_vimeoid_from_url( $url ) {
+  $regex = '~
+    # Match Vimeo link and embed code
+    (?:<iframe [^>]*src=")?         # If iframe match up to first quote of src
+    (?:                             # Group vimeo url
+        https?:\/\/             # Either http or https
+        (?:[\w]+\.)*            # Optional subdomains
+        vimeo\.com              # Match vimeo.com
+        (?:[\/\w]*\/videos?)?   # Optional video sub directory this handles groups links also
+        \/                      # Slash before Id
+        ([0-9]+)                # $1: VIDEO_ID is numeric
+        [^\s]*                  # Not a space
+    )                               # End group
+    "?                              # Match end quote if part of src
+    (?:[^>]*></iframe>)?            # Match the end of the iframe
+    (?:<p>.*</p>)?                  # Match any title information stuff
+    ~ix';
+  
+  preg_match( $regex, $url, $matches );
+  
+  return $matches[1];
+}
 
 
 
@@ -89,18 +198,23 @@ if ( !function_exists( 'dropshop_load_scripts' ) ) {
       wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/js/vendor/modernizr.custom.min.js', array(), '2.5.3', false );
       
       wp_register_script( 'jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", '', '' , true);
-      wp_register_script( 'dropshop', get_bloginfo('template_directory') . "/library/js/dropshop.js", 'jquery', '', true);
-      wp_register_script( 'scripts', get_bloginfo('template_directory') . "/library/js/scripts.js", 'jquery', '', true);
+      wp_register_script( 'picturefill', get_bloginfo('template_directory') . "/library/js/vendor/picturefill.min.js", 'jquery', '', true);
+      wp_register_script( 'fastclick', get_bloginfo('template_directory') . "/library/js/vendor/fastclick.js", 'jquery', '', true);
+      wp_register_script( 'history', get_bloginfo('template_directory') . "/library/js/vendor/jquery.history.js", array('jquery'), '', true);
+      wp_register_script( 'ajaxify', get_bloginfo('template_directory') . "/library/js/vendor/ajaxify-html5.js", array('jquery', 'picturefill', 'history'), '', true);
+      wp_register_script( 'dropshop', get_bloginfo('template_directory') . "/library/js/dropshop.js", array('jquery', 'picturefill', 'ajaxify'), '', true);
+      wp_register_script( 'scripts', get_bloginfo('template_directory') . "/library/js/scripts.js", array('dropshop', 'fastclick'), '', true);
 
       wp_enqueue_script( 'modernizr' );
       wp_enqueue_script( 'jquery' );
-      wp_enqueue_script('dropshop' );
+      wp_enqueue_script( 'fastclick' );
+      wp_enqueue_script( 'picturefill' );
+      wp_enqueue_script( 'dropshop' );
       wp_enqueue_script( 'scripts');
     }
   }
   add_action( 'wp_enqueue_scripts', 'dropshop_load_scripts' );
 }
-
 
 function dropshop_scripts_and_styles() {
   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
@@ -114,6 +228,9 @@ function dropshop_scripts_and_styles() {
     $wp_styles->add_data( 'dropshop-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
   }
 }
+
+
+
 
 
 
@@ -280,6 +397,8 @@ function dropshop_related_posts() {
 
 
 
+
+
 /*********************
 PAGE NAVI
 *********************/
@@ -312,6 +431,12 @@ function dropshop_page_navi() {
 
 
 
+
+
+
+
+
+
 function not_found_message(){ ?>
 
   <article id="post-not-found" class="hentry group">
@@ -325,6 +450,14 @@ function not_found_message(){ ?>
   </article>
 
 <?php }
+
+
+
+
+
+
+
+
 
 
 

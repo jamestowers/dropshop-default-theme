@@ -2,15 +2,21 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-  	<section <?php post_class( 'pad group' ); ?> >
+    <?php dropshop_hero_image();?>
 
-  		<h1 class="page-title"><?php the_title(); ?></h1>
+    <div class="inner">
 
-  		<div class="entry-content group">
-  			<?php the_content(); ?>
-  		</div>
+    	<section <?php post_class( 'pad group' ); ?> >
 
-  	</section>
+    		<h1 class="page-title"><?php the_title(); ?></h1>
+
+    		<div class="entry-content group">
+    			<?php the_content(); ?>
+    		</div>
+
+    	</section>
+
+    </div> <!-- close inner -->
 
 	<?php endwhile; ?>
 

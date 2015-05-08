@@ -114,6 +114,11 @@ nav{
     &#menu-nav-header{
 
       li{
+        &.current-menu-item{
+          a{
+            background:$grey8;
+          }
+        }
         a{
           &:hover{
             background: $grey4;

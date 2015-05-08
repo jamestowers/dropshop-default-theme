@@ -23,8 +23,8 @@
 			$content = $(contentSelector).filter(':first'),
 			contentNode = $content.get(0),
 			$menu = $('nav:first').filter(':first'),
-			activeClass = 'active',
-			activeSelector = '.active',
+			activeClass = 'current-menu-item',
+			activeSelector = '.current-menu-item',
 			menuChildrenSelector = '> li,> ul > li',
 			completedEventName = 'statechangecomplete',
 			/* Application Generic Variables */
@@ -112,7 +112,7 @@
 			// Start Fade Out
 			// Animating to opacity to 0 still keeps the element's height intact
 			// Which prevents that annoying pop bang issue when loading in new content
-			$content.animate({opacity:0},800);
+			$content.animate({opacity:0},200);
 			
 			// Ajax Request the Traditional Page
 			$.ajax({

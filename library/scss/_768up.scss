@@ -1,3 +1,8 @@
+.hide-on-mobile{
+  display: inline;
+  visibility: visible;
+}
+
 /*********************
 HEADER STYLES
 *********************/
@@ -15,6 +20,13 @@ HEADER STYLES
 }
 
 #logo {}
+
+
+
+
+
+
+
 
 /*********************
 NAVIGATION STYLES
@@ -56,6 +68,102 @@ nav{
 	  }
 	}
 }
+
+
+
+
+
+
+
+
+/*********************
+HERO
+*********************/
+
+a.slider-nav{
+  display: block;
+  position: absolute ;
+  height:100%;
+  top:0;
+  opacity:0.4;
+  z-index: 8;
+  transition: all 0.2s ease-in;
+  width:100px;
+  &:before,
+  &:after{
+    background:$white;
+    height:2px;
+    width:50%;
+    content: '';
+    display: block;
+    position: absolute;
+    top:50%;
+  }
+  &:before{
+    transform: translateY(18px) translateX(20px) rotate(-45deg);
+  }
+  &:after{
+    transform: translateY(-17px) translateX(20px) rotate(45deg);
+  }
+  &:hover{
+    opacity:1;
+    &#slider-nav-left{
+      transform: translateX(-20px) rotate(180deg);
+    }
+    &#slider-nav-right{
+      transform: translateX(20px);
+    }
+  }
+  &#slider-nav-left{
+    left:0;
+    transform: rotate(180deg);
+  }
+  &#slider-nav-right{
+    right:0;
+  }
+}
+.banner-promo {
+  @include font-size(4.4);
+}
+.banner-bottom-box{
+  //transition: padding 0.2s cubic-bezier(0.65,0.7,0.58,1.43);
+  @include font-size(2);
+  &:hover{
+    color: $white;
+    //padding: 10px 30px;
+  }
+}
+
+// VIDEO
+.hero-container{
+  min-height: 400px;
+}
+.video-wrapper{
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  &.playing{
+    
+  }
+  iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+
+
+
 
 
 

@@ -27,7 +27,9 @@ section{
 .hide{
   display: none !important;
 }
-
+.hide-on-mobile{
+  display: none;
+}
 .flex{
   display: flex;
   flex-wrap: wrap;

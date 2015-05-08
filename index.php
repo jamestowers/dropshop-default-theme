@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+	<div class="inner">
+
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'pad group' ); ?> role="article">
@@ -51,5 +53,7 @@
 		<?php endif; ?>
 
 	<?php //get_sidebar();?>
+
+	</div> <!-- close inner -->
 
 <?php get_footer(); ?>

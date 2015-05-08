@@ -7,8 +7,10 @@ class @Dropshop
     @init()
 
   init: ->
+    FastClick.attach(document.body);
     @setWidths()
     @onPageLoad()
+
     ###
     Add Test for ios and Android
     Modernizr.addTest 'ios', ->
@@ -19,9 +21,10 @@ class @Dropshop
 
   onPageLoad: ->
     console.log '[Dropshop] onPageLoad'
+    picturefill()
     @setEventListeners()
-    $('.hero').css
-      'max-height' : @sizes.windowHeight - (@sizes.headerHeight + @windowHeightMargin)
+    # $('.hero').css
+    #   'max-height' : @sizes.windowHeight - (@sizes.headerHeight + @windowHeightMargin)
     @$allMods = $("[data-animate]")
 
   setWidths:->
@@ -33,6 +36,14 @@ class @Dropshop
     @isMobile = @sizes.windowWidth < 580
 
 
+
+
+
+
+
+  ######################
+  ## ON SCROLL
+  ######################
   onScroll: ->
     window.ticking = false
     unless dropshop.isMobile
@@ -47,6 +58,12 @@ class @Dropshop
       el.addClass 'animate' if el.visible(true)
     return
 
+
+
+
+  ######################
+  ## EVENT LISTENERS
+  ######################
   setEventListeners: ->
     console.log '[Dropshop] setting event listeners'
 

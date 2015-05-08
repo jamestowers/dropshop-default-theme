@@ -9,6 +9,7 @@
     }
 
     Dropshop.prototype.init = function() {
+      FastClick.attach(document.body);
       this.setWidths();
       return this.onPageLoad();
 
@@ -23,10 +24,8 @@
 
     Dropshop.prototype.onPageLoad = function() {
       console.log('[Dropshop] onPageLoad');
+      picturefill();
       this.setEventListeners();
-      $('.hero').css({
-        'max-height': this.sizes.windowHeight - (this.sizes.headerHeight + this.windowHeightMargin)
-      });
       return this.$allMods = $("[data-animate]");
     };
 

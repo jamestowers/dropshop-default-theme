@@ -1,4 +1,4 @@
-					</div> <!-- close inner -->
+					
 				</div> <!-- close wrapper -->
 
 			<footer class="footer group">

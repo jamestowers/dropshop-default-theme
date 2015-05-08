@@ -54,5 +54,3 @@
 			</nav>
 
 			<div id="content" class="group">
-
-				<div class="inner">

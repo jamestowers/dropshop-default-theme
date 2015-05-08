@@ -9,22 +9,11 @@ be seen on the Desktop.
 
 ******************************************************************/
 
-body{
 
-}
-body.scrolled{
-  header.header{
-    
-  }
-  nav#main-nav{
-    position: fixed;
-    top:0;
-  }
-  div#content{
-    margin-top: 100px;
-  }
-}
 
-.pad{
-  
+/*********************
+HERO
+*********************/
+.hero-container {
+  min-height: 500px;
 }

@@ -330,10 +330,16 @@ NO MARGIN
   float: right;
 }
 */
+/* line 1, ../scss/_768up.scss */
+.hide-on-mobile {
+  display: inline;
+  visibility: visible;
+}
+
 /*********************
 HEADER STYLES
 *********************/
-/* line 6, ../scss/_768up.scss */
+/* line 11, ../scss/_768up.scss */
 .scrolled header.header {
   position: fixed;
   height: 60px;
@@ -348,12 +354,12 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-/* line 22, ../scss/_768up.scss */
+/* line 34, ../scss/_768up.scss */
 a#menu-toggle {
   display: none;
 }
 
-/* line 26, ../scss/_768up.scss */
+/* line 38, ../scss/_768up.scss */
 nav#nav-header {
   background: #FFF;
   color: #222;
@@ -364,56 +370,164 @@ nav#nav-header {
   top: auto;
   width: 100%;
 }
-/* line 36, ../scss/_768up.scss */
+/* line 48, ../scss/_768up.scss */
 nav .nav {
   font-size: 0px;
   font-size: 0rem;
 }
-/* line 38, ../scss/_768up.scss */
+/* line 50, ../scss/_768up.scss */
 nav .nav li {
   display: inline-block;
   vertical-align: top;
 }
-/* line 41, ../scss/_768up.scss */
+/* line 53, ../scss/_768up.scss */
 nav .nav li a {
   font-size: 14px;
   font-size: 1.4rem;
 }
-/* line 46, ../scss/_768up.scss */
+/* line 58, ../scss/_768up.scss */
 nav .nav#menu-nav-header li {
   border-bottom: none;
 }
-/* line 48, ../scss/_768up.scss */
+/* line 60, ../scss/_768up.scss */
 nav .nav#menu-nav-header li:not(:last-child) {
   border-right: 1px solid #FFF;
 }
-/* line 51, ../scss/_768up.scss */
+/* line 63, ../scss/_768up.scss */
 nav .nav#menu-nav-header li a {
   color: #222;
   padding: 10px 20px;
 }
 
 /*********************
+HERO
+*********************/
+/* line 83, ../scss/_768up.scss */
+a.slider-nav {
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  z-index: 8;
+  -webkit-transition: all 0.2s ease-in;
+          transition: all 0.2s ease-in;
+  width: 100px;
+}
+/* line 92, ../scss/_768up.scss */
+a.slider-nav:before, a.slider-nav:after {
+  background: #FFF;
+  height: 2px;
+  width: 50%;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+}
+/* line 102, ../scss/_768up.scss */
+a.slider-nav:before {
+  -webkit-transform: translateY(18px) translateX(20px) rotate(-45deg);
+      -ms-transform: translateY(18px) translateX(20px) rotate(-45deg);
+          transform: translateY(18px) translateX(20px) rotate(-45deg);
+}
+/* line 105, ../scss/_768up.scss */
+a.slider-nav:after {
+  -webkit-transform: translateY(-17px) translateX(20px) rotate(45deg);
+      -ms-transform: translateY(-17px) translateX(20px) rotate(45deg);
+          transform: translateY(-17px) translateX(20px) rotate(45deg);
+}
+/* line 108, ../scss/_768up.scss */
+a.slider-nav:hover {
+  opacity: 1;
+}
+/* line 110, ../scss/_768up.scss */
+a.slider-nav:hover#slider-nav-left {
+  -webkit-transform: translateX(-20px) rotate(180deg);
+      -ms-transform: translateX(-20px) rotate(180deg);
+          transform: translateX(-20px) rotate(180deg);
+}
+/* line 113, ../scss/_768up.scss */
+a.slider-nav:hover#slider-nav-right {
+  -webkit-transform: translateX(20px);
+      -ms-transform: translateX(20px);
+          transform: translateX(20px);
+}
+/* line 117, ../scss/_768up.scss */
+a.slider-nav#slider-nav-left {
+  left: 0;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+/* line 121, ../scss/_768up.scss */
+a.slider-nav#slider-nav-right {
+  right: 0;
+}
+
+/* line 125, ../scss/_768up.scss */
+.banner-promo {
+  font-size: 44px;
+  font-size: 4.4rem;
+}
+
+/* line 128, ../scss/_768up.scss */
+.banner-bottom-box {
+  font-size: 20px;
+  font-size: 2rem;
+}
+/* line 131, ../scss/_768up.scss */
+.banner-bottom-box:hover {
+  color: #FFF;
+}
+
+/* line 138, ../scss/_768up.scss */
+.hero-container {
+  min-height: 400px;
+}
+
+/* line 141, ../scss/_768up.scss */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+}
+/* line 154, ../scss/_768up.scss */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*********************
 WIDGETS
 *********************/
-/* line 65, ../scss/_768up.scss */
+/* line 173, ../scss/_768up.scss */
 div#footer-asides {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 67, ../scss/_768up.scss */
+/* line 175, ../scss/_768up.scss */
 div#footer-asides aside {
   background: #6E6E6E;
   color: #373737;
   border-bottom: none;
 }
-/* line 71, ../scss/_768up.scss */
+/* line 179, ../scss/_768up.scss */
 div#footer-asides aside:not(:last-child) {
   border-right: 1px solid #555;
 }
-/* line 74, ../scss/_768up.scss */
+/* line 182, ../scss/_768up.scss */
 div#footer-asides aside .widgettitle {
   color: #FFF;
 }
@@ -428,14 +542,12 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
-/* line 19, ../scss/_1030up.scss */
-body.scrolled nav#main-nav {
-  position: fixed;
-  top: 0;
-}
-/* line 23, ../scss/_1030up.scss */
-body.scrolled div#content {
-  margin-top: 100px;
+/*********************
+HERO
+*********************/
+/* line 17, ../scss/_1030up.scss */
+.hero-container {
+  min-height: 500px;
 }
 
 /* 
