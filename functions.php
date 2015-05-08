@@ -98,8 +98,18 @@ add_shortcode( 'responsive', 'dropshop_responsive_shortcode' );
   echo do_shortcode('[responsive imageid="'.$image_id.'"]');
 */
 
+function dropshop_using_custom_featured_image_metabox_plugin() {
+  return method_exists('Custom_Featured_Image_Metabox', 'get_instance');
+}
+
 function dropshop_hero_image(){
   global $post;
+  
+  // If we are using the custom-featured-image-metabox plugin we can check to see if the hero image has been enabled on this post/page
+  if( dropshop_using_custom_featured_image_metabox_plugin() && get_post_meta($post->ID, 'enable_cover_image', true) !== '1'){
+    return;
+  }
+  
   if ( has_post_thumbnail() || function_exists('get') && get('hero_video') != '') { ?>
     
     <div class="hero-container">

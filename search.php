@@ -2,7 +2,7 @@
 
 	<div class="inner group">
 
-		<div id="main" class="col8 group" role="main">
+		<div id="main" class="pad col8 group" role="main">
 			
 			<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'dropshoptheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
@@ -13,8 +13,8 @@
 					<header class="article-header">
 
 						<h3 class="search-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-						<p class="byline vcard"><?php
-							printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span> <span class="amp">&</span> filed under %4$s.', 'dropshoptheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'dropshoptheme' ) ), dropshop_get_the_author_posts_link(), get_the_category_list(', ') );
+						<p class="small"><?php
+							printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> <span class="amp">&</span> filed under %3$s.', 'dropshoptheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'dropshoptheme' ) ), get_the_category_list(', ') );
 						?></p>
 
 					</header>

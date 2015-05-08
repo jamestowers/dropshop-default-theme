@@ -12,18 +12,46 @@
       FastClick.attach(document.body);
       this.setWidths();
       this.onPageLoad();
-      return this.$doc.on('click', 'a#menu-toggle', function() {
+      this.$doc.on('click', 'a#menu-toggle', function() {
         dropshop.$body.toggleClass('slide-from-right');
         return false;
       });
-
-      /*
-      Add Test for ios and Android
-      Modernizr.addTest 'ios', ->
-        return !!navigator.userAgent.match(/(iPad|iPhone|iPod)/g)
-      Modernizr.addTest 'android', ->
-        return !!navigator.userAgent.match(/(android)/g)
-       */
+      this.$doc.on('click', '.share-fb', function() {
+        var url;
+        url = this.href;
+        if (!url) {
+          url = $(this).data('share-url');
+        }
+        if (!url) {
+          url = window.location.href;
+        }
+        FB.ui({
+          method: 'share',
+          href: url
+        }, function(response) {
+          return console.log(response);
+        });
+        return false;
+      });
+      this.$doc.on('click', '.share-email', function() {
+        var emailBody, url;
+        url = this.href;
+        if (!url) {
+          url = window.location.href;
+        }
+        emailBody = 'I’ve just pledged! Join Me and Wear Your Support for this campaign! ' + url;
+        return window.location = 'mailto:?subject=' + document.title + '&body=' + emailBody;
+      });
+      return this.$doc.on('click', '.share-twitter', function() {
+        var popUp, url;
+        url = this.href;
+        if (!url) {
+          url = window.location.href;
+        }
+        popUp = window.open('http://twitter.com/intent/tweet?text=I\’ve just pledged! Join Me and Wear Your Support for this campaign! via @wearsupport - ' + url + ' %23wearyoursupport', 'popupwindow', 'scrollbars=yes,width=600,height=400,top=150,left=150');
+        popUp.focus();
+        return false;
+      });
     };
 
     Dropshop.prototype.onPageLoad = function() {

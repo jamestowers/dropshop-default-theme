@@ -15,13 +15,31 @@ class @Dropshop
       dropshop.$body.toggleClass 'slide-from-right'
       false
 
-    ###
-    Add Test for ios and Android
-    Modernizr.addTest 'ios', ->
-      return !!navigator.userAgent.match(/(iPad|iPhone|iPod)/g)
-    Modernizr.addTest 'android', ->
-      return !!navigator.userAgent.match(/(android)/g)
-    ###
+    @$doc.on 'click', '.share-fb', ->
+      url = this.href
+      url = $(this).data 'share-url' unless url
+      url = window.location.href unless url
+      FB.ui {
+        method: 'share'
+        href: url
+      }, (response) ->
+        console.log (response)
+      false
+
+    @$doc.on 'click', '.share-email', ->
+      url = this.href
+      url = window.location.href unless url
+      emailBody = 'I’ve just pledged! Join Me and Wear Your Support for this campaign! '+ url
+      window.location = 'mailto:?subject=' + document.title + '&body=' +   emailBody;
+
+    @$doc.on 'click', '.share-twitter', ->
+      url = this.href
+      url = window.location.href unless url
+      popUp = window.open('http://twitter.com/intent/tweet?text=I\’ve just pledged! Join Me and Wear Your Support for this campaign! via @wearsupport - ' + url + ' %23wearyoursupport', 'popupwindow', 'scrollbars=yes,width=600,height=400,top=150,left=150')
+      popUp.focus()
+      false
+
+
 
   onPageLoad: ->
     console.log '[Dropshop] onPageLoad'

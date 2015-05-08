@@ -23,7 +23,8 @@
 					</div>
 
 					<footer class="article-footer small">
-						<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'dropshoptheme' ) . '</span> ', ', ', '' ); ?></p>
+						<?php dropshop_share_buttons();?>
+						<?php the_tags( '<p class="tags pull-right"><span class="tags-title">' . __( 'Tags:', 'dropshoptheme' ) . '</span> ', ', ', '</p>' ); ?>
 					</footer>
 
 				</div>

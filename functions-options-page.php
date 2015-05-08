@@ -1,7 +1,7 @@
 <?php
 
 function dropshop_social_icons(){
-	$socials = get_option( 'dropshop_theme_social_options');
+	$socials = get_option( 'dropshop_theme_social_links');
 	echo '<div class="social-icons">
 	        <ul>';
 	        foreach ($socials as $option => $url) {
@@ -13,6 +13,17 @@ function dropshop_social_icons(){
 	</div>';
 }
 
+function dropshop_share_buttons(){
+	echo '<div class="social-icons pull-left">
+					Share this: 
+	        <ul>
+	         <li><a href="" class="icon-facebook share-fb no-ajaxy"></a></li>
+	         <li><a href="" class="icon-twitter share-twitter no-ajaxy"></a></li>
+	         <li><a href="" class="icon-email share-email no-ajaxy"></a></li>
+	        </ul>
+		</ul>
+	</div>';
+}
 
 
 
@@ -33,13 +44,13 @@ MENU OPTIONS
  * This function introduces the theme options into the 'Appearance' menu and into a top-level 
  * 'Contact info' menu.
  */
-function dropshop_theme_options_menu() {
+function dropshop_contact_info_menu() {
 
 	add_theme_page(
 		'Contact info', 					// The title to be displayed in the browser window for this page.
 		'Contact info',					// The text to be displayed for this menu item
 		'administrator',					// Which type of users can see this menu item
-		'dropshop_theme_options',			// The unique ID - that is, the slug - for this menu item
+		'dropshop_contact_info',			// The unique ID - that is, the slug - for this menu item
 		'dropshop_theme_display'				// The name of the function to call when rendering this menu's page
 
 	);
@@ -55,14 +66,14 @@ function dropshop_theme_options_menu() {
 	);
 	
 	add_submenu_page(
-		'dropshop_theme_menu',				// The ID of the top-level menu page to which this submenu item belongs
-		__( 'Contact info', 'dropshop' ),			// The value used to populate the browser's title bar when the menu page is active
-		__( 'Contact info', 'dropshop' ),					// The label of this submenu item displayed in the menu
-		'administrator',					// What roles are able to access this submenu item
-		'dropshop_theme_contact_info',	// The ID used to represent this submenu item
-		'dropshop_theme_display'				// The callback function used to render the options for this submenu item
+		'dropshop_theme_menu',
+		__( 'Social Links', 'dropshop' ),
+		__( 'Social Links', 'dropshop' ),
+		'administrator',
+		'dropshop_theme_social_links',
+		create_function( null, 'dropshop_theme_display( "social_links" );' )
 	);
-	
+
 	add_submenu_page(
 		'dropshop_theme_menu',
 		__( 'Social Options', 'dropshop' ),
@@ -73,8 +84,8 @@ function dropshop_theme_options_menu() {
 	);
 	
 
-} // end dropshop_theme_options_menu
-add_action( 'admin_menu', 'dropshop_theme_options_menu' );
+} // end dropshop_contact_info_menu
+add_action( 'admin_menu', 'dropshop_contact_info_menu' );
 
 /**
  * Renders a simple page to display for the theme menu defined above.
@@ -90,17 +101,18 @@ function dropshop_theme_display( $active_tab = '' ) {
 		
 		<?php if( isset( $_GET[ 'tab' ] ) ) {
 			$active_tab = $_GET[ 'tab' ];
+		} else if( $active_tab == 'social_links' ) {
+			$active_tab = 'social_links';
 		} else if( $active_tab == 'social_options' ) {
 			$active_tab = 'social_options';
-		} else if( $active_tab == 'input_examples' ) {
-			//$active_tab = 'input_examples';
 		} else {
 			$active_tab = 'contact_info';
 		} // end if/else ?>
 		
 		<h2 class="nav-tab-wrapper">
-			<a href="?page=dropshop_theme_options&tab=contact_info" class="nav-tab <?php echo $active_tab == 'contact_info' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Contact info', 'dropshop' ); ?></a>
-			<a href="?page=dropshop_theme_options&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social Options', 'dropshop' ); ?></a>
+			<a href="?page=dropshop_contact_info&tab=contact_info" class="nav-tab <?php echo $active_tab == 'contact_info' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Contact info', 'dropshop' ); ?></a>
+			<a href="?page=dropshop_contact_info&tab=social_links" class="nav-tab <?php echo $active_tab == 'social_links' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social Links', 'dropshop' ); ?></a>
+			<a href="?page=dropshop_contact_info&tab=social_options" class="nav-tab <?php echo $active_tab == 'social_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Social Options', 'dropshop' ); ?></a>
 		</h2>
 		
 		<form method="post" action="options.php">
@@ -111,15 +123,15 @@ function dropshop_theme_display( $active_tab = '' ) {
 					settings_fields( 'dropshop_theme_contact_info' );
 					do_settings_sections( 'dropshop_theme_contact_info' );
 					
-				} elseif( $active_tab == 'social_options' ) {
+				} elseif( $active_tab == 'social_links' ) {
 				
-					settings_fields( 'dropshop_theme_social_options' );
-					do_settings_sections( 'dropshop_theme_social_options' );
+					settings_fields( 'dropshop_theme_social_links' );
+					do_settings_sections( 'dropshop_theme_social_links' );
 					
 				} else {
 				
-					settings_fields( 'dropshop_theme_input_examples' );
-					do_settings_sections( 'dropshop_theme_input_examples' );
+					settings_fields( 'dropshop_theme_social_options' );
+					do_settings_sections( 'dropshop_theme_social_options' );
 					
 				} // end if/else
 				
@@ -159,7 +171,7 @@ CONTACT INFO
  *
  * This function is registered with the 'admin_init' hook.
  */ 
-function dropshop_initialize_theme_options() {
+function dropshop_initialize_contact_info() {
 
 	// If the theme options don't exist, create them.
 	if( false == get_option( 'dropshop_theme_contact_info' ) ) {	
@@ -269,8 +281,8 @@ function dropshop_initialize_theme_options() {
 		'dropshop_theme_contact_info'
 	);
 	
-} // end dropshop_initialize_theme_options
-add_action( 'admin_init', 'dropshop_initialize_theme_options' );
+} // end dropshop_initialize_contact_info
+add_action( 'admin_init', 'dropshop_initialize_contact_info' );
 
 
 
@@ -283,7 +295,103 @@ add_action( 'admin_init', 'dropshop_initialize_theme_options' );
 
 
 
+/********************************
 
+SOCIAL INFO
+
+********************************/
+
+/**
+ * Initializes the theme's social options by registering the Sections,
+ * Fields, and Settings.
+ *
+ * This function is registered with the 'admin_init' hook.
+ */ 
+function dropshop_theme_intialize_social_links() {
+
+	if( false == get_option( 'dropshop_theme_social_links' ) ) {	
+		add_option( 'dropshop_theme_social_links' );
+	} // end if
+	
+	add_settings_section(
+		'social_settings_section',			// ID used to identify this section and with which to register options
+		__( 'Social Links', 'dropshop' ),		// Title to be displayed on the administration page
+		'dropshop_social_links_callback',	// Callback used to render the description of the section
+		'dropshop_theme_social_links'		// Page on which to add this section of options
+	);
+	
+	add_settings_field(	
+		'twitter',						
+		'Twitter',							
+		'dropshop_twitter_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+
+	add_settings_field(	
+		'facebook',						
+		'Facebook',							
+		'dropshop_facebook_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+	
+	add_settings_field(	
+		'linkedin',						
+		'Linked In',							
+		'dropshop_linkedin_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+
+	add_settings_field(	
+		'pinterest',						
+		'Pinterest',							
+		'dropshop_pinterest_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+	
+	add_settings_field(	
+		'instagram',						
+		'Instagram',							
+		'dropshop_instagram_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+
+	add_settings_field(	
+		'googleplus',						
+		'Google+',							
+		'dropshop_googleplus_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+	
+	register_setting(
+		'dropshop_theme_social_links',
+		'dropshop_theme_social_links',
+		'dropshop_theme_sanitize_social_links'
+	);
+	
+} // end dropshop_theme_intialize_social_links
+add_action( 'admin_init', 'dropshop_theme_intialize_social_links' );
+
+
+
+
+
+
+
+
+
+
+
+/********************************
+
+SOCIAL INTEGRATION OPTIONS
+
+********************************/
 
 /**
  * Initializes the theme's social options by registering the Sections,
@@ -299,60 +407,35 @@ function dropshop_theme_intialize_social_options() {
 	
 	add_settings_section(
 		'social_settings_section',			// ID used to identify this section and with which to register options
-		__( 'Social Options', 'dropshop' ),		// Title to be displayed on the administration page
+		__( 'Social Integration Options', 'dropshop' ),		// Title to be displayed on the administration page
 		'dropshop_social_options_callback',	// Callback used to render the description of the section
 		'dropshop_theme_social_options'		// Page on which to add this section of options
 	);
 	
 	add_settings_field(	
-		'twitter',						
-		'Twitter',							
-		'dropshop_twitter_callback',	
+		'share_text',						
+		'Share text',							
+		'dropshop_share_text_callback',	
 		'dropshop_theme_social_options',	
 		'social_settings_section'			
 	);
 
 	add_settings_field(	
-		'facebook',						
-		'Facebook',							
-		'dropshop_facebook_callback',	
-		'dropshop_theme_social_options',	
-		'social_settings_section'			
-	);
-	
-	add_settings_field(	
-		'linkedin',						
-		'Linked In',							
-		'dropshop_linkedin_callback',	
+		'facebook_app_id',						
+		'Facebook App ID',							
+		'dropshop_facebook_app_id_callback',	
 		'dropshop_theme_social_options',	
 		'social_settings_section'			
 	);
 
-	add_settings_field(	
-		'instagram',						
-		'Instagram',							
-		'dropshop_instagram_callback',	
-		'dropshop_theme_social_options',	
-		'social_settings_section'			
-	);
-	
-	add_settings_field(	
-		'googleplus',						
-		'Google+',							
-		'dropshop_googleplus_callback',	
-		'dropshop_theme_social_options',	
-		'social_settings_section'			
-	);
 	
 	register_setting(
 		'dropshop_theme_social_options',
-		'dropshop_theme_social_options',
-		'dropshop_theme_sanitize_social_options'
+		'dropshop_theme_social_options'
 	);
 	
 } // end dropshop_theme_intialize_social_options
 add_action( 'admin_init', 'dropshop_theme_intialize_social_options' );
-
 
 
 
@@ -371,12 +454,23 @@ add_action( 'admin_init', 'dropshop_theme_intialize_social_options' );
 /**
  * This function provides a simple description for the General Options page. 
  *
- * It's called from the 'dropshop_initialize_theme_options' function by being passed as a parameter
+ * It's called from the 'dropshop_initialize_contact_info' function by being passed as a parameter
  * in the add_settings_section function.
  */
 function dropshop_general_options_callback() {
-	echo '<p>' . __( 'Select which areas of content you wish to display.', 'dropshop' ) . '</p>';
+	echo '<p>' . __( 'Enter you company/personal contact information for display on the site', 'dropshop' ) . '</p>';
 } // end dropshop_general_options_callback
+
+/**
+ * This function provides a simple description for the Social Links page. 
+ *
+ * It's called from the 'dropshop_theme_intialize_social_links' function by being passed as a parameter
+ * in the add_settings_section function.
+ */
+function dropshop_social_links_callback() {
+	echo '<p>' . __( 'Provide the URL to the social networks you\'d like to display.', 'dropshop' ) . '</p>';
+} // end dropshop_general_options_callback
+
 
 /**
  * This function provides a simple description for the Social Options page. 
@@ -385,7 +479,7 @@ function dropshop_general_options_callback() {
  * in the add_settings_section function.
  */
 function dropshop_social_options_callback() {
-	echo '<p>' . __( 'Provide the URL to the social networks you\'d like to display.', 'dropshop' ) . '</p>';
+	echo '<p>' . __( 'Set up social apps for sharing', 'dropshop' ) . '</p>';
 } // end dropshop_general_options_callback
 
 
@@ -520,7 +614,7 @@ function dropshop_longitude_callback($args) {
 function dropshop_twitter_callback() {
 	
 	// First, we read the social options collection
-	$options = get_option( 'dropshop_theme_social_options' );
+	$options = get_option( 'dropshop_theme_social_links' );
 	
 	// Next, we need to make sure the element is defined in the options. If not, we'll set an empty string.
 	$url = '';
@@ -529,13 +623,13 @@ function dropshop_twitter_callback() {
 	} // end if
 	
 	// Render the output
-	echo '<input class="regular-text" type="text" id="twitter" name="dropshop_theme_social_options[twitter]" value="' . $url . '" />';
+	echo '<input class="regular-text" type="text" id="twitter" name="dropshop_theme_social_links[twitter]" value="' . $url . '" />';
 	
 } // end dropshop_twitter_callback
 
 function dropshop_facebook_callback() {
 	
-	$options = get_option( 'dropshop_theme_social_options' );
+	$options = get_option( 'dropshop_theme_social_links' );
 	
 	$url = '';
 	if( isset( $options['facebook'] ) ) {
@@ -543,13 +637,13 @@ function dropshop_facebook_callback() {
 	} // end if
 	
 	// Render the output
-	echo '<input class="regular-text" type="text" id="facebook" name="dropshop_theme_social_options[facebook]" value="' . $url . '" />';
+	echo '<input class="regular-text" type="text" id="facebook" name="dropshop_theme_social_links[facebook]" value="' . $url . '" />';
 	
 } // end dropshop_facebook_callback
 
 function dropshop_instagram_callback() {
 	
-	$options = get_option( 'dropshop_theme_social_options' );
+	$options = get_option( 'dropshop_theme_social_links' );
 	
 	$url = '';
 	if( isset( $options['instagram'] ) ) {
@@ -557,13 +651,27 @@ function dropshop_instagram_callback() {
 	} // end if
 	
 	// Render the output
-	echo '<input class="regular-text" type="text" id="instagram" name="dropshop_theme_social_options[instagram]" value="' . $url . '" />';
+	echo '<input class="regular-text" type="text" id="instagram" name="dropshop_theme_social_links[instagram]" value="' . $url . '" />';
 	
 } // end dropshop_instagram_callback
 
+function dropshop_pinterest_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_links' );
+	
+	$url = '';
+	if( isset( $options['pinterest'] ) ) {
+		$url = esc_url( $options['pinterest'] );
+	} // end if
+	
+	// Render the output
+	echo '<input class="regular-text" type="text" id="pinterest" name="dropshop_theme_social_links[pinterest]" value="' . $url . '" />';
+	
+} // end dropshop_pinterest_callback
+
 function dropshop_linkedin_callback() {
 	
-	$options = get_option( 'dropshop_theme_social_options' );
+	$options = get_option( 'dropshop_theme_social_links' );
 	
 	$url = '';
 	if( isset( $options['linkedin'] ) ) {
@@ -571,13 +679,13 @@ function dropshop_linkedin_callback() {
 	} // end if
 	
 	// Render the output
-	echo '<input class="regular-text" type="text" id="linkedin" name="dropshop_theme_social_options[linkedin]" value="' . $url . '" />';
+	echo '<input class="regular-text" type="text" id="linkedin" name="dropshop_theme_social_links[linkedin]" value="' . $url . '" />';
 	
 } // end dropshop_linkedin_callback
 
 function dropshop_googleplus_callback() {
 	
-	$options = get_option( 'dropshop_theme_social_options' );
+	$options = get_option( 'dropshop_theme_social_links' );
 	
 	$url = '';
 	if( isset( $options['googleplus'] ) ) {
@@ -585,7 +693,7 @@ function dropshop_googleplus_callback() {
 	} // end if
 	
 	// Render the output
-	echo '<input class="regular-text" type="text" id="googleplus" name="dropshop_theme_social_options[googleplus]" value="' . $url . '" />';
+	echo '<input class="regular-text" type="text" id="googleplus" name="dropshop_theme_social_links[googleplus]" value="' . $url . '" />';
 	
 } // end dropshop_googleplus_callback
 
@@ -598,12 +706,38 @@ function dropshop_googleplus_callback() {
 
 
 
+
+
+function dropshop_share_text_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_options' );
+	
+	$value = isset( $options['share_text'] ) ? $options['share_text'] : "";
+	// Render the output
+	$html =  '<textarea class="large-text" rows="4" id="share_text" name="dropshop_theme_social_options[share_text]">' . $value . '</textarea>';
+	$html .= '<br><span class="description">Enter some text to pre-populate the sharing dialog on Twitter (Facebook does not allow pre-populating)</span>'; 
+	echo $html;
+} // end dropshop_share_text_callback
+
+function dropshop_facebook_app_id_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_options' );
+	
+	$value = isset( $options['facebook_app_id'] ) ? $options['facebook_app_id'] : "";
+	// Render the output
+	echo '<input class="regular-text" type="text" id="facebook_app_id" name="dropshop_theme_social_options[facebook_app_id]" value="' . $value . '" />';
+	
+} // end dropshop_facebook_app_id_callback
+
+
+
+
 /* ------------------------------------------------------------------------ *
  * Setting Callbacks
  * ------------------------------------------------------------------------ */ 
  
  /**
- * Sanitization callback for the social options. Since each of the social options are text inputs,
+ * Sanitization callback for the social links. Since each of the social options are text inputs,
  * this function loops through the incoming option and strips all tags and slashes from the value
  * before serializing it.
  *	
@@ -611,7 +745,7 @@ function dropshop_googleplus_callback() {
  *
  * @returns			The collection of sanitized values.
  */
-function dropshop_theme_sanitize_social_options( $input ) {
+function dropshop_theme_sanitize_social_links( $input ) {
 	
 	// Define the array for the updated options
 	$output = array();
@@ -626,9 +760,9 @@ function dropshop_theme_sanitize_social_options( $input ) {
 	} // end foreach
 	
 	// Return the new collection
-	return apply_filters( 'dropshop_theme_sanitize_social_options', $output, $input );
+	return apply_filters( 'dropshop_theme_sanitize_social_links', $output, $input );
 
-} // end dropshop_theme_sanitize_social_options
+} // end dropshop_theme_sanitize_social_links
 
 
 

@@ -21,11 +21,11 @@
 					</section>
 
 					<footer class="article-footer small">
-						<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'dropshoptheme' ) . '</span> ', ', ', '</p>' ); ?>
+						<?php dropshop_share_buttons();?>
+						<?php the_tags( '<p class="tags pull-right"><span class="tags-title">' . __( 'Tags:', 'dropshoptheme' ) . '</span> ', ', ', '</p>' ); ?>
 					</footer>
 
 					<?php //comments_template(); ?>
-
 				</article>
 
 			<?php endwhile; ?>

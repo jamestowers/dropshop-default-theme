@@ -1,3 +1,7 @@
+# Fix IE consol.log bug
+if !window.console
+  console = log: ->
+
 window.latestKnownScrollY = 0
 
 # transition end event name

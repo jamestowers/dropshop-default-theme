@@ -7,6 +7,8 @@ body{
 }
 
 img{
+  display: inline-block;
+  width:auto; // required for height: auto to work in IE8
   max-width:100%;
   height:auto;
 }
