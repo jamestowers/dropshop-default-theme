@@ -20,11 +20,17 @@ $.fn.visible = (partial) ->
   compareBottom = (if partial is true then _top else _bottom)
   (compareBottom <= viewBottom) and (compareTop >= viewTop)
 
-window.spintune = new Spintune()
-window.spintune.player = new Player()
-window.spintune.interact = new Interact()
+window.dropshop = new Dropshop()
 
+
+
+
+
+
+##################################
 ## requestAnimationFrame Polyfill
+##################################
+
 lastTime = 0
 vendors = [
   "ms"
@@ -52,7 +58,12 @@ unless window.cancelAnimationFrame
   window.cancelAnimationFrame = (id) ->
     clearTimeout id
     return
+################################## 
 ## end requestAnimationFrame Polyfill
+##################################
+
+
+
 
 repeatOften = ->
   window.globalID = requestAnimationFrame(repeatOften)
@@ -62,7 +73,7 @@ repeatOften = ->
 
 # Call requestTick on window.scroll - see bottom
 requestTick = ->
-  requestAnimationFrame twizoo.onScroll  unless window.ticking
+  requestAnimationFrame dropshop.onScroll  unless window.ticking
   window.ticking = true
   return
 
@@ -73,7 +84,7 @@ requestTick = ->
 $doc = $(document)
 
 $doc.on 'click', 'a#menu-toggle', ->
-  #twizoo.$body.toggleClass 'slide-from-right'
+  dropshop.$body.toggleClass 'slide-from-right'
   false
 
 $(window).scroll ->
@@ -81,11 +92,11 @@ $(window).scroll ->
   requestTick()
 
 $(window).resize ->
-  #twizoo.setWidths()
+  dropshop.setWidths()
 
 $(window).on 'statechangecomplete', ->
   console.log '[scripts] stage change complete'
-  #twizoo.onPageLoad()
+  dropshop.onPageLoad()
 
 
 

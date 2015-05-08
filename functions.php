@@ -80,21 +80,23 @@ SCRIPTS & ENQUEUEING
 *********************/
 
 // Load jQuery
-if ( !function_exists( 'core_mods' ) ) {
-  function core_mods() {
+if ( !function_exists( 'dropshop_load_scripts' ) ) {
+  function dropshop_load_scripts() {
     if ( !is_admin() ) {
       wp_deregister_script( 'jquery' );
       wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/js/vendor/modernizr.custom.min.js', array(), '2.5.3', false );
       
       wp_register_script( 'jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", '', '' , true);
+      wp_register_script( 'dropshop', get_bloginfo('template_directory') . "/library/js/dropshop.js", 'jquery', '', true);
       wp_register_script( 'scripts', get_bloginfo('template_directory') . "/library/js/scripts.js", 'jquery', '', true);
 
       wp_enqueue_script( 'modernizr' );
       wp_enqueue_script( 'jquery' );
+      wp_enqueue_script('dropshop' );
       wp_enqueue_script( 'scripts');
     }
   }
-  add_action( 'wp_enqueue_scripts', 'core_mods' );
+  add_action( 'wp_enqueue_scripts', 'dropshop_load_scripts' );
 }
 
 

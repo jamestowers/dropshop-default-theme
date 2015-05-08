@@ -156,29 +156,6 @@ div#wrapper {
   min-height:100%;
   margin: 0 auto;
   transition: transform 0.2s ease-out;
-
-  /* =========
-  Responsive slide out menu 
-  ============ */
-  &.slide-left{
-    transform: translateX(-80%);
-    nav#main-nav{
-      transform: translateX(100%);
-    }
-    a#menu-toggle{
-      span{
-        height:0;
-      }
-      span:before{
-        transform: rotate(45deg);
-        top: -2px
-      }
-      span:after{
-        transform: rotate(-45deg);
-        bottom: -2px;
-      }
-    }
-  }
 }
 #main{
   clear:both;

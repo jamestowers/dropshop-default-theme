@@ -1,5 +1,30 @@
 /* MOBILE ONLY KEEP IT SMALL!! */
 
+
+/* =========
+Responsive slide out menu 
+============ */
+.slide-from-right{
+  transform: translateX(-80%);
+  nav#nav-header{
+    transform: translateX(100%);
+  }
+  a#menu-toggle{
+    span{
+      height:0;
+    }
+    span:before{
+      transform: rotate(45deg);
+      top: -2px
+    }
+    span:after{
+      transform: rotate(-45deg);
+      bottom: -2px;
+    }
+  }
+}
+
+
 a#menu-toggle{
   display:block;
   float:right;

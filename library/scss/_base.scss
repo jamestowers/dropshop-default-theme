@@ -1,0 +1,53 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.group:after { // (.clearfix)
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+div#main {
+	ul, ol{
+		padding-left:40px;
+		li{
+			margin-bottom: 5px;
+		}
+	}
+	ul{
+		li{
+			list-style: disc;
+		}
+	}
+	ol{
+		li{
+			list-style: decimal;
+		}
+	}
+}
+
+.sidebar{
+	background: $grey1;
+	height:100%;
+}
+aside{
+	width:100%;
+	clear:both;
+}
+
+
+div#footer-asides{
+	clear:both;
+	aside{
+		background:$grey5;
+		color:$grey3;
+		border-bottom: 1px solid $grey4;
+		.widgettitle{
+			color:$white;
+		}
+	}
+}
+

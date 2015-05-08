@@ -691,47 +691,14 @@ div#wrapper {
   margin: 0 auto;
   -webkit-transition: -webkit-transform 0.2s ease-out;
           transition: transform 0.2s ease-out;
-  /* =========
-  Responsive slide out menu 
-  ============ */
-}
-/* line 163, ../scss/_layout.scss */
-div#wrapper.slide-left {
-  -webkit-transform: translateX(-80%);
-      -ms-transform: translateX(-80%);
-          transform: translateX(-80%);
-}
-/* line 165, ../scss/_layout.scss */
-div#wrapper.slide-left nav#main-nav {
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
-}
-/* line 169, ../scss/_layout.scss */
-div#wrapper.slide-left a#menu-toggle span {
-  height: 0;
-}
-/* line 172, ../scss/_layout.scss */
-div#wrapper.slide-left a#menu-toggle span:before {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-  top: -2px;
-}
-/* line 176, ../scss/_layout.scss */
-div#wrapper.slide-left a#menu-toggle span:after {
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  bottom: -2px;
 }
 
-/* line 183, ../scss/_layout.scss */
+/* line 160, ../scss/_layout.scss */
 #main {
   clear: both;
 }
 
-/* line 186, ../scss/_layout.scss */
+/* line 163, ../scss/_layout.scss */
 #content {
   clear: both;
   position: relative;
@@ -742,14 +709,48 @@ div#wrapper.slide-left a#menu-toggle span:after {
 }
 
 /* MOBILE ONLY KEEP IT SMALL!! */
-/* line 3, ../scss/_nav.scss */
+/* =========
+Responsive slide out menu 
+============ */
+/* line 7, ../scss/_nav.scss */
+.slide-from-right {
+  -webkit-transform: translateX(-80%);
+      -ms-transform: translateX(-80%);
+          transform: translateX(-80%);
+}
+/* line 9, ../scss/_nav.scss */
+.slide-from-right nav#nav-header {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+}
+/* line 13, ../scss/_nav.scss */
+.slide-from-right a#menu-toggle span {
+  height: 0;
+}
+/* line 16, ../scss/_nav.scss */
+.slide-from-right a#menu-toggle span:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: -2px;
+}
+/* line 20, ../scss/_nav.scss */
+.slide-from-right a#menu-toggle span:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: -2px;
+}
+
+/* line 28, ../scss/_nav.scss */
 a#menu-toggle {
   display: block;
   float: right;
   height: 24px;
   padding: 10px;
 }
-/* line 8, ../scss/_nav.scss */
+/* line 33, ../scss/_nav.scss */
 a#menu-toggle span,
 a#menu-toggle span:before,
 a#menu-toggle span:after {
@@ -758,30 +759,30 @@ a#menu-toggle span:after {
   width: 20px;
   display: block;
 }
-/* line 16, ../scss/_nav.scss */
+/* line 41, ../scss/_nav.scss */
 a#menu-toggle span {
   position: relative;
 }
-/* line 18, ../scss/_nav.scss */
+/* line 43, ../scss/_nav.scss */
 a#menu-toggle span:before, a#menu-toggle span:after {
   position: absolute;
   left: 0;
   content: '';
 }
-/* line 24, ../scss/_nav.scss */
+/* line 49, ../scss/_nav.scss */
 a#menu-toggle span:before {
   top: -7px;
 }
-/* line 27, ../scss/_nav.scss */
+/* line 52, ../scss/_nav.scss */
 a#menu-toggle span:after {
   bottom: -7px;
 }
 
-/* line 33, ../scss/_nav.scss */
+/* line 58, ../scss/_nav.scss */
 nav {
   /* end .nav */
 }
-/* line 34, ../scss/_nav.scss */
+/* line 59, ../scss/_nav.scss */
 nav#nav-header {
   color: #222;
   position: fixed;
@@ -794,30 +795,30 @@ nav#nav-header {
           transition: transform 0.2s ease-out;
   z-index: -1;
 }
-/* line 46, ../scss/_nav.scss */
+/* line 71, ../scss/_nav.scss */
 nav.pagination ul.page-numbers {
   padding-left: 0 !important;
 }
-/* line 48, ../scss/_nav.scss */
+/* line 73, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li {
   display: inline-block;
 }
-/* line 50, ../scss/_nav.scss */
+/* line 75, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers {
   background: #6ED0E1;
   color: #FFF;
   padding: 7px 15px;
   display: block;
 }
-/* line 55, ../scss/_nav.scss */
+/* line 80, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers a {
   color: #FFF;
 }
-/* line 58, ../scss/_nav.scss */
+/* line 83, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers.current {
   background: #28aac1;
 }
-/* line 65, ../scss/_nav.scss */
+/* line 90, ../scss/_nav.scss */
 nav .nav {
   border-bottom: 0;
   clear: both;
@@ -826,37 +827,37 @@ nav .nav {
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 69, ../scss/_nav.scss */
+/* line 94, ../scss/_nav.scss */
 nav .nav ul {
   margin: 0;
 }
-/* line 72, ../scss/_nav.scss */
+/* line 97, ../scss/_nav.scss */
 nav .nav li {
   display: block;
   border-bottom: 1px solid #CCC;
 }
-/* line 75, ../scss/_nav.scss */
+/* line 100, ../scss/_nav.scss */
 nav .nav li a {
   display: block;
   color: #FFF;
   text-decoration: none;
   padding: 10px 10px;
 }
-/* line 85, ../scss/_nav.scss */
+/* line 110, ../scss/_nav.scss */
 nav .nav#menu-nav-header li a {
   padding: 10px 20px;
 }
-/* line 87, ../scss/_nav.scss */
+/* line 112, ../scss/_nav.scss */
 nav .nav#menu-nav-header li a:hover {
   background: #555;
   color: #FFF;
 }
-/* line 92, ../scss/_nav.scss */
+/* line 117, ../scss/_nav.scss */
 nav .nav#menu-nav-header li.menu-item-has-children {
   /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
   You can show the child pages there on mobiles. */
 }
-/* line 95, ../scss/_nav.scss */
+/* line 120, ../scss/_nav.scss */
 nav .nav#menu-nav-header li.menu-item-has-children ul.sub-menu {
   display: none;
 }
