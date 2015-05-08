@@ -1,0 +1,191 @@
+html,
+body{
+  height:100%;
+  overflow: hidden;
+}
+body{
+  background: $grey8;
+}
+
+section{
+  clear: both;
+}
+.inner{
+  width:1400px;
+  max-width:100%;
+  margin: 0 auto;
+}
+.row{
+  clear: both;
+}
+.full-height{
+  height: 100%;
+}
+.hide{
+  display: none !important;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-column{
+  flex-direction: column;
+  flex: 1;
+}
+
+
+.bg-light{
+  background:$grey8;
+}
+.bg-dark{
+  background:$grey2;
+}
+.bg-white{
+  background:$white;
+}
+
+// FLOATS
+.clear{
+  clear: both;
+}
+.pull-left{
+  float: left !important;
+}
+.pull-right{
+  float: right !important;
+}
+.pull-center{
+  margin-left:auto;
+  margin-right: auto;
+}
+
+// TEXT ALIGNMENT
+.text-left{
+  text-align:left;
+}
+.text-right{
+  text-align:right;
+}
+.text-center{
+  text-align:center;
+}
+
+// IMAGE ALIGNMENT
+.alignleft, img.alignleft { 
+  margin-right: 1.5em; 
+  display: inline; 
+  float: left; 
+}
+.alignright, img.alignright { 
+  margin-left: 1.5em; 
+  display: inline; 
+  float: right; 
+}
+.aligncenter, img.aligncenter { 
+  margin-right: auto; 
+  margin-left: auto; 
+  display: block; 
+  clear: both; 
+}
+.pad{
+  padding: $padding $padding $padding $padding;
+}
+
+
+/*********************
+GRID
+*********************/
+.col6-sm{
+  width: 50%;
+  position: relative;
+  float: left;
+}
+
+
+
+
+/*********************
+ELEMENTS
+*********************/
+
+header.header,
+footer.footer{
+  background:$grey3;
+  padding: 10px;
+}
+header.header{
+  background:$white;
+  text-align: center;
+  padding: $padding;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  #logo{
+    background: url('../images/logo.gif') no-repeat 50% 50%;
+    background-size: contain;
+    text-indent: -9999px;
+    width:220px;
+    height:100px;
+    display: block;
+    margin: auto;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+footer#footer{
+  background: $grey6;
+  color:$grey4;
+  clear: both;
+  text-align: center;
+  a{
+    color:$grey2;
+  }
+}
+
+
+div#wrapper {
+  width: 100%;
+  min-height:100%;
+  margin: 0 auto;
+  transition: transform 0.2s ease-out;
+
+  /* =========
+  Responsive slide out menu 
+  ============ */
+  &.slide-left{
+    transform: translateX(-80%);
+    nav#main-nav{
+      transform: translateX(100%);
+    }
+    a#menu-toggle{
+      span{
+        height:0;
+      }
+      span:before{
+        transform: rotate(45deg);
+        top: -2px
+      }
+      span:after{
+        transform: rotate(-45deg);
+        bottom: -2px;
+      }
+    }
+  }
+}
+#main{
+  clear:both;
+}
+#content{
+  clear:both;
+  position: relative;
+  flex: 2;
+}
+

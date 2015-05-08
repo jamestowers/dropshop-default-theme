@@ -6,9 +6,13 @@
 
 			</div>
 
+			<nav role="navigation" id="nav-footer">
+				<?php dropshop_nav_footer(); ?>
+			</nav>
+
 			<footer class="footer group">
 
-				<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+				<p class="small source-org">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 
 			</footer>
 

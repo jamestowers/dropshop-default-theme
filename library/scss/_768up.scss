@@ -4,7 +4,7 @@ HEADER STYLES
 
 .header {}
 
-	#logo {}
+#logo {}
 
 /*********************
 NAVIGATION STYLES
@@ -13,9 +13,9 @@ a#menu-toggle{
 	display:none;
 }
 nav{
-  &#main-nav{
+  &#nav-header{
     background:$white;
-  	color:$grey7;
+  	color:$grey2;
   	height:auto;
   	z-index: 1;
   	position: relative;
@@ -25,28 +25,29 @@ nav{
   }
 	.nav {
 	  @include font-size(0); // Fighting the space betwen inline-block items
-	  /* Target just the Header menu */
 	  li {
 	    display:inline-block;
       vertical-align: top;
 	    a {
-	      @include font-size( 1.4rem); // !!Important. Must have a size set here because of inlineblock spacing bug above
+	      @include font-size(1.4); // !!Important. Must have a size set here because of inlineblock spacing bug above
 	    }
 	  }
-	  &#menu-header-menu{
+	  &#menu-nav-header{
 	    li{
         border-bottom: none;
 	      &:not(:last-child){
 	        border-right: 1px solid $white;
 	      }
 	      a{
-          color:$grey6;
+          color:$grey2;
 	        padding: 10px 20px;
 	      }
 	    } 
 	  }
 	}
 }
+
+
 
 /*********************
 WIDGETS

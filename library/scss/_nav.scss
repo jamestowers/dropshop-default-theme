@@ -31,8 +31,8 @@ a#menu-toggle{
 }
 
 nav{
-  &#main-nav{
-    color:$grey7;
+  &#nav-header{
+    color:$grey2;
     position: fixed;
     text-transform: uppercase;
     height:100%;
@@ -80,7 +80,7 @@ nav{
       }
     }
     /* Target just the Header menu */
-    &#menu-header-menu{
+    &#menu-nav-header{
       li{
         a{
           padding: 10px 20px;

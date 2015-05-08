@@ -194,9 +194,9 @@ a#menu-toggle {
 }
 
 /* line 16, ../scss/_768up.scss */
-nav#main-nav {
+nav#nav-header {
   background: #FFF;
-  color: #E8E8E8;
+  color: #222;
   height: auto;
   z-index: 1;
   position: relative;
@@ -208,53 +208,52 @@ nav#main-nav {
 nav .nav {
   font-size: 0px;
   font-size: 0rem;
-  /* Target just the Header menu */
 }
-/* line 29, ../scss/_768up.scss */
+/* line 28, ../scss/_768up.scss */
 nav .nav li {
   display: inline-block;
   vertical-align: top;
 }
-/* line 32, ../scss/_768up.scss */
+/* line 31, ../scss/_768up.scss */
 nav .nav li a {
-  font-size: 14rempx;
-  font-size: 1.4remrem;
+  font-size: 14px;
+  font-size: 1.4rem;
 }
-/* line 37, ../scss/_768up.scss */
-nav .nav#menu-header-menu li {
+/* line 36, ../scss/_768up.scss */
+nav .nav#menu-nav-header li {
   border-bottom: none;
 }
-/* line 39, ../scss/_768up.scss */
-nav .nav#menu-header-menu li:not(:last-child) {
+/* line 38, ../scss/_768up.scss */
+nav .nav#menu-nav-header li:not(:last-child) {
   border-right: 1px solid #FFF;
 }
-/* line 42, ../scss/_768up.scss */
-nav .nav#menu-header-menu li a {
-  color: #CCC;
+/* line 41, ../scss/_768up.scss */
+nav .nav#menu-nav-header li a {
+  color: #222;
   padding: 10px 20px;
 }
 
 /*********************
 WIDGETS
 *********************/
-/* line 54, ../scss/_768up.scss */
+/* line 55, ../scss/_768up.scss */
 div#footer-asides {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 56, ../scss/_768up.scss */
+/* line 57, ../scss/_768up.scss */
 div#footer-asides aside {
   background: #6E6E6E;
   color: #373737;
   border-bottom: none;
 }
-/* line 60, ../scss/_768up.scss */
+/* line 61, ../scss/_768up.scss */
 div#footer-asides aside:not(:last-child) {
   border-right: 1px solid #555;
 }
-/* line 63, ../scss/_768up.scss */
+/* line 64, ../scss/_768up.scss */
 div#footer-asides aside .widgettitle {
   color: #FFF;
 }

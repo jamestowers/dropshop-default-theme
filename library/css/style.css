@@ -470,6 +470,277 @@ dd {
   list-style: none;
 }
 
+/* line 1, ../scss/_layout.scss */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 6, ../scss/_layout.scss */
+body {
+  background: #F5F5F5;
+}
+
+/* line 10, ../scss/_layout.scss */
+section {
+  clear: both;
+}
+
+/* line 13, ../scss/_layout.scss */
+.inner {
+  width: 1400px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* line 18, ../scss/_layout.scss */
+.row {
+  clear: both;
+}
+
+/* line 21, ../scss/_layout.scss */
+.full-height {
+  height: 100%;
+}
+
+/* line 24, ../scss/_layout.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 28, ../scss/_layout.scss */
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+/* line 32, ../scss/_layout.scss */
+.flex-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 37, ../scss/_layout.scss */
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 43, ../scss/_layout.scss */
+.bg-light {
+  background: #F5F5F5;
+}
+
+/* line 46, ../scss/_layout.scss */
+.bg-dark {
+  background: #222;
+}
+
+/* line 49, ../scss/_layout.scss */
+.bg-white {
+  background: #FFF;
+}
+
+/* line 54, ../scss/_layout.scss */
+.clear {
+  clear: both;
+}
+
+/* line 57, ../scss/_layout.scss */
+.pull-left {
+  float: left !important;
+}
+
+/* line 60, ../scss/_layout.scss */
+.pull-right {
+  float: right !important;
+}
+
+/* line 63, ../scss/_layout.scss */
+.pull-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 69, ../scss/_layout.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 72, ../scss/_layout.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 75, ../scss/_layout.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 80, ../scss/_layout.scss */
+.alignleft, img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+
+/* line 85, ../scss/_layout.scss */
+.alignright, img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+
+/* line 90, ../scss/_layout.scss */
+.aligncenter, img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+
+/* line 96, ../scss/_layout.scss */
+.pad {
+  padding: 30px 30px 30px 30px;
+}
+
+/*********************
+GRID
+*********************/
+/* line 104, ../scss/_layout.scss */
+.col6-sm {
+  width: 50%;
+  position: relative;
+  float: left;
+}
+
+/*********************
+ELEMENTS
+*********************/
+/* line 117, ../scss/_layout.scss */
+header.header,
+footer.footer {
+  background: #373737;
+  padding: 10px;
+}
+
+/* line 122, ../scss/_layout.scss */
+header.header {
+  background: #FFF;
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+/* line 129, ../scss/_layout.scss */
+header.header #logo {
+  background: url("../images/logo.gif") no-repeat 50% 50%;
+  background-size: contain;
+  text-indent: -9999px;
+  width: 220px;
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+/* line 137, ../scss/_layout.scss */
+header.header #logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 143, ../scss/_layout.scss */
+footer#footer {
+  background: #CCC;
+  color: #555;
+  clear: both;
+  text-align: center;
+}
+/* line 148, ../scss/_layout.scss */
+footer#footer a {
+  color: #222;
+}
+
+/* line 154, ../scss/_layout.scss */
+div#wrapper {
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+          transition: transform 0.2s ease-out;
+  /* =========
+  Responsive slide out menu 
+  ============ */
+}
+/* line 163, ../scss/_layout.scss */
+div#wrapper.slide-left {
+  -webkit-transform: translateX(-80%);
+      -ms-transform: translateX(-80%);
+          transform: translateX(-80%);
+}
+/* line 165, ../scss/_layout.scss */
+div#wrapper.slide-left nav#main-nav {
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+}
+/* line 169, ../scss/_layout.scss */
+div#wrapper.slide-left a#menu-toggle span {
+  height: 0;
+}
+/* line 172, ../scss/_layout.scss */
+div#wrapper.slide-left a#menu-toggle span:before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: -2px;
+}
+/* line 176, ../scss/_layout.scss */
+div#wrapper.slide-left a#menu-toggle span:after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  bottom: -2px;
+}
+
+/* line 183, ../scss/_layout.scss */
+#main {
+  clear: both;
+}
+
+/* line 186, ../scss/_layout.scss */
+#content {
+  clear: both;
+  position: relative;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
 /* MOBILE ONLY KEEP IT SMALL!! */
 /* line 3, ../scss/_nav.scss */
 a#menu-toggle {
@@ -511,8 +782,8 @@ nav {
   /* end .nav */
 }
 /* line 34, ../scss/_nav.scss */
-nav#main-nav {
-  color: #E8E8E8;
+nav#nav-header {
+  color: #222;
   position: fixed;
   text-transform: uppercase;
   height: 100%;
@@ -572,21 +843,21 @@ nav .nav li a {
   padding: 10px 10px;
 }
 /* line 85, ../scss/_nav.scss */
-nav .nav#menu-header-menu li a {
+nav .nav#menu-nav-header li a {
   padding: 10px 20px;
 }
 /* line 87, ../scss/_nav.scss */
-nav .nav#menu-header-menu li a:hover {
+nav .nav#menu-nav-header li a:hover {
   background: #555;
   color: #FFF;
 }
 /* line 92, ../scss/_nav.scss */
-nav .nav#menu-header-menu li.menu-item-has-children {
+nav .nav#menu-nav-header li.menu-item-has-children {
   /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
   You can show the child pages there on mobiles. */
 }
 /* line 95, ../scss/_nav.scss */
-nav .nav#menu-header-menu li.menu-item-has-children ul.sub-menu {
+nav .nav#menu-nav-header li.menu-item-has-children ul.sub-menu {
   display: none;
 }
 
@@ -601,17 +872,24 @@ body {
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.5;
-  color: #CCC;
+  color: #222;
   text-rendering: optimizeLegibility;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* line 20, ../scss/_type.scss */
+small,
+.small {
+  font-size: 10px;
+  font-size: 1rem;
+}
+
 /*********************
 LINK STYLES
 *********************/
-/* line 19, ../scss/_type.scss */
+/* line 29, ../scss/_type.scss */
 a, a:visited {
   color: #6ED0E1;
   text-decoration: none;
@@ -619,11 +897,11 @@ a, a:visited {
   /* on click */
   /* mobile tap color */
 }
-/* line 24, ../scss/_type.scss */
+/* line 34, ../scss/_type.scss */
 a:hover, a:focus, a:visited:hover, a:visited:focus {
   color: #8cdae7;
 }
-/* line 34, ../scss/_type.scss */
+/* line 44, ../scss/_type.scss */
 a:link, a:visited:link {
   /*
   this highlights links on iPhones/iPads.
@@ -636,19 +914,19 @@ a:link, a:visited:link {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-/* line 48, ../scss/_type.scss */
+/* line 58, ../scss/_type.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: "Open Sans", sans-serif;
   font-weight: 200;
   text-transform: uppercase;
-  color: #FFF;
+  color: #222;
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
   */
 }
 
-/* line 59, ../scss/_type.scss */
+/* line 69, ../scss/_type.scss */
 h1, .h1 {
   font-size: 42px;
   font-size: 4.2rem;
@@ -656,7 +934,7 @@ h1, .h1 {
   margin: 0 0 20px;
 }
 
-/* line 65, ../scss/_type.scss */
+/* line 75, ../scss/_type.scss */
 h2, .h2 {
   font-size: 36px;
   font-size: 3.6rem;
@@ -664,32 +942,436 @@ h2, .h2 {
   margin: 0 0 1rem;
 }
 
-/* line 71, ../scss/_type.scss */
+/* line 81, ../scss/_type.scss */
 h3, .h3 {
   font-size: 24px;
   font-size: 2.4rem;
   margin: 0 0 15px;
 }
 
-/* line 76, ../scss/_type.scss */
+/* line 86, ../scss/_type.scss */
 h4, .h4 {
   font-size: 11px;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-/* line 81, ../scss/_type.scss */
+/* line 91, ../scss/_type.scss */
 h5, .h5 {
   line-height: 2.09rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 87, ../scss/_type.scss */
+/* line 97, ../scss/_type.scss */
 blockquote {
   font-style: italic;
   font-size: 20px;
   font-size: 2rem;
+}
+
+/*********************
+FORMS
+*********************/
+/* line 4, ../scss/_forms.scss */
+form {
+  max-width: 800px;
+}
+/* line 7, ../scss/_forms.scss */
+form.inline label,
+form.inline input[type="text"],
+form.inline input[type="email"],
+form.inline input[type="password"],
+form.inline input[type="date"],
+form.inline input[type="tel"],
+form.inline input[type="url"],
+form.inline input[type="number"] {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 14px;
+}
+/* line 20, ../scss/_forms.scss */
+form input[type="submit"],
+form input[type="button"],
+form button.btn {
+  float: right;
+}
+/* line 24, ../scss/_forms.scss */
+form input[type="submit"].btn-cancel,
+form input[type="button"].btn-cancel,
+form button.btn.btn-cancel {
+  margin-right: 40px;
+}
+
+/* line 29, ../scss/_forms.scss */
+fieldset {
+  border-bottom: 1px solid #CCC;
+  padding: 30px 0;
+}
+/* line 32, ../scss/_forms.scss */
+fieldset label {
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-align: right;
+  padding-right: 30px;
+}
+
+/* line 38, ../scss/_forms.scss */
+.form-line {
+  padding: 15px;
+}
+/* line 40, ../scss/_forms.scss */
+.form-line:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 46, ../scss/_forms.scss */
+textarea {
+  min-height: 200px;
+}
+
+/* line 50, ../scss/_forms.scss */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+textarea {
+  border: 1px solid #E8E8E8;
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  font-size: 1.2rem;
+  padding: 10px 10px 10px;
+  margin-bottom: 10px;
+  color: #555;
+  min-width: 44px;
+}
+/* line 68, ../scss/_forms.scss */
+input[type="text"]:not([class*="col"]), input[type="text"]:not([class^="col"]),
+input[type="email"]:not([class*="col"]),
+input[type="email"]:not([class^="col"]),
+input[type="password"]:not([class*="col"]),
+input[type="password"]:not([class^="col"]),
+input[type="date"]:not([class*="col"]),
+input[type="date"]:not([class^="col"]),
+input[type="tel"]:not([class*="col"]),
+input[type="tel"]:not([class^="col"]),
+input[type="url"]:not([class*="col"]),
+input[type="url"]:not([class^="col"]),
+input[type="number"]:not([class*="col"]),
+input[type="number"]:not([class^="col"]),
+textarea:not([class*="col"]),
+textarea:not([class^="col"]) {
+  width: 100%;
+}
+/* line 72, ../scss/_forms.scss */
+input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+input[type="date"]::-webkit-input-placeholder,
+input[type="tel"]::-webkit-input-placeholder,
+input[type="url"]::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #222;
+  font-weight: 400;
+}
+/* line 76, ../scss/_forms.scss */
+input[type="text"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder,
+input[type="date"]::-moz-placeholder,
+input[type="tel"]::-moz-placeholder,
+input[type="url"]::-moz-placeholder,
+input[type="number"]::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #222;
+  font-weight: 400;
+}
+/* line 80, ../scss/_forms.scss */
+input[type="text"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="date"]:-ms-input-placeholder,
+input[type="tel"]:-ms-input-placeholder,
+input[type="url"]:-ms-input-placeholder,
+input[type="number"]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #222;
+  font-weight: 400;
+}
+/* line 84, ../scss/_forms.scss */
+input[type="text"]:disabled, input[type="text"][readonly],
+input[type="email"]:disabled,
+input[type="email"][readonly],
+input[type="password"]:disabled,
+input[type="password"][readonly],
+input[type="date"]:disabled,
+input[type="date"][readonly],
+input[type="tel"]:disabled,
+input[type="tel"][readonly],
+input[type="url"]:disabled,
+input[type="url"][readonly],
+input[type="number"]:disabled,
+input[type="number"][readonly],
+textarea:disabled,
+textarea[readonly] {
+  background: #F5F5F5;
+  cursor: not-allowed;
+}
+
+/* line 90, ../scss/_forms.scss */
+input[type="number"] {
+  width: auto;
+}
+
+/* line 94, ../scss/_forms.scss */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* line 98, ../scss/_forms.scss */
+input.datepicker {
+  width: 100%;
+}
+
+/* line 102, ../scss/_forms.scss */
+.checkbox-group label {
+  text-align: left;
+}
+
+/* line 106, ../scss/_forms.scss */
+.checkbox {
+  width: 50%;
+  display: block;
+  float: left;
+  padding: 5px 0;
+}
+/* line 111, ../scss/_forms.scss */
+.checkbox .field_with_errors {
+  display: inline;
+}
+
+/* line 115, ../scss/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 5px;
+}
+/* line 119, ../scss/_forms.scss */
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  clear: none;
+  display: inline;
+  margin-right: 10px;
+  padding-right: 0;
+}
+
+/* RANGE INPUTS */
+/* line 130, ../scss/_forms.scss */
+input[type=range] {
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  /* Specific width is required for Firefox. */
+}
+
+/* line 135, ../scss/_forms.scss */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+/* line 139, ../scss/_forms.scss */
+input[type=range]:focus {
+  outline: none;
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* line 143, ../scss/_forms.scss */
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  /* Hides the slider so custom styles can be added */
+  border-color: transparent;
+  color: transparent;
+}
+
+/* RANGE THUMB */
+/* Special styling for WebKit/Blink */
+/* line 153, ../scss/_forms.scss */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #28aac1;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #6ED0E1;
+  cursor: pointer;
+  margin-top: -10px;
+  /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+/* line 165, ../scss/_forms.scss */
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #28aac1;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #6ED0E1;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+/* line 175, ../scss/_forms.scss */
+input[type=range]::-ms-thumb {
+  border: 1px solid #28aac1;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background: #6ED0E1;
+  cursor: pointer;
+}
+
+/* RANGE TRACK */
+/* line 185, ../scss/_forms.scss */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #28aac1;
+  border: 1px solid #6E6E6E;
+}
+
+/* line 193, ../scss/_forms.scss */
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #F5F5F5;
+}
+
+/* line 197, ../scss/_forms.scss */
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: #28aac1;
+  border: 1px solid #6E6E6E;
+}
+
+/* line 205, ../scss/_forms.scss */
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transpcolor-secondary;
+  border-color: transparent;
+  border-width: 0px;
+  color: transparent;
+}
+
+/* line 214, ../scss/_forms.scss */
+input[type=range]::-ms-fill-lower {
+  background: #6ED0E1;
+  border: 1px solid #CCC;
+  border-radius: 2.6px;
+}
+
+/* line 219, ../scss/_forms.scss */
+input[type=range]:focus::-ms-fill-lower {
+  background: #FFF;
+}
+
+/* line 222, ../scss/_forms.scss */
+input[type=range]::-ms-fill-upper {
+  background: #FFF;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+}
+
+/* line 227, ../scss/_forms.scss */
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+@media only screen and (max-width: 767px) {
+  /* line 234, ../scss/_forms.scss */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+  }
+}
+/* line 247, ../scss/_forms.scss */
+.btn,
+input[type="submit"],
+input[type="button"] {
+  background: #6ED0E1;
+  border: 1px solid #6ED0E1;
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 10px 15px;
+  display: inline-block;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  -webkit-transition: all 0.1s ease-in;
+          transition: all 0.1s ease-in;
+}
+/* line 265, ../scss/_forms.scss */
+.btn.btn-primary,
+input[type="submit"].btn-primary,
+input[type="button"].btn-primary {
+  background: #6ED0E1;
+}
+/* line 268, ../scss/_forms.scss */
+.btn.btn-secondary,
+input[type="submit"].btn-secondary,
+input[type="button"].btn-secondary {
+  background: #28aac1;
+}
+/* line 270, ../scss/_forms.scss */
+.btn.btn-secondary:hover,
+input[type="submit"].btn-secondary:hover,
+input[type="button"].btn-secondary:hover {
+  background: #37bed6;
+}
+/* line 274, ../scss/_forms.scss */
+.btn.btn-cancel,
+input[type="submit"].btn-cancel,
+input[type="button"].btn-cancel {
+  background: #e65f5f;
+  border: 1px solid #e14040;
+  color: #FFF;
+}
+/* line 279, ../scss/_forms.scss */
+.btn.btn-small,
+input[type="submit"].btn-small,
+input[type="button"].btn-small {
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  text-transform: none;
 }
 
 /*
@@ -710,258 +1392,48 @@ the other stylesheets. Remember, keep it light: Speed is Important.
   clear: both;
 }
 
-/* line 11, ../scss/_base.scss */
-html,
-body {
-  height: 100%;
-}
-
-/* line 15, ../scss/_base.scss */
-body {
-  background: #E8E8E8;
-}
-
-/* line 18, ../scss/_base.scss */
-div#wrapper {
-  width: 100%;
-  min-height: 100%;
-  margin: 0 auto;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-          transition: transform 0.2s ease-out;
-  /* =========
-  Responsive slide out menu 
-  ============ */
-}
-/* line 28, ../scss/_base.scss */
-div#wrapper.slide-left {
-  -webkit-transform: translateX(-80%);
-      -ms-transform: translateX(-80%);
-          transform: translateX(-80%);
-}
-/* line 30, ../scss/_base.scss */
-div#wrapper.slide-left nav#main-nav {
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
-}
-/* line 34, ../scss/_base.scss */
-div#wrapper.slide-left a#menu-toggle span {
-  height: 0;
-}
-/* line 37, ../scss/_base.scss */
-div#wrapper.slide-left a#menu-toggle span:before {
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-  top: -2px;
-}
-/* line 41, ../scss/_base.scss */
-div#wrapper.slide-left a#menu-toggle span:after {
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  bottom: -2px;
-}
-
-/* line 53, ../scss/_base.scss */
-.header {
-  background: #FFF;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-}
-
-/* line 60, ../scss/_base.scss */
-#logo {
-  background: url("../images/logo.gif") no-repeat 50% 50%;
-  background-size: contain;
-  text-indent: -9999px;
-  width: 220px;
-  height: 100px;
-  display: block;
-  margin: auto;
-}
-
-/* line 70, ../scss/_base.scss */
-footer.footer {
-  background: #CCC;
-  color: #555;
-  clear: both;
-  text-align: center;
-}
-/* line 75, ../scss/_base.scss */
-footer.footer a {
-  color: #222;
-}
-
-/* line 79, ../scss/_base.scss */
-div#content {
-  clear: both;
-}
-
-/* line 82, ../scss/_base.scss */
-.pad {
-  padding: 20px;
-}
-
-/* line 85, ../scss/_base.scss */
-.page {
-  max-width: 100%;
-}
-
-/* line 89, ../scss/_base.scss */
-article.post {
-  border-bottom: 1px solid #111;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-
-/* line 97, ../scss/_base.scss */
+/* line 14, ../scss/_base.scss */
 div#main ul, div#main ol {
   padding-left: 40px;
 }
-/* line 99, ../scss/_base.scss */
+/* line 16, ../scss/_base.scss */
 div#main ul li, div#main ol li {
   margin-bottom: 5px;
 }
-/* line 104, ../scss/_base.scss */
+/* line 21, ../scss/_base.scss */
 div#main ul li {
   list-style: disc;
 }
-/* line 109, ../scss/_base.scss */
+/* line 26, ../scss/_base.scss */
 div#main ol li {
   list-style: decimal;
 }
 
-/* line 114, ../scss/_base.scss */
+/* line 32, ../scss/_base.scss */
 .sidebar {
   background: #111;
   height: 100%;
 }
 
-/* line 118, ../scss/_base.scss */
+/* line 36, ../scss/_base.scss */
 aside {
   width: 100%;
   clear: both;
 }
 
-/* line 122, ../scss/_base.scss */
+/* line 42, ../scss/_base.scss */
 div#footer-asides {
   clear: both;
 }
-/* line 124, ../scss/_base.scss */
+/* line 44, ../scss/_base.scss */
 div#footer-asides aside {
   background: #6E6E6E;
   color: #373737;
   border-bottom: 1px solid #555;
 }
-/* line 128, ../scss/_base.scss */
+/* line 48, ../scss/_base.scss */
 div#footer-asides aside .widgettitle {
   color: #FFF;
-}
-
-/* line 134, ../scss/_base.scss */
-.alignleft, img.alignleft {
-  margin-right: 1.5em;
-  display: inline;
-  float: left;
-}
-
-/* line 139, ../scss/_base.scss */
-.alignright, img.alignright {
-  margin-left: 1.5em;
-  display: inline;
-  float: right;
-}
-
-/* line 144, ../scss/_base.scss */
-.aligncenter, img.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  clear: both;
-}
-
-/*********************
-FORM STYLES
-*********************/
-/* line 156, ../scss/_base.scss */
-form fieldset {
-  clear: both;
-}
-/* line 159, ../scss/_base.scss */
-form label {
-  clear: both;
-  display: block;
-  width: 100%;
-}
-/* line 163, ../scss/_base.scss */
-form label.display-inline {
-  clear: none;
-  display: inline-block;
-  width: auto;
-}
-/* line 169, ../scss/_base.scss */
-form input {
-  clear: left;
-}
-/* line 173, ../scss/_base.scss */
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form input[type="tel"],
-form textarea {
-  border: none;
-  -webkit-appearance: none;
-  border-radius: 0;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 200;
-  width: 100%;
-  max-width: 100%;
-  padding: 10px;
-  margin: 10px 0 20px;
-  font-size: 16px;
-  font-size: 1.6rem;
-  color: #555;
-}
-/* line 189, ../scss/_base.scss */
-form input[type="text"]::-webkit-input-placeholder,
-form input[type="email"]::-webkit-input-placeholder,
-form input[type="password"]::-webkit-input-placeholder,
-form input[type="tel"]::-webkit-input-placeholder,
-form textarea::-webkit-input-placeholder {
-  color: #373737;
-}
-/* line 192, ../scss/_base.scss */
-form input[type="text"]::-moz-placeholder,
-form input[type="email"]::-moz-placeholder,
-form input[type="password"]::-moz-placeholder,
-form input[type="tel"]::-moz-placeholder,
-form textarea::-moz-placeholder {
-  color: #373737;
-}
-/* line 195, ../scss/_base.scss */
-form input[type="text"]:-ms-input-placeholder,
-form input[type="email"]:-ms-input-placeholder,
-form input[type="password"]:-ms-input-placeholder,
-form input[type="tel"]:-ms-input-placeholder,
-form textarea:-ms-input-placeholder {
-  color: #373737;
-}
-/* line 199, ../scss/_base.scss */
-form input[type="submit"],
-form input[type="button"] {
-  background: #6ED0E1;
-  border-radius: 2px;
-  padding: 10px 20px;
-  border: none;
-  -webkit-appearance: none;
-  float: right;
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
-  color: #fff;
-  clear: both;
 }
 
 /*
@@ -1154,9 +1626,9 @@ you can add resource intensive styles.
   }
 
   /* line 16, ../scss/_768up.scss */
-  nav#main-nav {
+  nav#nav-header {
     background: #FFF;
-    color: #E8E8E8;
+    color: #222;
     height: auto;
     z-index: 1;
     position: relative;
@@ -1168,53 +1640,52 @@ you can add resource intensive styles.
   nav .nav {
     font-size: 0px;
     font-size: 0rem;
-    /* Target just the Header menu */
   }
-  /* line 29, ../scss/_768up.scss */
+  /* line 28, ../scss/_768up.scss */
   nav .nav li {
     display: inline-block;
     vertical-align: top;
   }
-  /* line 32, ../scss/_768up.scss */
+  /* line 31, ../scss/_768up.scss */
   nav .nav li a {
-    font-size: 14rempx;
-    font-size: 1.4remrem;
+    font-size: 14px;
+    font-size: 1.4rem;
   }
-  /* line 37, ../scss/_768up.scss */
-  nav .nav#menu-header-menu li {
+  /* line 36, ../scss/_768up.scss */
+  nav .nav#menu-nav-header li {
     border-bottom: none;
   }
-  /* line 39, ../scss/_768up.scss */
-  nav .nav#menu-header-menu li:not(:last-child) {
+  /* line 38, ../scss/_768up.scss */
+  nav .nav#menu-nav-header li:not(:last-child) {
     border-right: 1px solid #FFF;
   }
-  /* line 42, ../scss/_768up.scss */
-  nav .nav#menu-header-menu li a {
-    color: #CCC;
+  /* line 41, ../scss/_768up.scss */
+  nav .nav#menu-nav-header li a {
+    color: #222;
     padding: 10px 20px;
   }
 
   /*********************
   WIDGETS
   *********************/
-  /* line 54, ../scss/_768up.scss */
+  /* line 55, ../scss/_768up.scss */
   div#footer-asides {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 56, ../scss/_768up.scss */
+  /* line 57, ../scss/_768up.scss */
   div#footer-asides aside {
     background: #6E6E6E;
     color: #373737;
     border-bottom: none;
   }
-  /* line 60, ../scss/_768up.scss */
+  /* line 61, ../scss/_768up.scss */
   div#footer-asides aside:not(:last-child) {
     border-right: 1px solid #555;
   }
-  /* line 63, ../scss/_768up.scss */
+  /* line 64, ../scss/_768up.scss */
   div#footer-asides aside .widgettitle {
     color: #FFF;
   }
@@ -1275,10 +1746,6 @@ This is for the large monitors
   on larger screens.
   
   ******************************************************************/
-  /* line 12, ../scss/_1240up.scss */
-  .pad {
-    padding: 20px 40px;
-  }
 }
 /*
 SUPERLARGE VIEWING SIZE
@@ -1298,11 +1765,6 @@ This is for the larger monitors and possibly full screen viewers.
   /* line 12, ../scss/_1640up.scss */
   html {
     font-size: 74%;
-  }
-
-  /* line 15, ../scss/_1640up.scss */
-  .pad {
-    padding: 40px 80px;
   }
 }
 /*

@@ -1,12 +1,23 @@
 # Dropshop's Default theme
-__Default starte theme for most projects__
+__A Lightweight Wordpress Development Theme__
 
-Dropshop's theme is a heavily modified version of Bones (Designed by **Eddie Machado**: http://themble.com/bones) is designed to make the life of developers easier. 
+dropshop is designed to make the life of developers easier. It's built
+using HTML5 & has a strong semantic foundation. It was updated recently
+using some of the HTML5 Boilerplate's recommended markup and setup.
+It's constantly growing so be sure to check back often if you are a
+frequent user. I'm always open to contribution. :)
 
-Designed by **James Towers**: http://dropshop.io
+Designed by **Eddie Machado**: http://themble.com/dropshop
+
+Special Thanks to:
+* Paul Irish & the HTML5 Boilerplate
+* Yoast for some WP functions & optimization ideas
+* Andrew Rogers for code optimization
+* David Dellanave for speed & code optimization
+* and several other developers. :)
 
 Submit Bugs & or Fixes:
-https://github.com/jamestowers/dropshop-default-theme/issues
+https://github.com/eddiemachado/dropshop/issues
 
 
 ## License

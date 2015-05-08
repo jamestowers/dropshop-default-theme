@@ -27,9 +27,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.png">
 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-
-		<script src="/library/js/vendor/modernizr.custom.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700' rel='stylesheet' type='text/css'>
 
 		<?php wp_head(); ?>
 
@@ -49,8 +47,8 @@
 
 			</header>
 
-			<nav role="navigation" id="main-nav">
-				<?php dropshop_main_nav(); ?>
+			<nav role="navigation" id="nav-header">
+				<?php dropshop_nav_header(); ?>
 			</nav>
 
 			<div id="content" class="">
