@@ -817,8 +817,8 @@ ELEMENTS
   left: 0;
   padding: 4px;
   z-index: 11;
-  -webkit-animation: animate-from-top 0.2s;
-          animation: animate-from-top 0.2s;
+  -webkit-animation: animate-from-top 0.2s 1 0;
+          animation: animate-from-top 0.2s 1 0;
 }
 
 /* line 166, ../scss/_layout.scss */
