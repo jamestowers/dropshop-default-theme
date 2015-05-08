@@ -57,7 +57,6 @@ BIG MARGIN
 /*************************
 SMALL MARGIN
 **************************/
-/*
 .col1    { width: 7.33333%;  }    
 .col2    { width: 15.6666666667%; }   
 .col3    { width: 24%; }  
@@ -93,13 +92,14 @@ SMALL MARGIN
   &.col11   { width: 91.96666667%; }  
   &.col12   { width: 100%; } 
 }
-*/
+
 
 
 
 /*************************
 NO MARGIN
 **************************/
+/*
 .col1    { width: 8.33333%;  }    
 .col2    { width: 16.6666666667%; }   
 .col3    { width: 25%; }  
@@ -119,9 +119,7 @@ NO MARGIN
   float: left;
 }
 
-.first {
-}
-
 .last {
   float: right;
 }
+*/

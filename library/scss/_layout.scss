@@ -1,12 +1,15 @@
 html,
 body{
   height:100%;
-  overflow: hidden;
 }
 body{
   background: $grey8;
 }
 
+img{
+  max-width:100%;
+  height:auto;
+}
 section{
   clear: both;
 }
@@ -97,6 +100,32 @@ section{
   padding: $padding $padding $padding $padding;
 }
 
+// BORDERS
+.border-top{
+  border-top: 1px solid $grey6;
+}
+.border-right{
+  border-right: 1px solid $grey6;
+}
+.border-bottom{
+  border-bottom: 1px solid $grey6;
+}
+.border-left{
+  border-left: 1px solid $grey6;
+}
+
+
+// THUMBNAILS
+.thumbnail{
+  float:left;
+  position: relative;
+}
+
+// ANIMATIONS
+.shaking{
+  animation: shake 0.6s linear infinite 0s;
+}
+
 
 /*********************
 GRID
@@ -122,7 +151,7 @@ footer.footer{
 header.header{
   background:$white;
   text-align: center;
-  padding: $padding;
+  padding: 10px $padding;
   width: 100%;
   position: relative;
   z-index: 10;
@@ -132,6 +161,7 @@ header.header{
     text-indent: -9999px;
     width:220px;
     height:100px;
+    max-height: 100%;
     display: block;
     margin: auto;
     img{
@@ -140,11 +170,17 @@ header.header{
     }
   }
 }
-footer#footer{
-  background: $grey6;
-  color:$grey4;
+footer.footer{
   clear: both;
   text-align: center;
+  min-height:140px; // Should be equal to #content padding-bottom to keep it at the bottom of page 
+  // (should be just height, not sure about using min-height...)
+  // Below is necesary to kee it at bottom 
+  // see: http://cssreset.com/how-to-keep-footer-at-bottom-of-page-with-css/
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
   a{
     color:$grey2;
   }
@@ -156,13 +192,22 @@ div#wrapper {
   min-height:100%;
   margin: 0 auto;
   transition: transform 0.2s ease-out;
-}
-#main{
-  clear:both;
-}
-#content{
-  clear:both;
   position: relative;
-  flex: 2;
 }
 
+#content{
+  background:$grey8;
+  display: flex;
+  clear:both;
+  position: relative;
+  padding-bottom: 140px;
+}
+
+.sidebar{
+  background: $grey7;
+  height:100%;
+}
+aside{
+  width:100%;
+  clear:both;
+}

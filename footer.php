@@ -1,16 +1,17 @@
+					</div> <!-- close inner -->
 				</div> <!-- close wrapper -->
-					
-			<div id="footer-asides" class="group">
-
-			  <?php dynamic_sidebar( 'footer-sidebar' ); ?>
-
-			</div>
-
-			<nav role="navigation" id="nav-footer">
-				<?php dropshop_nav_footer(); ?>
-			</nav>
 
 			<footer class="footer group">
+					
+				<div id="footer-asides" class="group">
+
+				  <?php dynamic_sidebar( 'footer-sidebar' ); ?>
+
+				</div>
+
+				<nav role="navigation" id="nav-footer">
+					<?php dropshop_nav_footer(); ?>
+				</nav>
 
 				<p class="small source-org">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 

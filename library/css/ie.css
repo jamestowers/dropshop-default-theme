@@ -17,6 +17,118 @@ understand (what's inside the media queries). We also need to
 import the mixins file so SASS can understand the variables.
 */
 /* import mixins */
+@-webkit-keyframes animate-from-top {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@keyframes animate-from-top {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+            transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+            transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+            transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+            transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+            transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+            transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+            transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+            transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 /******************************************************************
 Site Name:
 Author:
@@ -71,129 +183,177 @@ BIG MARGIN
 /*************************
 SMALL MARGIN
 **************************/
+/* line 60, ../scss/_grid.scss */
+.col1 {
+  width: 7.33333%;
+}
+
+/* line 61, ../scss/_grid.scss */
+.col2 {
+  width: 15.6666666667%;
+}
+
+/* line 62, ../scss/_grid.scss */
+.col3 {
+  width: 24%;
+}
+
+/* line 63, ../scss/_grid.scss */
+.col4 {
+  width: 32.333333%;
+}
+
+/* line 64, ../scss/_grid.scss */
+.col5 {
+  width: 40.6666666667%;
+}
+
+/* line 65, ../scss/_grid.scss */
+.col6 {
+  width: 49%;
+}
+
+/* line 66, ../scss/_grid.scss */
+.col7 {
+  width: 57.33333337%;
+}
+
+/* line 67, ../scss/_grid.scss */
+.col8 {
+  width: 65.666666667%;
+}
+
+/* line 68, ../scss/_grid.scss */
+.col9 {
+  width: 74%;
+}
+
+/* line 69, ../scss/_grid.scss */
+.col10 {
+  width: 82.3333333%;
+}
+
+/* line 70, ../scss/_grid.scss */
+.col11 {
+  width: 90.96666667%;
+}
+
+/* line 71, ../scss/_grid.scss */
+.col12 {
+  width: 100%;
+}
+
+/* line 74, ../scss/_grid.scss */
+[class^="col"], [class*=" col"] {
+  position: relative;
+  float: left;
+  margin-right: 1%;
+}
+
+/* line 80, ../scss/_grid.scss */
+.last {
+  margin-right: 0;
+}
+/* line 82, ../scss/_grid.scss */
+.last.col1 {
+  width: 8.33333%;
+}
+/* line 83, ../scss/_grid.scss */
+.last.col2 {
+  width: 16.6666666667%;
+}
+/* line 84, ../scss/_grid.scss */
+.last.col3 {
+  width: 25%;
+}
+/* line 85, ../scss/_grid.scss */
+.last.col4 {
+  width: 33.333333%;
+}
+/* line 86, ../scss/_grid.scss */
+.last.col5 {
+  width: 41.6666666667%;
+}
+/* line 87, ../scss/_grid.scss */
+.last.col6 {
+  width: 50%;
+}
+/* line 88, ../scss/_grid.scss */
+.last.col7 {
+  width: 58.33333337%;
+}
+/* line 89, ../scss/_grid.scss */
+.last.col8 {
+  width: 66.666666667%;
+}
+/* line 90, ../scss/_grid.scss */
+.last.col9 {
+  width: 75%;
+}
+/* line 91, ../scss/_grid.scss */
+.last.col10 {
+  width: 83.3333333%;
+}
+/* line 92, ../scss/_grid.scss */
+.last.col11 {
+  width: 91.96666667%;
+}
+/* line 93, ../scss/_grid.scss */
+.last.col12 {
+  width: 100%;
+}
+
+/*************************
+NO MARGIN
+**************************/
 /*
-.col1    { width: 7.33333%;  }    
-.col2    { width: 15.6666666667%; }   
-.col3    { width: 24%; }  
-.col4    { width: 32.333333%; }  
-.col5    { width: 40.6666666667%; } 
-.col6    { width: 49%; }  
-.col7    { width: 57.33333337%; }
-.col8    { width: 65.666666667%; } 
-.col9    { width: 74%; } 
-.col10   { width: 82.3333333%; }  
-.col11   { width: 90.96666667%; }  
+.col1    { width: 8.33333%;  }    
+.col2    { width: 16.6666666667%; }   
+.col3    { width: 25%; }  
+.col4    { width: 33.333333%; }  
+.col5    { width: 41.6666666667%; } 
+.col6    { width: 50%; }  
+.col7    { width: 58.33333337%; }
+.col8    { width: 66.666666667%; } 
+.col9    { width: 75%; } 
+.col10   { width: 83.3333333%; }  
+.col11   { width: 91.96666667%; }  
 .col12   { width: 100%; } 
 
 // layout & column defaults
 [class^="col"], [class*=" col"] {
   position: relative;
   float: left;
-  margin-right: 1%
 }
 
-.last {
-  margin-right:0;
-  &.col1    { width: 8.33333%;  }    
-  &.col2    { width: 16.6666666667%; }   
-  &.col3    { width: 25%; }  
-  &.col4    { width: 33.333333%; }  
-  &.col5    { width: 41.6666666667%; } 
-  &.col6    { width: 50%; }  
-  &.col7    { width: 58.33333337%; }
-  &.col8    { width: 66.666666667%; } 
-  &.col9    { width: 75%; } 
-  &.col10   { width: 83.3333333%; }  
-  &.col11   { width: 91.96666667%; }  
-  &.col12   { width: 100%; } 
-}
-*/
-/*************************
-NO MARGIN
-**************************/
-/* line 103, ../scss/_grid.scss */
-.col1 {
-  width: 8.33333%;
-}
-
-/* line 104, ../scss/_grid.scss */
-.col2 {
-  width: 16.6666666667%;
-}
-
-/* line 105, ../scss/_grid.scss */
-.col3 {
-  width: 25%;
-}
-
-/* line 106, ../scss/_grid.scss */
-.col4 {
-  width: 33.333333%;
-}
-
-/* line 107, ../scss/_grid.scss */
-.col5 {
-  width: 41.6666666667%;
-}
-
-/* line 108, ../scss/_grid.scss */
-.col6 {
-  width: 50%;
-}
-
-/* line 109, ../scss/_grid.scss */
-.col7 {
-  width: 58.33333337%;
-}
-
-/* line 110, ../scss/_grid.scss */
-.col8 {
-  width: 66.666666667%;
-}
-
-/* line 111, ../scss/_grid.scss */
-.col9 {
-  width: 75%;
-}
-
-/* line 112, ../scss/_grid.scss */
-.col10 {
-  width: 83.3333333%;
-}
-
-/* line 113, ../scss/_grid.scss */
-.col11 {
-  width: 91.96666667%;
-}
-
-/* line 114, ../scss/_grid.scss */
-.col12 {
-  width: 100%;
-}
-
-/* line 117, ../scss/_grid.scss */
-[class^="col"], [class*=" col"] {
-  position: relative;
-  float: left;
-}
-
-/* line 125, ../scss/_grid.scss */
 .last {
   float: right;
 }
-
+*/
 /*********************
 HEADER STYLES
 *********************/
+/* line 6, ../scss/_768up.scss */
+.scrolled header.header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  left: 0;
+  padding: 4px;
+  z-index: 11;
+  -webkit-animation: animate-from-top 0.2s;
+          animation: animate-from-top 0.2s;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
-/* line 12, ../scss/_768up.scss */
+/* line 22, ../scss/_768up.scss */
 a#menu-toggle {
   display: none;
 }
 
-/* line 16, ../scss/_768up.scss */
+/* line 26, ../scss/_768up.scss */
 nav#nav-header {
   background: #FFF;
   color: #222;
@@ -204,30 +364,30 @@ nav#nav-header {
   top: auto;
   width: 100%;
 }
-/* line 26, ../scss/_768up.scss */
+/* line 36, ../scss/_768up.scss */
 nav .nav {
   font-size: 0px;
   font-size: 0rem;
 }
-/* line 28, ../scss/_768up.scss */
+/* line 38, ../scss/_768up.scss */
 nav .nav li {
   display: inline-block;
   vertical-align: top;
 }
-/* line 31, ../scss/_768up.scss */
+/* line 41, ../scss/_768up.scss */
 nav .nav li a {
   font-size: 14px;
   font-size: 1.4rem;
 }
-/* line 36, ../scss/_768up.scss */
+/* line 46, ../scss/_768up.scss */
 nav .nav#menu-nav-header li {
   border-bottom: none;
 }
-/* line 38, ../scss/_768up.scss */
+/* line 48, ../scss/_768up.scss */
 nav .nav#menu-nav-header li:not(:last-child) {
   border-right: 1px solid #FFF;
 }
-/* line 41, ../scss/_768up.scss */
+/* line 51, ../scss/_768up.scss */
 nav .nav#menu-nav-header li a {
   color: #222;
   padding: 10px 20px;
@@ -236,24 +396,24 @@ nav .nav#menu-nav-header li a {
 /*********************
 WIDGETS
 *********************/
-/* line 55, ../scss/_768up.scss */
+/* line 65, ../scss/_768up.scss */
 div#footer-asides {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 57, ../scss/_768up.scss */
+/* line 67, ../scss/_768up.scss */
 div#footer-asides aside {
   background: #6E6E6E;
   color: #373737;
   border-bottom: none;
 }
-/* line 61, ../scss/_768up.scss */
+/* line 71, ../scss/_768up.scss */
 div#footer-asides aside:not(:last-child) {
   border-right: 1px solid #555;
 }
-/* line 64, ../scss/_768up.scss */
+/* line 74, ../scss/_768up.scss */
 div#footer-asides aside .widgettitle {
   color: #FFF;
 }
@@ -268,26 +428,12 @@ This is the desktop size. It's larger than an iPad so it will only
 be seen on the Desktop. 
 
 ******************************************************************/
-/* line 17, ../scss/_1030up.scss */
-body.scrolled header.header a#logo {
-  left: 0;
-  padding: 10px;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-}
-/* line 23, ../scss/_1030up.scss */
-body.scrolled header.header a#logo h1 {
-  font-size: 20px;
-  font-size: 2rem;
-  line-height: 2rem;
-}
-/* line 29, ../scss/_1030up.scss */
+/* line 19, ../scss/_1030up.scss */
 body.scrolled nav#main-nav {
   position: fixed;
   top: 0;
 }
-/* line 33, ../scss/_1030up.scss */
+/* line 23, ../scss/_1030up.scss */
 body.scrolled div#content {
   margin-top: 100px;
 }

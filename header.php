@@ -11,8 +11,6 @@
 		<?php // Google Chrome Frame for IE ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title><?php wp_title(''); ?></title>
-
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="350">
@@ -29,6 +27,10 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700' rel='stylesheet' type='text/css'>
 
+
+		<title><?php wp_title(''); ?></title>
+
+		
 		<?php wp_head(); ?>
 
 	</head>
@@ -51,4 +53,6 @@
 				<?php dropshop_nav_header(); ?>
 			</nav>
 
-			<div id="content" class="">
+			<div id="content" class="group">
+
+				<div class="inner">

@@ -1,31 +1,16 @@
 <?php get_header(); ?>
 
-	<article id="post-not-found" class="hentry group">
+	<section <?php post_class( 'text-center pad group' ); ?> >
 
-		<header class="article-header">
+		<h1 class="page-title"><?php _e( 'Woops... ', 'dropshoptheme' ); ?></h1>
+		<h2><?php _e( 'Page not found', 'dropshoptheme' ); ?></h2>
 
-			<h1><?php _e( 'Epic 404 - Article Not Found', 'dropshoptheme' ); ?></h1>
+		<div class="entry-content">
 
-		</header>
+			<p><?php _e( 'The page you were looking for was not found, maybe check the url?', 'dropshoptheme' ); ?></p>
 
-		<section class="entry-content">
+		</div>
 
-			<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'dropshoptheme' ); ?></p>
-
-		</section>
-
-		<section class="search">
-
-				<p><?php get_search_form(); ?></p>
-
-		</section>
-
-		<footer class="article-footer">
-
-				<p><?php _e( 'This is the 404.php template.', 'dropshoptheme' ); ?></p>
-
-		</footer>
-
-	</article>
+	</section>
 
 <?php get_footer(); ?>

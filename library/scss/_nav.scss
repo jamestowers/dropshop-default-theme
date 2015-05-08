@@ -5,7 +5,9 @@
 Responsive slide out menu 
 ============ */
 .slide-from-right{
-  transform: translateX(-80%);
+  #wrapper{
+    transform: translateX(-80%);
+  }
   nav#nav-header{
     transform: translateX(100%);
   }
@@ -57,7 +59,8 @@ a#menu-toggle{
 
 nav{
   &#nav-header{
-    color:$grey2;
+    background:$grey2;
+    color:$white;
     position: fixed;
     text-transform: uppercase;
     height:100%;
@@ -91,24 +94,27 @@ nav{
     border-bottom: 0;
     clear: both;
     text-align: center;
+    margin: 0;
+    padding: 0;
     ul{
       margin: 0;
+      padding: 0;
     }
     li {
       display:block;
-      border-bottom: 1px solid $grey6;
+      border-bottom: 1px solid $grey4;
       a {
         display: block;
         color:$white;
         text-decoration: none;
-        padding: 10px 10px;
+        padding: $padding;
       }
     }
     /* Target just the Header menu */
     &#menu-nav-header{
+
       li{
         a{
-          padding: 10px 20px;
           &:hover{
             background: $grey4;
             color:$white;

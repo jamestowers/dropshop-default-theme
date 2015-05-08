@@ -78,14 +78,8 @@ requestTick = ->
   return
 
 
-  
 
 
-$doc = $(document)
-
-$doc.on 'click', 'a#menu-toggle', ->
-  dropshop.$body.toggleClass 'slide-from-right'
-  false
 
 $(window).scroll ->
   window.latestKnownScrollY = window.scrollY

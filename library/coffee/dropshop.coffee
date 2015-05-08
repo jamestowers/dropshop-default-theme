@@ -49,7 +49,12 @@ class @Dropshop
 
   setEventListeners: ->
     console.log '[Dropshop] setting event listeners'
-    @$doc.on 'click', '.expand-text', ->
-      $(this).parent().toggleClass 'expanded'
+
+    # @$doc.on 'click', '.expand-text', ->
+    #   $(this).parent().toggleClass 'expanded'
+    #   false
+
+    @$doc.on 'click', 'a#menu-toggle', ->
+      dropshop.$body.toggleClass 'slide-from-right'
       false
 

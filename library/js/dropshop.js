@@ -59,8 +59,8 @@
 
     Dropshop.prototype.setEventListeners = function() {
       console.log('[Dropshop] setting event listeners');
-      return this.$doc.on('click', '.expand-text', function() {
-        $(this).parent().toggleClass('expanded');
+      return this.$doc.on('click', 'a#menu-toggle', function() {
+        dropshop.$body.toggleClass('slide-from-right');
         return false;
       });
     };

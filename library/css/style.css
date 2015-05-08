@@ -9,6 +9,118 @@ the separate media queries. The base mobile goes outside any query
 and is called at the beginning, after that we call the rest
 of the styles inside media queries.
 ******************************************************************/
+@-webkit-keyframes animate-from-top {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@keyframes animate-from-top {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+            transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+            transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+            transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+            transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+            transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+            transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+            transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+            transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -474,42 +586,47 @@ dd {
 html,
 body {
   height: 100%;
-  overflow: hidden;
 }
 
-/* line 6, ../scss/_layout.scss */
+/* line 5, ../scss/_layout.scss */
 body {
   background: #F5F5F5;
 }
 
-/* line 10, ../scss/_layout.scss */
+/* line 9, ../scss/_layout.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 13, ../scss/_layout.scss */
 section {
   clear: both;
 }
 
-/* line 13, ../scss/_layout.scss */
+/* line 16, ../scss/_layout.scss */
 .inner {
   width: 1400px;
   max-width: 100%;
   margin: 0 auto;
 }
 
-/* line 18, ../scss/_layout.scss */
+/* line 21, ../scss/_layout.scss */
 .row {
   clear: both;
 }
 
-/* line 21, ../scss/_layout.scss */
+/* line 24, ../scss/_layout.scss */
 .full-height {
   height: 100%;
 }
 
-/* line 24, ../scss/_layout.scss */
+/* line 27, ../scss/_layout.scss */
 .hide {
   display: none !important;
 }
 
-/* line 28, ../scss/_layout.scss */
+/* line 31, ../scss/_layout.scss */
 .flex {
   display: -webkit-box;
   display: -webkit-flex;
@@ -520,7 +637,7 @@ section {
           flex-wrap: wrap;
 }
 
-/* line 32, ../scss/_layout.scss */
+/* line 35, ../scss/_layout.scss */
 .flex-center {
   display: -webkit-box;
   display: -webkit-flex;
@@ -536,7 +653,7 @@ section {
           justify-content: center;
 }
 
-/* line 37, ../scss/_layout.scss */
+/* line 40, ../scss/_layout.scss */
 .flex-column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -549,72 +666,72 @@ section {
           flex: 1;
 }
 
-/* line 43, ../scss/_layout.scss */
+/* line 46, ../scss/_layout.scss */
 .bg-light {
   background: #F5F5F5;
 }
 
-/* line 46, ../scss/_layout.scss */
+/* line 49, ../scss/_layout.scss */
 .bg-dark {
   background: #222;
 }
 
-/* line 49, ../scss/_layout.scss */
+/* line 52, ../scss/_layout.scss */
 .bg-white {
   background: #FFF;
 }
 
-/* line 54, ../scss/_layout.scss */
+/* line 57, ../scss/_layout.scss */
 .clear {
   clear: both;
 }
 
-/* line 57, ../scss/_layout.scss */
+/* line 60, ../scss/_layout.scss */
 .pull-left {
   float: left !important;
 }
 
-/* line 60, ../scss/_layout.scss */
+/* line 63, ../scss/_layout.scss */
 .pull-right {
   float: right !important;
 }
 
-/* line 63, ../scss/_layout.scss */
+/* line 66, ../scss/_layout.scss */
 .pull-center {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 69, ../scss/_layout.scss */
+/* line 72, ../scss/_layout.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 72, ../scss/_layout.scss */
+/* line 75, ../scss/_layout.scss */
 .text-right {
   text-align: right;
 }
 
-/* line 75, ../scss/_layout.scss */
+/* line 78, ../scss/_layout.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 80, ../scss/_layout.scss */
+/* line 83, ../scss/_layout.scss */
 .alignleft, img.alignleft {
   margin-right: 1.5em;
   display: inline;
   float: left;
 }
 
-/* line 85, ../scss/_layout.scss */
+/* line 88, ../scss/_layout.scss */
 .alignright, img.alignright {
   margin-left: 1.5em;
   display: inline;
   float: right;
 }
 
-/* line 90, ../scss/_layout.scss */
+/* line 93, ../scss/_layout.scss */
 .aligncenter, img.aligncenter {
   margin-right: auto;
   margin-left: auto;
@@ -622,15 +739,47 @@ section {
   clear: both;
 }
 
-/* line 96, ../scss/_layout.scss */
+/* line 99, ../scss/_layout.scss */
 .pad {
   padding: 30px 30px 30px 30px;
+}
+
+/* line 104, ../scss/_layout.scss */
+.border-top {
+  border-top: 1px solid #CCC;
+}
+
+/* line 107, ../scss/_layout.scss */
+.border-right {
+  border-right: 1px solid #CCC;
+}
+
+/* line 110, ../scss/_layout.scss */
+.border-bottom {
+  border-bottom: 1px solid #CCC;
+}
+
+/* line 113, ../scss/_layout.scss */
+.border-left {
+  border-left: 1px solid #CCC;
+}
+
+/* line 119, ../scss/_layout.scss */
+.thumbnail {
+  float: left;
+  position: relative;
+}
+
+/* line 125, ../scss/_layout.scss */
+.shaking {
+  -webkit-animation: shake 0.6s linear infinite 0s;
+          animation: shake 0.6s linear infinite 0s;
 }
 
 /*********************
 GRID
 *********************/
-/* line 104, ../scss/_layout.scss */
+/* line 133, ../scss/_layout.scss */
 .col6-sm {
   width: 50%;
   position: relative;
@@ -640,102 +789,116 @@ GRID
 /*********************
 ELEMENTS
 *********************/
-/* line 117, ../scss/_layout.scss */
+/* line 146, ../scss/_layout.scss */
 header.header,
 footer.footer {
   background: #373737;
   padding: 10px;
 }
 
-/* line 122, ../scss/_layout.scss */
+/* line 151, ../scss/_layout.scss */
 header.header {
   background: #FFF;
   text-align: center;
-  padding: 30px;
+  padding: 10px 30px;
   width: 100%;
   position: relative;
   z-index: 10;
 }
-/* line 129, ../scss/_layout.scss */
+/* line 158, ../scss/_layout.scss */
 header.header #logo {
   background: url("../images/logo.gif") no-repeat 50% 50%;
   background-size: contain;
   text-indent: -9999px;
   width: 220px;
   height: 100px;
+  max-height: 100%;
   display: block;
   margin: auto;
 }
-/* line 137, ../scss/_layout.scss */
+/* line 167, ../scss/_layout.scss */
 header.header #logo img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 143, ../scss/_layout.scss */
-footer#footer {
-  background: #CCC;
-  color: #555;
+/* line 173, ../scss/_layout.scss */
+footer.footer {
   clear: both;
   text-align: center;
+  min-height: 140px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
-/* line 148, ../scss/_layout.scss */
-footer#footer a {
+/* line 184, ../scss/_layout.scss */
+footer.footer a {
   color: #222;
 }
 
-/* line 154, ../scss/_layout.scss */
+/* line 190, ../scss/_layout.scss */
 div#wrapper {
   width: 100%;
   min-height: 100%;
   margin: 0 auto;
   -webkit-transition: -webkit-transform 0.2s ease-out;
           transition: transform 0.2s ease-out;
+  position: relative;
 }
 
-/* line 160, ../scss/_layout.scss */
-#main {
-  clear: both;
-}
-
-/* line 163, ../scss/_layout.scss */
+/* line 198, ../scss/_layout.scss */
 #content {
+  background: #F5F5F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   clear: both;
   position: relative;
-  -webkit-box-flex: 2;
-  -webkit-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+  padding-bottom: 140px;
+}
+
+/* line 206, ../scss/_layout.scss */
+.sidebar {
+  background: #E8E8E8;
+  height: 100%;
+}
+
+/* line 210, ../scss/_layout.scss */
+aside {
+  width: 100%;
+  clear: both;
 }
 
 /* MOBILE ONLY KEEP IT SMALL!! */
 /* =========
 Responsive slide out menu 
 ============ */
-/* line 7, ../scss/_nav.scss */
-.slide-from-right {
+/* line 8, ../scss/_nav.scss */
+.slide-from-right #wrapper {
   -webkit-transform: translateX(-80%);
       -ms-transform: translateX(-80%);
           transform: translateX(-80%);
 }
-/* line 9, ../scss/_nav.scss */
+/* line 11, ../scss/_nav.scss */
 .slide-from-right nav#nav-header {
   -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
           transform: translateX(100%);
 }
-/* line 13, ../scss/_nav.scss */
+/* line 15, ../scss/_nav.scss */
 .slide-from-right a#menu-toggle span {
   height: 0;
 }
-/* line 16, ../scss/_nav.scss */
+/* line 18, ../scss/_nav.scss */
 .slide-from-right a#menu-toggle span:before {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
   top: -2px;
 }
-/* line 20, ../scss/_nav.scss */
+/* line 22, ../scss/_nav.scss */
 .slide-from-right a#menu-toggle span:after {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
@@ -743,14 +906,14 @@ Responsive slide out menu
   bottom: -2px;
 }
 
-/* line 28, ../scss/_nav.scss */
+/* line 30, ../scss/_nav.scss */
 a#menu-toggle {
   display: block;
   float: right;
   height: 24px;
   padding: 10px;
 }
-/* line 33, ../scss/_nav.scss */
+/* line 35, ../scss/_nav.scss */
 a#menu-toggle span,
 a#menu-toggle span:before,
 a#menu-toggle span:after {
@@ -759,32 +922,33 @@ a#menu-toggle span:after {
   width: 20px;
   display: block;
 }
-/* line 41, ../scss/_nav.scss */
+/* line 43, ../scss/_nav.scss */
 a#menu-toggle span {
   position: relative;
 }
-/* line 43, ../scss/_nav.scss */
+/* line 45, ../scss/_nav.scss */
 a#menu-toggle span:before, a#menu-toggle span:after {
   position: absolute;
   left: 0;
   content: '';
 }
-/* line 49, ../scss/_nav.scss */
+/* line 51, ../scss/_nav.scss */
 a#menu-toggle span:before {
   top: -7px;
 }
-/* line 52, ../scss/_nav.scss */
+/* line 54, ../scss/_nav.scss */
 a#menu-toggle span:after {
   bottom: -7px;
 }
 
-/* line 58, ../scss/_nav.scss */
+/* line 60, ../scss/_nav.scss */
 nav {
   /* end .nav */
 }
-/* line 59, ../scss/_nav.scss */
+/* line 61, ../scss/_nav.scss */
 nav#nav-header {
-  color: #222;
+  background: #222;
+  color: #FFF;
   position: fixed;
   text-transform: uppercase;
   height: 100%;
@@ -795,69 +959,68 @@ nav#nav-header {
           transition: transform 0.2s ease-out;
   z-index: -1;
 }
-/* line 71, ../scss/_nav.scss */
+/* line 74, ../scss/_nav.scss */
 nav.pagination ul.page-numbers {
   padding-left: 0 !important;
 }
-/* line 73, ../scss/_nav.scss */
+/* line 76, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li {
   display: inline-block;
 }
-/* line 75, ../scss/_nav.scss */
+/* line 78, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers {
   background: #6ED0E1;
   color: #FFF;
   padding: 7px 15px;
   display: block;
 }
-/* line 80, ../scss/_nav.scss */
+/* line 83, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers a {
   color: #FFF;
 }
-/* line 83, ../scss/_nav.scss */
+/* line 86, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers.current {
   background: #28aac1;
 }
-/* line 90, ../scss/_nav.scss */
+/* line 93, ../scss/_nav.scss */
 nav .nav {
   border-bottom: 0;
   clear: both;
   text-align: center;
+  margin: 0;
+  padding: 0;
   /* Target just the Header menu */
   /* highlight current page */
   /* end current highlighters */
 }
-/* line 94, ../scss/_nav.scss */
+/* line 99, ../scss/_nav.scss */
 nav .nav ul {
   margin: 0;
+  padding: 0;
 }
-/* line 97, ../scss/_nav.scss */
+/* line 103, ../scss/_nav.scss */
 nav .nav li {
   display: block;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #555;
 }
-/* line 100, ../scss/_nav.scss */
+/* line 106, ../scss/_nav.scss */
 nav .nav li a {
   display: block;
   color: #FFF;
   text-decoration: none;
-  padding: 10px 10px;
+  padding: 30px;
 }
-/* line 110, ../scss/_nav.scss */
-nav .nav#menu-nav-header li a {
-  padding: 10px 20px;
-}
-/* line 112, ../scss/_nav.scss */
+/* line 118, ../scss/_nav.scss */
 nav .nav#menu-nav-header li a:hover {
   background: #555;
   color: #FFF;
 }
-/* line 117, ../scss/_nav.scss */
+/* line 123, ../scss/_nav.scss */
 nav .nav#menu-nav-header li.menu-item-has-children {
   /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
   You can show the child pages there on mobiles. */
 }
-/* line 120, ../scss/_nav.scss */
+/* line 126, ../scss/_nav.scss */
 nav .nav#menu-nav-header li.menu-item-has-children ul.sub-menu {
   display: none;
 }
@@ -929,16 +1092,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 /* line 69, ../scss/_type.scss */
 h1, .h1 {
-  font-size: 42px;
-  font-size: 4.2rem;
+  font-size: 48px;
+  font-size: 4.8rem;
   line-height: 4.2rem;
   margin: 0 0 20px;
 }
 
 /* line 75, ../scss/_type.scss */
 h2, .h2 {
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 32px;
+  font-size: 3.2rem;
   line-height: 3.6rem;
   margin: 0 0 1rem;
 }
@@ -1410,29 +1573,17 @@ div#main ol li {
   list-style: decimal;
 }
 
-/* line 32, ../scss/_base.scss */
-.sidebar {
-  background: #111;
-  height: 100%;
-}
-
-/* line 36, ../scss/_base.scss */
-aside {
-  width: 100%;
-  clear: both;
-}
-
-/* line 42, ../scss/_base.scss */
+/* line 35, ../scss/_base.scss */
 div#footer-asides {
   clear: both;
 }
-/* line 44, ../scss/_base.scss */
+/* line 37, ../scss/_base.scss */
 div#footer-asides aside {
   background: #6E6E6E;
   color: #373737;
   border-bottom: 1px solid #555;
 }
-/* line 48, ../scss/_base.scss */
+/* line 41, ../scss/_base.scss */
 div#footer-asides aside .widgettitle {
   color: #FFF;
 }
@@ -1504,129 +1655,177 @@ you can add resource intensive styles.
   /*************************
   SMALL MARGIN
   **************************/
+  /* line 60, ../scss/_grid.scss */
+  .col1 {
+    width: 7.33333%;
+  }
+
+  /* line 61, ../scss/_grid.scss */
+  .col2 {
+    width: 15.6666666667%;
+  }
+
+  /* line 62, ../scss/_grid.scss */
+  .col3 {
+    width: 24%;
+  }
+
+  /* line 63, ../scss/_grid.scss */
+  .col4 {
+    width: 32.333333%;
+  }
+
+  /* line 64, ../scss/_grid.scss */
+  .col5 {
+    width: 40.6666666667%;
+  }
+
+  /* line 65, ../scss/_grid.scss */
+  .col6 {
+    width: 49%;
+  }
+
+  /* line 66, ../scss/_grid.scss */
+  .col7 {
+    width: 57.33333337%;
+  }
+
+  /* line 67, ../scss/_grid.scss */
+  .col8 {
+    width: 65.666666667%;
+  }
+
+  /* line 68, ../scss/_grid.scss */
+  .col9 {
+    width: 74%;
+  }
+
+  /* line 69, ../scss/_grid.scss */
+  .col10 {
+    width: 82.3333333%;
+  }
+
+  /* line 70, ../scss/_grid.scss */
+  .col11 {
+    width: 90.96666667%;
+  }
+
+  /* line 71, ../scss/_grid.scss */
+  .col12 {
+    width: 100%;
+  }
+
+  /* line 74, ../scss/_grid.scss */
+  [class^="col"], [class*=" col"] {
+    position: relative;
+    float: left;
+    margin-right: 1%;
+  }
+
+  /* line 80, ../scss/_grid.scss */
+  .last {
+    margin-right: 0;
+  }
+  /* line 82, ../scss/_grid.scss */
+  .last.col1 {
+    width: 8.33333%;
+  }
+  /* line 83, ../scss/_grid.scss */
+  .last.col2 {
+    width: 16.6666666667%;
+  }
+  /* line 84, ../scss/_grid.scss */
+  .last.col3 {
+    width: 25%;
+  }
+  /* line 85, ../scss/_grid.scss */
+  .last.col4 {
+    width: 33.333333%;
+  }
+  /* line 86, ../scss/_grid.scss */
+  .last.col5 {
+    width: 41.6666666667%;
+  }
+  /* line 87, ../scss/_grid.scss */
+  .last.col6 {
+    width: 50%;
+  }
+  /* line 88, ../scss/_grid.scss */
+  .last.col7 {
+    width: 58.33333337%;
+  }
+  /* line 89, ../scss/_grid.scss */
+  .last.col8 {
+    width: 66.666666667%;
+  }
+  /* line 90, ../scss/_grid.scss */
+  .last.col9 {
+    width: 75%;
+  }
+  /* line 91, ../scss/_grid.scss */
+  .last.col10 {
+    width: 83.3333333%;
+  }
+  /* line 92, ../scss/_grid.scss */
+  .last.col11 {
+    width: 91.96666667%;
+  }
+  /* line 93, ../scss/_grid.scss */
+  .last.col12 {
+    width: 100%;
+  }
+
+  /*************************
+  NO MARGIN
+  **************************/
   /*
-  .col1    { width: 7.33333%;  }    
-  .col2    { width: 15.6666666667%; }   
-  .col3    { width: 24%; }  
-  .col4    { width: 32.333333%; }  
-  .col5    { width: 40.6666666667%; } 
-  .col6    { width: 49%; }  
-  .col7    { width: 57.33333337%; }
-  .col8    { width: 65.666666667%; } 
-  .col9    { width: 74%; } 
-  .col10   { width: 82.3333333%; }  
-  .col11   { width: 90.96666667%; }  
+  .col1    { width: 8.33333%;  }    
+  .col2    { width: 16.6666666667%; }   
+  .col3    { width: 25%; }  
+  .col4    { width: 33.333333%; }  
+  .col5    { width: 41.6666666667%; } 
+  .col6    { width: 50%; }  
+  .col7    { width: 58.33333337%; }
+  .col8    { width: 66.666666667%; } 
+  .col9    { width: 75%; } 
+  .col10   { width: 83.3333333%; }  
+  .col11   { width: 91.96666667%; }  
   .col12   { width: 100%; } 
   
   // layout & column defaults
   [class^="col"], [class*=" col"] {
     position: relative;
     float: left;
-    margin-right: 1%
   }
   
   .last {
-    margin-right:0;
-    &.col1    { width: 8.33333%;  }    
-    &.col2    { width: 16.6666666667%; }   
-    &.col3    { width: 25%; }  
-    &.col4    { width: 33.333333%; }  
-    &.col5    { width: 41.6666666667%; } 
-    &.col6    { width: 50%; }  
-    &.col7    { width: 58.33333337%; }
-    &.col8    { width: 66.666666667%; } 
-    &.col9    { width: 75%; } 
-    &.col10   { width: 83.3333333%; }  
-    &.col11   { width: 91.96666667%; }  
-    &.col12   { width: 100%; } 
-  }
-  */
-  /*************************
-  NO MARGIN
-  **************************/
-  /* line 103, ../scss/_grid.scss */
-  .col1 {
-    width: 8.33333%;
-  }
-
-  /* line 104, ../scss/_grid.scss */
-  .col2 {
-    width: 16.6666666667%;
-  }
-
-  /* line 105, ../scss/_grid.scss */
-  .col3 {
-    width: 25%;
-  }
-
-  /* line 106, ../scss/_grid.scss */
-  .col4 {
-    width: 33.333333%;
-  }
-
-  /* line 107, ../scss/_grid.scss */
-  .col5 {
-    width: 41.6666666667%;
-  }
-
-  /* line 108, ../scss/_grid.scss */
-  .col6 {
-    width: 50%;
-  }
-
-  /* line 109, ../scss/_grid.scss */
-  .col7 {
-    width: 58.33333337%;
-  }
-
-  /* line 110, ../scss/_grid.scss */
-  .col8 {
-    width: 66.666666667%;
-  }
-
-  /* line 111, ../scss/_grid.scss */
-  .col9 {
-    width: 75%;
-  }
-
-  /* line 112, ../scss/_grid.scss */
-  .col10 {
-    width: 83.3333333%;
-  }
-
-  /* line 113, ../scss/_grid.scss */
-  .col11 {
-    width: 91.96666667%;
-  }
-
-  /* line 114, ../scss/_grid.scss */
-  .col12 {
-    width: 100%;
-  }
-
-  /* line 117, ../scss/_grid.scss */
-  [class^="col"], [class*=" col"] {
-    position: relative;
-    float: left;
-  }
-
-  /* line 125, ../scss/_grid.scss */
-  .last {
     float: right;
   }
-
+  */
   /*********************
   HEADER STYLES
   *********************/
+  /* line 6, ../scss/_768up.scss */
+  .scrolled header.header {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    left: 0;
+    padding: 4px;
+    z-index: 11;
+    -webkit-animation: animate-from-top 0.2s;
+            animation: animate-from-top 0.2s;
+  }
+
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 12, ../scss/_768up.scss */
+  /* line 22, ../scss/_768up.scss */
   a#menu-toggle {
     display: none;
   }
 
-  /* line 16, ../scss/_768up.scss */
+  /* line 26, ../scss/_768up.scss */
   nav#nav-header {
     background: #FFF;
     color: #222;
@@ -1637,30 +1836,30 @@ you can add resource intensive styles.
     top: auto;
     width: 100%;
   }
-  /* line 26, ../scss/_768up.scss */
+  /* line 36, ../scss/_768up.scss */
   nav .nav {
     font-size: 0px;
     font-size: 0rem;
   }
-  /* line 28, ../scss/_768up.scss */
+  /* line 38, ../scss/_768up.scss */
   nav .nav li {
     display: inline-block;
     vertical-align: top;
   }
-  /* line 31, ../scss/_768up.scss */
+  /* line 41, ../scss/_768up.scss */
   nav .nav li a {
     font-size: 14px;
     font-size: 1.4rem;
   }
-  /* line 36, ../scss/_768up.scss */
+  /* line 46, ../scss/_768up.scss */
   nav .nav#menu-nav-header li {
     border-bottom: none;
   }
-  /* line 38, ../scss/_768up.scss */
+  /* line 48, ../scss/_768up.scss */
   nav .nav#menu-nav-header li:not(:last-child) {
     border-right: 1px solid #FFF;
   }
-  /* line 41, ../scss/_768up.scss */
+  /* line 51, ../scss/_768up.scss */
   nav .nav#menu-nav-header li a {
     color: #222;
     padding: 10px 20px;
@@ -1669,24 +1868,24 @@ you can add resource intensive styles.
   /*********************
   WIDGETS
   *********************/
-  /* line 55, ../scss/_768up.scss */
+  /* line 65, ../scss/_768up.scss */
   div#footer-asides {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 57, ../scss/_768up.scss */
+  /* line 67, ../scss/_768up.scss */
   div#footer-asides aside {
     background: #6E6E6E;
     color: #373737;
     border-bottom: none;
   }
-  /* line 61, ../scss/_768up.scss */
+  /* line 71, ../scss/_768up.scss */
   div#footer-asides aside:not(:last-child) {
     border-right: 1px solid #555;
   }
-  /* line 64, ../scss/_768up.scss */
+  /* line 74, ../scss/_768up.scss */
   div#footer-asides aside .widgettitle {
     color: #FFF;
   }
@@ -1708,26 +1907,12 @@ you can add resource intensive styles.
   be seen on the Desktop. 
   
   ******************************************************************/
-  /* line 17, ../scss/_1030up.scss */
-  body.scrolled header.header a#logo {
-    left: 0;
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    z-index: 2;
-  }
-  /* line 23, ../scss/_1030up.scss */
-  body.scrolled header.header a#logo h1 {
-    font-size: 20px;
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-  /* line 29, ../scss/_1030up.scss */
+  /* line 19, ../scss/_1030up.scss */
   body.scrolled nav#main-nav {
     position: fixed;
     top: 0;
   }
-  /* line 33, ../scss/_1030up.scss */
+  /* line 23, ../scss/_1030up.scss */
   body.scrolled div#content {
     margin-top: 100px;
   }

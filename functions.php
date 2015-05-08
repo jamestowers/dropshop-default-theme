@@ -12,6 +12,8 @@ add_image_size( 'featured-image-mobile-retina', 640, 340, true );
 add_image_size( 'featured-image-mobile', 320, 220, true );
 add_image_size( 'featured-image-thumbnail', 400, 400, true );
 
+
+set_post_thumbnail_size( '400', '400', true ); 
 /*
 <?php the_post_thumbnail( 'dropshop-thumb-300' ); ?>
 */
@@ -126,7 +128,6 @@ MENUS & NAVIGATION
 
 function dropshop_theme_support() {
   add_theme_support( 'post-thumbnails' );
-  set_post_thumbnail_size(125, 125, true);
   add_theme_support('automatic-feed-links');
   add_theme_support( 'menus' );
   
@@ -311,7 +312,19 @@ function dropshop_page_navi() {
 
 
 
+function not_found_message(){ ?>
 
+  <article id="post-not-found" class="hentry group">
+    <h1><?php _e( 'Oops, Post Not Found!', 'dropshoptheme' ); ?></h1>
+      <section class="entry-content">
+        <p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'dropshoptheme' ); ?></p>
+    </section>
+    <footer class="article-footer">
+        <p><?php _e( 'This is the error message in the index.php template.', 'dropshoptheme' ); ?></p>
+    </footer>
+  </article>
+
+<?php }
 
 
 

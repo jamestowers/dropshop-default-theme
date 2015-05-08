@@ -40,8 +40,21 @@
 
   }
 
+
+  // Prevent blank page title on homepage and add blog title on others
+  add_filter( 'wp_title', 'dropshop_hack_wp_title_for_home' );
+  function dropshop_hack_wp_title_for_home( $title ){
+    if( empty( $title ) && ( is_home() || is_front_page() ) ) {
+      return __( 'Home', 'dropshop' ) . ' | ' . get_bloginfo( 'description' );
+    }else{
+      return $title . ' | ' . get_bloginfo( 'name' );
+    }
+    return $title;
+  }
+
   // remove WP version from RSS
   function dropshop_rss_version() { return ''; }
+
   // remove WP version from scripts
   function dropshop_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
