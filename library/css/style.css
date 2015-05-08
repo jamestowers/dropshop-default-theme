@@ -787,9 +787,10 @@ section {
 .thumbnail {
   float: left;
   position: relative;
+  max-width: 100%;
 }
 
-/* line 132, ../scss/_layout.scss */
+/* line 133, ../scss/_layout.scss */
 .shaking {
   -webkit-animation: shake 0.6s linear infinite 0s;
           animation: shake 0.6s linear infinite 0s;
@@ -798,7 +799,7 @@ section {
 /*********************
 GRID
 *********************/
-/* line 140, ../scss/_layout.scss */
+/* line 141, ../scss/_layout.scss */
 .col6-sm {
   width: 50%;
   position: relative;
@@ -808,14 +809,26 @@ GRID
 /*********************
 ELEMENTS
 *********************/
-/* line 153, ../scss/_layout.scss */
+/* line 155, ../scss/_layout.scss */
+.scrolled header.header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  left: 0;
+  padding: 4px;
+  z-index: 11;
+  -webkit-animation: animate-from-top 0.2s;
+          animation: animate-from-top 0.2s;
+}
+
+/* line 166, ../scss/_layout.scss */
 header.header,
 footer.footer {
   background: #373737;
   padding: 10px;
 }
 
-/* line 158, ../scss/_layout.scss */
+/* line 171, ../scss/_layout.scss */
 header.header {
   background: #FFF;
   text-align: center;
@@ -824,24 +837,24 @@ header.header {
   position: relative;
   z-index: 10;
 }
-/* line 165, ../scss/_layout.scss */
+/* line 178, ../scss/_layout.scss */
 header.header #logo {
   background: url("../images/logo.gif") no-repeat 50% 50%;
   background-size: contain;
   text-indent: -9999px;
   width: 220px;
-  height: 100px;
+  height: 50px;
   max-height: 100%;
   display: block;
   margin: auto;
 }
-/* line 174, ../scss/_layout.scss */
+/* line 187, ../scss/_layout.scss */
 header.header #logo img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 180, ../scss/_layout.scss */
+/* line 193, ../scss/_layout.scss */
 footer.footer {
   clear: both;
   text-align: center;
@@ -851,12 +864,8 @@ footer.footer {
   bottom: 0px;
   left: 0px;
 }
-/* line 191, ../scss/_layout.scss */
-footer.footer a {
-  color: #222;
-}
 
-/* line 197, ../scss/_layout.scss */
+/* line 207, ../scss/_layout.scss */
 div#wrapper {
   width: 100%;
   min-height: 100%;
@@ -866,7 +875,7 @@ div#wrapper {
   position: relative;
 }
 
-/* line 205, ../scss/_layout.scss */
+/* line 215, ../scss/_layout.scss */
 #content {
   background: #F5F5F5;
   display: -webkit-box;
@@ -883,13 +892,13 @@ div#wrapper {
   padding-bottom: 140px;
 }
 
-/* line 214, ../scss/_layout.scss */
+/* line 224, ../scss/_layout.scss */
 .sidebar {
   background: #E8E8E8;
   height: 100%;
 }
 
-/* line 218, ../scss/_layout.scss */
+/* line 228, ../scss/_layout.scss */
 aside {
   width: 100%;
   clear: both;
@@ -900,7 +909,7 @@ HERO
 **************************************/
 /* line 5, ../scss/_hero.scss */
 .hero-container {
-  min-height: 200px;
+  min-height: 440px;
   overflow: hidden;
   position: relative;
 }
@@ -1070,11 +1079,16 @@ Responsive slide out menu
 /* line 30, ../scss/_nav.scss */
 a#menu-toggle {
   display: block;
-  float: right;
   height: 24px;
   padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
-/* line 35, ../scss/_nav.scss */
+/* line 38, ../scss/_nav.scss */
 a#menu-toggle span,
 a#menu-toggle span:before,
 a#menu-toggle span:after {
@@ -1083,30 +1097,31 @@ a#menu-toggle span:after {
   width: 20px;
   display: block;
 }
-/* line 43, ../scss/_nav.scss */
+/* line 46, ../scss/_nav.scss */
 a#menu-toggle span {
   position: relative;
 }
-/* line 45, ../scss/_nav.scss */
+/* line 48, ../scss/_nav.scss */
 a#menu-toggle span:before, a#menu-toggle span:after {
   position: absolute;
   left: 0;
   content: '';
 }
-/* line 51, ../scss/_nav.scss */
+/* line 54, ../scss/_nav.scss */
 a#menu-toggle span:before {
   top: -7px;
 }
-/* line 54, ../scss/_nav.scss */
+/* line 57, ../scss/_nav.scss */
 a#menu-toggle span:after {
   bottom: -7px;
 }
 
-/* line 60, ../scss/_nav.scss */
+/* line 63, ../scss/_nav.scss */
 nav {
-  /* end .nav */
+  clear: both;
+  text-align: center;
 }
-/* line 61, ../scss/_nav.scss */
+/* line 66, ../scss/_nav.scss */
 nav#nav-header {
   background: #222;
   color: #FFF;
@@ -1120,74 +1135,70 @@ nav#nav-header {
           transition: transform 0.2s ease-out;
   z-index: -1;
 }
-/* line 74, ../scss/_nav.scss */
+/* line 77, ../scss/_nav.scss */
+nav#nav-header li {
+  border-bottom: 1px solid #555;
+}
+/* line 80, ../scss/_nav.scss */
+nav#nav-header li.current-menu-item a {
+  background: #555;
+}
+/* line 85, ../scss/_nav.scss */
+nav#nav-header li a:hover {
+  background: #373737;
+  color: #FFF;
+}
+/* line 90, ../scss/_nav.scss */
+nav#nav-header li.menu-item-has-children {
+  /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
+  You can show the child pages there on mobiles. */
+}
+/* line 93, ../scss/_nav.scss */
+nav#nav-header li.menu-item-has-children ul.sub-menu {
+  display: none;
+}
+/* line 99, ../scss/_nav.scss */
+nav#nav-footer {
+  display: none;
+}
+/* line 103, ../scss/_nav.scss */
 nav.pagination ul.page-numbers {
   padding-left: 0 !important;
 }
-/* line 76, ../scss/_nav.scss */
+/* line 105, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li {
   display: inline-block;
 }
-/* line 78, ../scss/_nav.scss */
+/* line 107, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers {
   background: #6ED0E1;
   color: #FFF;
   padding: 7px 15px;
   display: block;
 }
-/* line 83, ../scss/_nav.scss */
+/* line 112, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers a {
   color: #FFF;
 }
-/* line 86, ../scss/_nav.scss */
+/* line 115, ../scss/_nav.scss */
 nav.pagination ul.page-numbers li .page-numbers.current {
   background: #28aac1;
 }
-/* line 93, ../scss/_nav.scss */
-nav .nav {
-  border-bottom: 0;
-  clear: both;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  /* Target just the Header menu */
-  /* highlight current page */
-  /* end current highlighters */
-}
-/* line 99, ../scss/_nav.scss */
-nav .nav ul {
+/* line 122, ../scss/_nav.scss */
+nav ul {
   margin: 0;
   padding: 0;
 }
-/* line 103, ../scss/_nav.scss */
-nav .nav li {
+/* line 126, ../scss/_nav.scss */
+nav li {
   display: block;
-  border-bottom: 1px solid #555;
 }
-/* line 106, ../scss/_nav.scss */
-nav .nav li a {
+/* line 128, ../scss/_nav.scss */
+nav li a {
   display: block;
   color: #FFF;
   text-decoration: none;
   padding: 30px;
-}
-/* line 118, ../scss/_nav.scss */
-nav .nav#menu-nav-header li.current-menu-item a {
-  background: #F5F5F5;
-}
-/* line 123, ../scss/_nav.scss */
-nav .nav#menu-nav-header li a:hover {
-  background: #555;
-  color: #FFF;
-}
-/* line 128, ../scss/_nav.scss */
-nav .nav#menu-nav-header li.menu-item-has-children {
-  /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
-  You can show the child pages there on mobiles. */
-}
-/* line 131, ../scss/_nav.scss */
-nav .nav#menu-nav-header li.menu-item-has-children ul.sub-menu {
-  display: none;
 }
 
 /* line 1, ../scss/_type.scss */
@@ -1200,7 +1211,8 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 1.5;
+  line-height: 19.95px;
+  line-height: 1.995rem;
   color: #222;
   text-rendering: optimizeLegibility;
   /* Better Font Rendering =========== */
@@ -1219,19 +1231,21 @@ small,
 LINK STYLES
 *********************/
 /* line 29, ../scss/_type.scss */
-a, a:visited {
+a {
   color: #6ED0E1;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
 /* line 34, ../scss/_type.scss */
-a:hover, a:focus, a:visited:hover, a:visited:focus {
+a:hover {
   color: #8cdae7;
 }
 /* line 44, ../scss/_type.scss */
-a:link, a:visited:link {
+a:link {
   /*
   this highlights links on iPhones/iPads.
   so it basically works like the :hover selector
@@ -1245,8 +1259,8 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 /* line 58, ../scss/_type.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   color: #222;
   /*
@@ -1254,45 +1268,56 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   http://css-tricks.com/watch-your-font-weight/
   */
 }
-
-/* line 69, ../scss/_type.scss */
-h1, .h1 {
-  font-size: 48px;
-  font-size: 4.8rem;
-  line-height: 4.2rem;
-  margin: 0 0 30px;
+/* line 63, ../scss/_type.scss */
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  color: #222;
+}
+/* line 65, ../scss/_type.scss */
+h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:hover, .h4 a:hover, h5 a:hover, .h5 a:hover {
+  color: #373737;
 }
 
 /* line 75, ../scss/_type.scss */
-h2, .h2 {
-  font-size: 32px;
-  font-size: 3.2rem;
-  line-height: 3.6rem;
-  margin: 0 0 1rem;
+h1, .h1 {
+  font-size: 48px;
+  font-size: 4.8rem;
+  line-height: 55.86px;
+  line-height: 5.586rem;
+  margin: 0 0 30px;
 }
 
 /* line 81, ../scss/_type.scss */
+h2, .h2 {
+  font-size: 32px;
+  font-size: 3.2rem;
+  line-height: 47.88px;
+  line-height: 4.788rem;
+  margin: 0 0 1rem;
+}
+
+/* line 87, ../scss/_type.scss */
 h3, .h3 {
   font-size: 24px;
   font-size: 2.4rem;
   margin: 0 0 15px;
 }
 
-/* line 86, ../scss/_type.scss */
+/* line 92, ../scss/_type.scss */
 h4, .h4 {
   font-size: 11px;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-/* line 91, ../scss/_type.scss */
+/* line 97, ../scss/_type.scss */
 h5, .h5 {
-  line-height: 2.09rem;
+  line-height: 26.6px;
+  line-height: 2.66rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-/* line 97, ../scss/_type.scss */
+/* line 103, ../scss/_type.scss */
 blockquote {
   font-style: italic;
   font-size: 20px;
@@ -1650,7 +1675,7 @@ input[type="button"] {
   border: 1px solid #6ED0E1;
   color: #FFF;
   text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 16px;
   font-size: 1.6rem;
@@ -1977,26 +2002,24 @@ you can add resource intensive styles.
   HEADER STYLES
   *********************/
   /* line 11, ../scss/_768up.scss */
-  .scrolled header.header {
-    position: fixed;
-    height: 60px;
-    width: 100%;
-    left: 0;
-    padding: 4px;
-    z-index: 11;
-    -webkit-animation: animate-from-top 0.2s;
-            animation: animate-from-top 0.2s;
+  header.header #logo {
+    height: 100px;
   }
 
   /*********************
   NAVIGATION STYLES
   *********************/
-  /* line 34, ../scss/_768up.scss */
+  /* line 26, ../scss/_768up.scss */
   a#menu-toggle {
     display: none;
   }
 
-  /* line 38, ../scss/_768up.scss */
+  /* line 29, ../scss/_768up.scss */
+  nav {
+    font-size: 0px;
+    font-size: 0rem;
+  }
+  /* line 30, ../scss/_768up.scss */
   nav#nav-header {
     background: #FFF;
     color: #222;
@@ -2007,45 +2030,71 @@ you can add resource intensive styles.
     top: auto;
     width: 100%;
   }
-  /* line 48, ../scss/_768up.scss */
-  nav .nav {
-    font-size: 0px;
-    font-size: 0rem;
+  /* line 39, ../scss/_768up.scss */
+  nav#nav-header li {
+    border-bottom: none;
   }
-  /* line 50, ../scss/_768up.scss */
-  nav .nav li {
+  /* line 41, ../scss/_768up.scss */
+  nav#nav-header li:not(:last-child) {
+    border-right: 1px solid #FFF;
+  }
+  /* line 44, ../scss/_768up.scss */
+  nav#nav-header li a {
+    color: #222;
+    padding: 10px 20px;
+  }
+  /* line 49, ../scss/_768up.scss */
+  nav#nav-header li.current-menu-item a {
+    background: #F5F5F5;
+  }
+  /* line 53, ../scss/_768up.scss */
+  nav#nav-header li.menu-item-has-children {
+    /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
+    You can show the child pages there on mobiles. */
+    position: relative;
+  }
+  /* line 57, ../scss/_768up.scss */
+  nav#nav-header li.menu-item-has-children ul.sub-menu {
+    display: none;
+    background: #E8E8E8;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  /* line 63, ../scss/_768up.scss */
+  nav#nav-header li.menu-item-has-children ul.sub-menu li {
+    width: 100%;
+  }
+  /* line 68, ../scss/_768up.scss */
+  nav#nav-header li.menu-item-has-children:hover ul.sub-menu {
+    display: block;
+  }
+  /* line 76, ../scss/_768up.scss */
+  nav#nav-footer a {
+    font-size: 12px;
+    font-size: 1.2rem;
+  }
+  /* line 81, ../scss/_768up.scss */
+  nav li {
     display: inline-block;
     vertical-align: top;
   }
-  /* line 53, ../scss/_768up.scss */
-  nav .nav li a {
+  /* line 84, ../scss/_768up.scss */
+  nav li a {
     font-size: 14px;
     font-size: 1.4rem;
-  }
-  /* line 58, ../scss/_768up.scss */
-  nav .nav#menu-nav-header li {
-    border-bottom: none;
-  }
-  /* line 60, ../scss/_768up.scss */
-  nav .nav#menu-nav-header li:not(:last-child) {
-    border-right: 1px solid #FFF;
-  }
-  /* line 63, ../scss/_768up.scss */
-  nav .nav#menu-nav-header li a {
-    color: #222;
-    padding: 10px 20px;
   }
 
   /*********************
   HERO
   *********************/
-  /* line 83, ../scss/_768up.scss */
+  /* line 101, ../scss/_768up.scss */
   .hero-container {
     min-height: 400px;
     width: 100%;
   }
 
-  /* line 87, ../scss/_768up.scss */
+  /* line 105, ../scss/_768up.scss */
   .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -2058,7 +2107,7 @@ you can add resource intensive styles.
     right: -9999px;
     margin: auto;
   }
-  /* line 100, ../scss/_768up.scss */
+  /* line 118, ../scss/_768up.scss */
   .video-wrapper iframe {
     position: absolute;
     top: 0;
@@ -2070,24 +2119,24 @@ you can add resource intensive styles.
   /*********************
   WIDGETS
   *********************/
-  /* line 119, ../scss/_768up.scss */
+  /* line 137, ../scss/_768up.scss */
   div#footer-asides {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 121, ../scss/_768up.scss */
+  /* line 139, ../scss/_768up.scss */
   div#footer-asides aside {
     background: #6E6E6E;
     color: #373737;
     border-bottom: none;
   }
-  /* line 125, ../scss/_768up.scss */
+  /* line 143, ../scss/_768up.scss */
   div#footer-asides aside:not(:last-child) {
     border-right: 1px solid #555;
   }
-  /* line 128, ../scss/_768up.scss */
+  /* line 146, ../scss/_768up.scss */
   div#footer-asides aside .widgettitle {
     color: #FFF;
   }

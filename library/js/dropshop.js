@@ -11,7 +11,11 @@
     Dropshop.prototype.init = function() {
       FastClick.attach(document.body);
       this.setWidths();
-      return this.onPageLoad();
+      this.onPageLoad();
+      return this.$doc.on('click', 'a#menu-toggle', function() {
+        dropshop.$body.toggleClass('slide-from-right');
+        return false;
+      });
 
       /*
       Add Test for ios and Android
@@ -26,6 +30,7 @@
       console.log('[Dropshop] onPageLoad');
       picturefill();
       this.setEventListeners();
+      this.$body.removeClass('slide-from-right');
       return this.$allMods = $("[data-animate]");
     };
 
@@ -41,12 +46,10 @@
 
     Dropshop.prototype.onScroll = function() {
       window.ticking = false;
-      if (!dropshop.isMobile) {
-        if (window.latestKnownScrollY > dropshop.sizes.headerHeight) {
-          dropshop.$body.addClass('scrolled');
-        } else {
-          dropshop.$body.removeClass('scrolled');
-        }
+      if (window.latestKnownScrollY > dropshop.sizes.headerHeight) {
+        dropshop.$body.addClass('scrolled');
+      } else {
+        dropshop.$body.removeClass('scrolled');
       }
       dropshop.$allMods.each(function(i, el) {
         el = $(el);
@@ -57,11 +60,7 @@
     };
 
     Dropshop.prototype.setEventListeners = function() {
-      console.log('[Dropshop] setting event listeners');
-      return this.$doc.on('click', 'a#menu-toggle', function() {
-        dropshop.$body.toggleClass('slide-from-right');
-        return false;
-      });
+      return console.log('[Dropshop] setting event listeners');
     };
 
     return Dropshop;

@@ -25,6 +25,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.png">
 
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700' rel='stylesheet' type='text/css'>
 
 
@@ -45,7 +46,7 @@
 					<h1><?php bloginfo('name'); ?></h1>
 				</a>
 
-				<a href="#" id="menu-toggle"><span></span></a>
+				<a href="#" id="menu-toggle" class="no-ajaxy"><span></span></a>
 
 			</header>
 

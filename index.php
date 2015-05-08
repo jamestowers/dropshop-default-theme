@@ -6,9 +6,9 @@
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'pad group' ); ?> role="article">
 
-				<div class="thumbnail col3">
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="thumbnail col3">
 					<?php the_post_thumbnail( 'thumbnail' ); ?> 
-				</div>
+				</a>
 
 				<div class="post-content col9 last">
 
@@ -22,7 +22,7 @@
 						<?php the_excerpt(); ?>
 					</div>
 
-					<footer class="article-footer">
+					<footer class="article-footer small">
 						<p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'dropshoptheme' ) . '</span> ', ', ', '' ); ?></p>
 					</footer>
 

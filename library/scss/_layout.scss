@@ -126,6 +126,7 @@ section{
 .thumbnail{
   float:left;
   position: relative;
+  max-width: 100%;
 }
 
 // ANIMATIONS
@@ -150,6 +151,18 @@ GRID
 ELEMENTS
 *********************/
 
+.scrolled{
+  header.header{
+    position: fixed;
+    height:60px;
+    width:100%;
+    left:0;
+    padding: 4px;
+    z-index: 11;
+    animation: animate-from-top 0.2s;
+  }
+}
+
 header.header,
 footer.footer{
   background:$grey3;
@@ -167,7 +180,7 @@ header.header{
     background-size: contain;
     text-indent: -9999px;
     width:220px;
-    height:100px;
+    height:50px;
     max-height: 100%;
     display: block;
     margin: auto;
@@ -188,9 +201,6 @@ footer.footer{
   position: absolute;
   bottom: 0px;
   left: 0px;
-  a{
-    color:$grey2;
-  }
 }
 
 

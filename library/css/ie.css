@@ -340,26 +340,24 @@ NO MARGIN
 HEADER STYLES
 *********************/
 /* line 11, ../scss/_768up.scss */
-.scrolled header.header {
-  position: fixed;
-  height: 60px;
-  width: 100%;
-  left: 0;
-  padding: 4px;
-  z-index: 11;
-  -webkit-animation: animate-from-top 0.2s;
-          animation: animate-from-top 0.2s;
+header.header #logo {
+  height: 100px;
 }
 
 /*********************
 NAVIGATION STYLES
 *********************/
-/* line 34, ../scss/_768up.scss */
+/* line 26, ../scss/_768up.scss */
 a#menu-toggle {
   display: none;
 }
 
-/* line 38, ../scss/_768up.scss */
+/* line 29, ../scss/_768up.scss */
+nav {
+  font-size: 0px;
+  font-size: 0rem;
+}
+/* line 30, ../scss/_768up.scss */
 nav#nav-header {
   background: #FFF;
   color: #222;
@@ -370,45 +368,71 @@ nav#nav-header {
   top: auto;
   width: 100%;
 }
-/* line 48, ../scss/_768up.scss */
-nav .nav {
-  font-size: 0px;
-  font-size: 0rem;
+/* line 39, ../scss/_768up.scss */
+nav#nav-header li {
+  border-bottom: none;
 }
-/* line 50, ../scss/_768up.scss */
-nav .nav li {
+/* line 41, ../scss/_768up.scss */
+nav#nav-header li:not(:last-child) {
+  border-right: 1px solid #FFF;
+}
+/* line 44, ../scss/_768up.scss */
+nav#nav-header li a {
+  color: #222;
+  padding: 10px 20px;
+}
+/* line 49, ../scss/_768up.scss */
+nav#nav-header li.current-menu-item a {
+  background: #F5F5F5;
+}
+/* line 53, ../scss/_768up.scss */
+nav#nav-header li.menu-item-has-children {
+  /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
+  You can show the child pages there on mobiles. */
+  position: relative;
+}
+/* line 57, ../scss/_768up.scss */
+nav#nav-header li.menu-item-has-children ul.sub-menu {
+  display: none;
+  background: #E8E8E8;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+/* line 63, ../scss/_768up.scss */
+nav#nav-header li.menu-item-has-children ul.sub-menu li {
+  width: 100%;
+}
+/* line 68, ../scss/_768up.scss */
+nav#nav-header li.menu-item-has-children:hover ul.sub-menu {
+  display: block;
+}
+/* line 76, ../scss/_768up.scss */
+nav#nav-footer a {
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+/* line 81, ../scss/_768up.scss */
+nav li {
   display: inline-block;
   vertical-align: top;
 }
-/* line 53, ../scss/_768up.scss */
-nav .nav li a {
+/* line 84, ../scss/_768up.scss */
+nav li a {
   font-size: 14px;
   font-size: 1.4rem;
-}
-/* line 58, ../scss/_768up.scss */
-nav .nav#menu-nav-header li {
-  border-bottom: none;
-}
-/* line 60, ../scss/_768up.scss */
-nav .nav#menu-nav-header li:not(:last-child) {
-  border-right: 1px solid #FFF;
-}
-/* line 63, ../scss/_768up.scss */
-nav .nav#menu-nav-header li a {
-  color: #222;
-  padding: 10px 20px;
 }
 
 /*********************
 HERO
 *********************/
-/* line 83, ../scss/_768up.scss */
+/* line 101, ../scss/_768up.scss */
 .hero-container {
   min-height: 400px;
   width: 100%;
 }
 
-/* line 87, ../scss/_768up.scss */
+/* line 105, ../scss/_768up.scss */
 .video-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -421,7 +445,7 @@ HERO
   right: -9999px;
   margin: auto;
 }
-/* line 100, ../scss/_768up.scss */
+/* line 118, ../scss/_768up.scss */
 .video-wrapper iframe {
   position: absolute;
   top: 0;
@@ -433,24 +457,24 @@ HERO
 /*********************
 WIDGETS
 *********************/
-/* line 119, ../scss/_768up.scss */
+/* line 137, ../scss/_768up.scss */
 div#footer-asides {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 121, ../scss/_768up.scss */
+/* line 139, ../scss/_768up.scss */
 div#footer-asides aside {
   background: #6E6E6E;
   color: #373737;
   border-bottom: none;
 }
-/* line 125, ../scss/_768up.scss */
+/* line 143, ../scss/_768up.scss */
 div#footer-asides aside:not(:last-child) {
   border-right: 1px solid #555;
 }
-/* line 128, ../scss/_768up.scss */
+/* line 146, ../scss/_768up.scss */
 div#footer-asides aside .widgettitle {
   color: #FFF;
 }

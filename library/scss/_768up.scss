@@ -7,19 +7,11 @@
 HEADER STYLES
 *********************/
 
-.scrolled{
-  header.header{
-    position: fixed;
-    height:60px;
-    width:100%;
-    left:0;
-    padding: 4px;
-    z-index: 11;
-    animation: animate-from-top 0.2s;
+header.header{
+  #logo{
+    height:100px;
   }
 }
-
-#logo {}
 
 
 
@@ -44,29 +36,55 @@ nav{
   	left: auto;
   	top:auto;
   	width:100%;
+    li{
+      border-bottom: none;
+      &:not(:last-child){
+        border-right: 1px solid $white;
+      }
+      a{
+        color:$grey2;
+        padding: 10px 20px;
+      }
+      &.current-menu-item{
+        a{
+          background:$grey8;
+        }
+      }
+      &.menu-item-has-children{
+        /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
+        You can show the child pages there on mobiles. */
+        position: relative;
+        ul.sub-menu{
+          display:none;
+          background:$grey7;
+          position: absolute;
+          top:100%;
+          left:0;
+          li{
+            width:100%;
+          }
+        }
+        &:hover{
+          ul.sub-menu{
+            display:block;
+          }
+        }
+      }
+    }
   }
-	.nav {
-	  @include font-size(0); // Fighting the space betwen inline-block items
-	  li {
-	    display:inline-block;
-      vertical-align: top;
-	    a {
-	      @include font-size(1.4); // !!Important. Must have a size set here because of inlineblock spacing bug above
-	    }
-	  }
-	  &#menu-nav-header{
-	    li{
-        border-bottom: none;
-	      &:not(:last-child){
-	        border-right: 1px solid $white;
-	      }
-	      a{
-          color:$grey2;
-	        padding: 10px 20px;
-	      }
-	    } 
-	  }
-	}
+  &#nav-footer{
+    a {
+      @include font-size(1.2); 
+    }
+  }
+  @include font-size(0); // Fighting the space betwen inline-block items
+  li {
+    display:inline-block;
+    vertical-align: top;
+    a {
+      @include font-size(1.4); // !!Important. Must have a size set here because of inlineblock spacing bug above
+    }
+  }
 }
 
 

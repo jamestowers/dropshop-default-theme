@@ -28,10 +28,13 @@ Responsive slide out menu
 
 
 a#menu-toggle{
-  display:block;
-  float:right;
+  display: block;
   height: 24px;
   padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   span,
   span:before,
   span:after{
@@ -58,6 +61,8 @@ a#menu-toggle{
 }
 
 nav{
+  clear: both;
+  text-align: center;
   &#nav-header{
     background:$grey2;
     color:$white;
@@ -69,6 +74,30 @@ nav{
     width:80%;
     transition: transform 0.2s ease-out;
     z-index: -1;
+    li{
+      border-bottom: 1px solid $grey4;
+      &.current-menu-item{
+        a{
+          background:$grey4;
+        }
+      }
+      a{
+        &:hover{
+          background: $grey3;
+          color:$white;
+        }
+      }
+      &.menu-item-has-children{
+        /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
+        You can show the child pages there on mobiles. */
+        ul.sub-menu{
+          display:none;
+        }
+      }
+    } 
+  }
+  &#nav-footer{
+    display: none;
   }
   &.pagination{
     ul.page-numbers{
@@ -90,57 +119,17 @@ nav{
       }
     }
   }
-  .nav {
-    border-bottom: 0;
-    clear: both;
-    text-align: center;
+  ul{
     margin: 0;
     padding: 0;
-    ul{
-      margin: 0;
-      padding: 0;
+  }
+  li {
+    display:block;
+    a {
+      display: block;
+      color:$white;
+      text-decoration: none;
+      padding: $padding;
     }
-    li {
-      display:block;
-      border-bottom: 1px solid $grey4;
-      a {
-        display: block;
-        color:$white;
-        text-decoration: none;
-        padding: $padding;
-      }
-    }
-    /* Target just the Header menu */
-    &#menu-nav-header{
-
-      li{
-        &.current-menu-item{
-          a{
-            background:$grey8;
-          }
-        }
-        a{
-          &:hover{
-            background: $grey4;
-            color:$white;
-          }
-        }
-        &.menu-item-has-children{
-          /* It's probabaly best to just hide sub nav and link straihght to the top level page. Y
-          You can show the child pages there on mobiles. */
-          ul.sub-menu{
-            display:none;
-          }
-        }
-      } 
-    }
-
-    /* highlight current page */
-    li.current-menu-item,
-    li.current_page_item,
-    li.current-page-ancestor {
-      a {}
-    }  /* end current highlighters */
-
-  } /* end .nav */
+  }
 }

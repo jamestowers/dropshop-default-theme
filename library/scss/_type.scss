@@ -4,7 +4,7 @@ html{
 body {
   font-family: $font-body;
   @include font-size(1.4);
-  line-height: 1.5;
+  @include line-height(1.5);
   color:$grey2;
   text-rendering: optimizeLegibility;
   /* Better Font Rendering =========== */
@@ -26,12 +26,12 @@ small,
 LINK STYLES
 *********************/
 
-a, a:visited {
+a{
   color: $color-link;
   text-decoration: none;
-
+  transition: all 0.2s ease-out;
   /* on hover */
-  &:hover, &:focus {
+  &:hover{
     color: $color-link-hover;
   }
 
@@ -57,9 +57,15 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: $font-header;
-  font-weight: 200;
+  font-weight: $font-weight-normal;
   text-transform: uppercase;
   color:$grey2;
+  a{
+    color:$grey2;
+    &:hover{
+      color:$grey3;
+    }
+  }
   /*
   if you're going to use webfonts, be sure to check your weights
   http://css-tricks.com/watch-your-font-weight/
@@ -68,13 +74,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 
 h1, .h1 {
   @include font-size(4.8);
-  line-height: 4.2rem;
+  @include line-height(4.2);
   margin: 0 0 $padding;
 }
 
 h2, .h2 {
   @include font-size(3.2);
-  line-height: 3.6rem;
+  @include line-height(3.6);
   margin: 0 0 1rem;
 }
 
@@ -89,7 +95,7 @@ h4, .h4 {
 }
 
 h5, .h5 {
-  line-height: 2.09rem;
+  @include line-height(2);
   text-transform: uppercase;
   letter-spacing: 2px;
 } 
