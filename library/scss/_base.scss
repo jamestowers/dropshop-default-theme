@@ -30,6 +30,33 @@ div#main {
 }
 
 
+.social-icons{
+  ul{
+  	margin: 0px;
+    li{
+      display: inline;
+      a{
+        display: inline-block;
+        color:$grey2;
+        padding: 5px;
+        font-size: 2rem;
+        &:hover{
+          color:$grey4;
+        }
+      }
+    }
+  }
+}
+header.header{
+	.social-icons{
+		float: left;
+		li{
+			a{
+				padding: 30px 5px;
+			}
+		}
+	}
+}
 
 
 div#footer-asides{

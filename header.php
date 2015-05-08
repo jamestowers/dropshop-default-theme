@@ -10,6 +10,7 @@
 
 		<?php // Google Chrome Frame for IE ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Copyright" content="Copyright &copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?>. All Rights Reserved.">
 
 		<?php // mobile meta (hooray!) ?>
 		<meta name="HandheldFriendly" content="True">
@@ -41,6 +42,9 @@
 		<div id="wrapper" class="group">
 
 			<header class="header group pad" role="banner">
+
+
+        <?php dropshop_social_icons();?>
 				
 				<a id="logo" href="<?php echo home_url(); ?>" rel="nofollow">
 					<h1><?php bloginfo('name'); ?></h1>

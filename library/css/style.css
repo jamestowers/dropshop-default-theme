@@ -820,15 +820,19 @@ ELEMENTS
   -webkit-animation: animate-from-top 0.2s 1 0;
           animation: animate-from-top 0.2s 1 0;
 }
+/* line 165, ../scss/_layout.scss */
+.scrolled header.header .social-icons li a {
+  padding: 16px 5px;
+}
 
-/* line 166, ../scss/_layout.scss */
+/* line 173, ../scss/_layout.scss */
 header.header,
 footer.footer {
   background: #373737;
   padding: 10px;
 }
 
-/* line 171, ../scss/_layout.scss */
+/* line 178, ../scss/_layout.scss */
 header.header {
   background: #FFF;
   text-align: center;
@@ -837,7 +841,7 @@ header.header {
   position: relative;
   z-index: 10;
 }
-/* line 178, ../scss/_layout.scss */
+/* line 185, ../scss/_layout.scss */
 header.header #logo {
   background: url("../images/logo.gif") no-repeat 50% 50%;
   background-size: contain;
@@ -848,13 +852,13 @@ header.header #logo {
   display: block;
   margin: auto;
 }
-/* line 187, ../scss/_layout.scss */
+/* line 194, ../scss/_layout.scss */
 header.header #logo img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 193, ../scss/_layout.scss */
+/* line 200, ../scss/_layout.scss */
 footer.footer {
   clear: both;
   text-align: center;
@@ -865,7 +869,7 @@ footer.footer {
   left: 0px;
 }
 
-/* line 207, ../scss/_layout.scss */
+/* line 214, ../scss/_layout.scss */
 div#wrapper {
   width: 100%;
   min-height: 100%;
@@ -875,7 +879,7 @@ div#wrapper {
   position: relative;
 }
 
-/* line 215, ../scss/_layout.scss */
+/* line 222, ../scss/_layout.scss */
 #content {
   background: #F5F5F5;
   display: -webkit-box;
@@ -892,13 +896,13 @@ div#wrapper {
   padding-bottom: 140px;
 }
 
-/* line 224, ../scss/_layout.scss */
+/* line 231, ../scss/_layout.scss */
 .sidebar {
   background: #E8E8E8;
   height: 100%;
 }
 
-/* line 228, ../scss/_layout.scss */
+/* line 235, ../scss/_layout.scss */
 aside {
   width: 100%;
   clear: both;
@@ -1201,12 +1205,19 @@ nav li a {
   padding: 30px;
 }
 
-/* line 1, ../scss/_type.scss */
+@font-face {
+  font-family: "dropshop";
+  src: url('../fonts/./dropshop.eot?1431103470');
+  src: url('../fonts/./dropshop.eot?&1431103470#iefix') format('embedded-opentype'), url('../fonts/./dropshop.ttf?1431103470') format('truetype'), url('../fonts/./dropshop.woff?1431103470') format('woff'), url('../fonts/./dropshop.svg?1431103470') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 5, ../scss/_type.scss */
 html {
   font-size: 62%;
 }
 
-/* line 4, ../scss/_type.scss */
+/* line 8, ../scss/_type.scss */
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -1220,7 +1231,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 20, ../scss/_type.scss */
+/* line 24, ../scss/_type.scss */
 small,
 .small {
   font-size: 10px;
@@ -1230,7 +1241,7 @@ small,
 /*********************
 LINK STYLES
 *********************/
-/* line 29, ../scss/_type.scss */
+/* line 33, ../scss/_type.scss */
 a {
   color: #6ED0E1;
   text-decoration: none;
@@ -1240,11 +1251,11 @@ a {
   /* on click */
   /* mobile tap color */
 }
-/* line 34, ../scss/_type.scss */
+/* line 38, ../scss/_type.scss */
 a:hover {
   color: #8cdae7;
 }
-/* line 44, ../scss/_type.scss */
+/* line 48, ../scss/_type.scss */
 a:link {
   /*
   this highlights links on iPhones/iPads.
@@ -1257,7 +1268,7 @@ a:link {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-/* line 58, ../scss/_type.scss */
+/* line 62, ../scss/_type.scss */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -1268,16 +1279,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   http://css-tricks.com/watch-your-font-weight/
   */
 }
-/* line 63, ../scss/_type.scss */
+/* line 67, ../scss/_type.scss */
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   color: #222;
 }
-/* line 65, ../scss/_type.scss */
+/* line 69, ../scss/_type.scss */
 h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:hover, .h4 a:hover, h5 a:hover, .h5 a:hover {
   color: #373737;
 }
 
-/* line 75, ../scss/_type.scss */
+/* line 79, ../scss/_type.scss */
 h1, .h1 {
   font-size: 48px;
   font-size: 4.8rem;
@@ -1286,7 +1297,7 @@ h1, .h1 {
   margin: 0 0 30px;
 }
 
-/* line 81, ../scss/_type.scss */
+/* line 85, ../scss/_type.scss */
 h2, .h2 {
   font-size: 32px;
   font-size: 3.2rem;
@@ -1295,21 +1306,21 @@ h2, .h2 {
   margin: 0 0 1rem;
 }
 
-/* line 87, ../scss/_type.scss */
+/* line 91, ../scss/_type.scss */
 h3, .h3 {
   font-size: 24px;
   font-size: 2.4rem;
   margin: 0 0 15px;
 }
 
-/* line 92, ../scss/_type.scss */
+/* line 96, ../scss/_type.scss */
 h4, .h4 {
   font-size: 11px;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-/* line 97, ../scss/_type.scss */
+/* line 101, ../scss/_type.scss */
 h5, .h5 {
   line-height: 26.6px;
   line-height: 2.66rem;
@@ -1317,11 +1328,62 @@ h5, .h5 {
   letter-spacing: 2px;
 }
 
-/* line 103, ../scss/_type.scss */
+/* line 107, ../scss/_type.scss */
 blockquote {
   font-style: italic;
   font-size: 20px;
   font-size: 2rem;
+}
+
+@font-face {
+  font-family: 'dropshop';
+  src: url("fonts/dropshop.eot");
+  src: url("fonts/dropshop.eot?#iefix-yv5vq3") format("embedded-opentype"), url("fonts/dropshop.woff") format("woff"), url("fonts/dropshop.ttf") format("truetype"), url("fonts/dropshop.svg#dropshop") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 13, ../scss/_icons.scss */
+[class^="icon-"]:before, [class^="icon-"]:after, [class*=" icon-"]:before, [class*=" icon-"]:after {
+  font-family: 'dropshop';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 29, ../scss/_icons.scss */
+.icon-pinterest:before {
+  content: "\e600";
+}
+
+/* line 33, ../scss/_icons.scss */
+.icon-linkedin:before {
+  content: "\e601";
+}
+
+/* line 37, ../scss/_icons.scss */
+.icon-twitter:before {
+  content: "\e603";
+}
+
+/* line 41, ../scss/_icons.scss */
+.icon-instagram:before {
+  content: "\e604";
+}
+
+/* line 45, ../scss/_icons.scss */
+.icon-facebook:before {
+  content: "\e605";
+}
+
+/* line 49, ../scss/_icons.scss */
+.icon-googleplus:before {
+  content: "\e606";
 }
 
 /*********************
@@ -1763,17 +1825,46 @@ div#main ol li {
   list-style: decimal;
 }
 
-/* line 35, ../scss/_base.scss */
+/* line 34, ../scss/_base.scss */
+.social-icons ul {
+  margin: 0px;
+}
+/* line 36, ../scss/_base.scss */
+.social-icons ul li {
+  display: inline;
+}
+/* line 38, ../scss/_base.scss */
+.social-icons ul li a {
+  display: inline-block;
+  color: #222;
+  padding: 5px;
+  font-size: 2rem;
+}
+/* line 43, ../scss/_base.scss */
+.social-icons ul li a:hover {
+  color: #555;
+}
+
+/* line 51, ../scss/_base.scss */
+header.header .social-icons {
+  float: left;
+}
+/* line 54, ../scss/_base.scss */
+header.header .social-icons li a {
+  padding: 30px 5px;
+}
+
+/* line 62, ../scss/_base.scss */
 div#footer-asides {
   clear: both;
 }
-/* line 37, ../scss/_base.scss */
+/* line 64, ../scss/_base.scss */
 div#footer-asides aside {
   background: #6E6E6E;
   color: #373737;
   border-bottom: 1px solid #555;
 }
-/* line 41, ../scss/_base.scss */
+/* line 68, ../scss/_base.scss */
 div#footer-asides aside .widgettitle {
   color: #FFF;
 }

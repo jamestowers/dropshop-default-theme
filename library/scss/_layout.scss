@@ -160,6 +160,13 @@ ELEMENTS
     padding: 4px;
     z-index: 11;
     animation: animate-from-top 0.2s 1 0;
+    .social-icons{
+      li{
+        a{
+          padding: 16px 5px;
+        }
+      }
+    }
   }
 }
 

@@ -1,3 +1,7 @@
+@import "compass/css3/font-face";
+@include font-face('dropshop', font-files("./dropshop.ttf", "./dropshop.woff", "./dropshop.svg"), "./dropshop.eot", normal, normal);
+
+
 html{
   font-size:  62%;
 }

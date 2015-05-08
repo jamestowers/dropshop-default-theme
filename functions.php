@@ -1,6 +1,7 @@
 <?php
 
 require ('functions-cleanup.php');
+require ('functions-options-page.php');
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
@@ -426,8 +427,6 @@ function dropshop_page_navi() {
   
   echo '</nav>';
 } /* end page navi */
-
-
 
 
 
