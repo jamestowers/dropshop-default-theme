@@ -1,13 +1,13 @@
 # Dropshop's Default theme
 __A Lightweight Wordpress Development Theme__
 
-dropshop is designed to make the life of developers easier. It's built
+Bones is designed to make the life of developers easier. It's built
 using HTML5 & has a strong semantic foundation. It was updated recently
 using some of the HTML5 Boilerplate's recommended markup and setup.
 It's constantly growing so be sure to check back often if you are a
 frequent user. I'm always open to contribution. :)
 
-Designed by **Eddie Machado**: http://themble.com/dropshop
+Designed by **Eddie Machado**: http://themble.com/bones
 
 Special Thanks to:
 * Paul Irish & the HTML5 Boilerplate
@@ -17,7 +17,7 @@ Special Thanks to:
 * and several other developers. :)
 
 Submit Bugs & or Fixes:
-https://github.com/eddiemachado/dropshop/issues
+https://github.com/eddiemachado/bones/issues
 
 
 ## License

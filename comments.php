@@ -1,6 +1,6 @@
 <?php
 /*
-The comments page for dropshop
+The comments page for Bones
 */
 
 // Do not delete these lines
@@ -9,7 +9,7 @@ The comments page for dropshop
 
 	if ( post_password_required() ) { ?>
 		<div class="alert alert-help">
-			<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'dropshoptheme' ); ?></p>
+			<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'bonestheme' ); ?></p>
 		</div>
 	<?php
 		return;
@@ -19,7 +19,7 @@ The comments page for dropshop
 <?php // You can start editing here. ?>
 
 <?php if ( have_comments() ) : ?>
-	<h3 id="comments" class="h2"><?php comments_number( __( '<span>No</span> Responses', 'dropshoptheme' ), __( '<span>One</span> Response', 'dropshoptheme' ), _n( '<span>%</span> Response', '<span>%</span> Responses', get_comments_number(), 'dropshoptheme' ) );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+	<h3 id="comments" class="h2"><?php comments_number( __( '<span>No</span> Responses', 'bonestheme' ), __( '<span>One</span> Response', 'bonestheme' ), _n( '<span>%</span> Response', '<span>%</span> Responses', get_comments_number(), 'bonestheme' ) );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
 	<nav id="comment-nav">
 		<ul class="group">
@@ -47,7 +47,7 @@ The comments page for dropshop
 	<?php else : // comments are closed ?>
 
 	<?php // If comments are closed. ?>
-	<!--p class="nocomments"><?php _e( 'Comments are closed.', 'dropshoptheme' ); ?></p-->
+	<!--p class="nocomments"><?php _e( 'Comments are closed.', 'bonestheme' ); ?></p-->
 
 	<?php endif; ?>
 
@@ -58,7 +58,7 @@ The comments page for dropshop
 
 <section id="respond" class="respond-form">
 
-	<h3 id="comment-form-title" class="h2"><?php comment_form_title( __( 'Leave a Reply', 'dropshoptheme' ), __( 'Leave a Reply to %s', 'dropshoptheme' )); ?></h3>
+	<h3 id="comment-form-title" class="h2"><?php comment_form_title( __( 'Leave a Reply', 'bonestheme' ), __( 'Leave a Reply to %s', 'bonestheme' )); ?></h3>
 
 	<div id="cancel-comment-reply">
 		<p class="small"><?php cancel_comment_reply_link(); ?></p>
@@ -66,7 +66,7 @@ The comments page for dropshop
 
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
 		<div class="alert alert-help">
-			<p><?php printf( __( 'You must be %1$slogged in%2$s to post a comment.', 'dropshoptheme' ), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
+			<p><?php printf( __( 'You must be %1$slogged in%2$s to post a comment.', 'bonestheme' ), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
 		</div>
 	<?php else : ?>
 
@@ -74,41 +74,41 @@ The comments page for dropshop
 
 	<?php if ( is_user_logged_in() ) : ?>
 
-	<p class="comments-logged-in-as"><?php _e( 'Logged in as', 'dropshoptheme' ); ?> <a href="<?php echo get_option( 'siteurl' ); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php _e( 'Log out of this account', 'dropshoptheme' ); ?>"><?php _e( 'Log out', 'dropshoptheme' ); ?> <?php _e( '&raquo;', 'dropshoptheme' ); ?></a></p>
+	<p class="comments-logged-in-as"><?php _e( 'Logged in as', 'bonestheme' ); ?> <a href="<?php echo get_option( 'siteurl' ); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php _e( 'Log out of this account', 'bonestheme' ); ?>"><?php _e( 'Log out', 'bonestheme' ); ?> <?php _e( '&raquo;', 'bonestheme' ); ?></a></p>
 
 	<?php else : ?>
 
 	<ul id="comment-form-elements" class="group">
 
 		<li>
-			<label for="author"><?php _e( 'Name', 'dropshoptheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
-			<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e( 'Your Name*', 'dropshoptheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
+			<label for="author"><?php _e( 'Name', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
+			<input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e( 'Your Name*', 'bonestheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
 		</li>
 
 		<li>
-			<label for="email"><?php _e( 'Mail', 'dropshoptheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
-			<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e( 'Your E-Mail*', 'dropshoptheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
-			<small><?php _e("(will not be published)", 'dropshoptheme' ); ?></small>
+			<label for="email"><?php _e( 'Mail', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
+			<input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e( 'Your E-Mail*', 'bonestheme' ); ?>" <?php if ($req) echo "aria-required='true'"; ?> />
+			<small><?php _e("(will not be published)", 'bonestheme' ); ?></small>
 		</li>
 
 		<li>
-			<label for="url"><?php _e( 'Website', 'dropshoptheme' ); ?></label>
-			<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e( 'Got a website?', 'dropshoptheme' ); ?>" />
+			<label for="url"><?php _e( 'Website', 'bonestheme' ); ?></label>
+			<input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e( 'Got a website?', 'bonestheme' ); ?>" />
 		</li>
 
 	</ul>
 
 	<?php endif; ?>
 
-	<p><textarea name="comment" id="comment" placeholder="<?php _e( 'Your Comment here...', 'dropshoptheme' ); ?>"></textarea></p>
+	<p><textarea name="comment" id="comment" placeholder="<?php _e( 'Your Comment here...', 'bonestheme' ); ?>"></textarea></p>
 
 	<p>
-		<input name="submit" type="submit" id="submit" class="button" value="<?php _e( 'Submit', 'dropshoptheme' ); ?>" />
+		<input name="submit" type="submit" id="submit" class="button" value="<?php _e( 'Submit', 'bonestheme' ); ?>" />
 		<?php comment_id_fields(); ?>
 	</p>
 
 	<div class="alert alert-info">
-		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e( 'You can use these tags', 'dropshoptheme' ); ?>: <code><?php echo allowed_tags(); ?></code></p>
+		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e( 'You can use these tags', 'bonestheme' ); ?>: <code><?php echo allowed_tags(); ?></code></p>
 	</div>
 
 	<?php do_action( 'comment_form', $post->ID ); ?>

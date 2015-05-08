@@ -1,31 +1,31 @@
 <?php
 
 // we're firing all out initial functions at the start
-add_action( 'after_setup_theme', 'dropshop_ahoy', 16 );
+add_action( 'after_setup_theme', 'bones_ahoy', 16 );
 
-function dropshop_ahoy() {
+function bones_ahoy() {
 
-	add_action( 'init', 'dropshop_head_cleanup' );
-	add_filter( 'the_generator', 'dropshop_rss_version' );
-	add_filter( 'wp_head', 'dropshop_remove_wp_widget_recent_comments_style', 1 );
-	add_action( 'wp_head', 'dropshop_remove_recent_comments_style', 1 );
-	add_filter( 'gallery_style', 'dropshop_gallery_style' );
+	add_action( 'init', 'bones_head_cleanup' );
+	add_filter( 'the_generator', 'bones_rss_version' );
+	add_filter( 'wp_head', 'bones_remove_wp_widget_recent_comments_style', 1 );
+	add_action( 'wp_head', 'bones_remove_recent_comments_style', 1 );
+	add_filter( 'gallery_style', 'bones_gallery_style' );
 
-	add_action( 'wp_enqueue_scripts', 'dropshop_scripts_and_styles', 999 );
+	add_action( 'wp_enqueue_scripts', 'bones_scripts_and_styles', 999 );
 
-	dropshop_theme_support();
+	bones_theme_support();
 
 	// adding sidebars to Wordpress (these are created in functions.php)
-	add_action( 'widgets_init', 'dropshop_register_sidebars' );
+	add_action( 'widgets_init', 'bones_register_sidebars' );
 
 	// cleaning up random code around images
-	add_filter( 'the_content', 'dropshop_filter_ptags_on_images' );
-	add_filter( 'excerpt_more', 'dropshop_excerpt_more' );
+	add_filter( 'the_content', 'bones_filter_ptags_on_images' );
+	add_filter( 'excerpt_more', 'bones_excerpt_more' );
 
-} /* end dropshop ahoy */
+} /* end bones ahoy */
 
 
-function dropshop_head_cleanup() {
+function bones_head_cleanup() {
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	remove_action( 'wp_head', 'feed_links', 2 );
 	remove_action( 'wp_head', 'rsd_link' );
@@ -35,34 +35,34 @@ function dropshop_head_cleanup() {
 	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 	remove_action( 'wp_head', 'wp_generator' );
-	add_filter( 'style_loader_src', 'dropshop_remove_wp_ver_css_js', 9999 );
-	add_filter( 'script_loader_src', 'dropshop_remove_wp_ver_css_js', 9999 );
+	add_filter( 'style_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
+	add_filter( 'script_loader_src', 'bones_remove_wp_ver_css_js', 9999 );
 
-} /* end dropshop head cleanup */
+} /* end bones head cleanup */
 
 // remove WP version from RSS
-function dropshop_rss_version() { return ''; }
+function bones_rss_version() { return ''; }
 // remove WP version from scripts
-function dropshop_remove_wp_ver_css_js( $src ) {
+function bones_remove_wp_ver_css_js( $src ) {
 	if ( strpos( $src, 'ver=' ) )
 		$src = remove_query_arg( 'ver', $src );
 	return $src;
 }
 // remove injected CSS for recent comments widget
-function dropshop_remove_wp_widget_recent_comments_style() {
+function bones_remove_wp_widget_recent_comments_style() {
 	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 	}
 }
 // remove injected CSS from recent comments widget
-function dropshop_remove_recent_comments_style() {
+function bones_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
 		remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
 	}
 }
 // remove injected CSS from gallery
-function dropshop_gallery_style($css) {
+function bones_gallery_style($css) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
@@ -90,16 +90,16 @@ if ( !function_exists( 'core_mods' ) ) {
 }
 
 // loading modernizr and jquery, and reply script
-function dropshop_scripts_and_styles() {
+function bones_scripts_and_styles() {
 	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 	if (!is_admin()) {
-		wp_register_style( 'dropshop-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
-		wp_register_style( 'dropshop-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
 		
-		wp_enqueue_style( 'dropshop-stylesheet' );
-		wp_enqueue_style( 'dropshop-ie-only' );
+		wp_enqueue_style( 'bones-stylesheet' );
+		wp_enqueue_style( 'bones-ie-only' );
 
-		$wp_styles->add_data( 'dropshop-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 	}
 }
 
@@ -108,7 +108,7 @@ THEME SUPPORT
 *********************/
 
 // Adding WP 3+ Functions & Theme Support
-function dropshop_theme_support() {
+function bones_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size(125, 125, true);
 	add_theme_support('automatic-feed-links');
@@ -116,11 +116,11 @@ function dropshop_theme_support() {
 	
 	register_nav_menus(
 		array(
-			'main-nav' => __( 'The Main Menu', 'dropshoptheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'dropshoptheme' ) // secondary nav in footer
+			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
+			'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
 		)
 	);
-} /* end dropshop theme support */
+} /* end bones theme support */
 
 
 /*********************
@@ -128,12 +128,12 @@ MENUS & NAVIGATION
 *********************/
 
 // the main menu
-function dropshop_main_nav() {
+function bones_main_nav() {
 	// display the wp3 menu if available
 	wp_nav_menu(array(
 		'container' => false,                           // remove nav container
 		'container_class' => 'menu group',           // class of container (should you choose to use it)
-		'menu' => __( 'The Main Menu', 'dropshoptheme' ),  // nav name
+		'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
 		'menu_class' => 'nav top-nav group',         // adding custom nav class
 		'theme_location' => 'main-nav',                 // where it's located in the theme
 		'before' => '',                                 // before the menu
@@ -141,17 +141,17 @@ function dropshop_main_nav() {
 		'link_before' => '',                            // before each link
 		'link_after' => '',                             // after each link
 		'depth' => 3,                                   // limit the depth of the nav
-		'fallback_cb' => 'dropshop_main_nav_fallback'      // fallback function
+		'fallback_cb' => 'bones_main_nav_fallback'      // fallback function
 	));
-} /* end dropshop main nav */
+} /* end bones main nav */
 
 // the footer menu (should you choose to use one)
-function dropshop_footer_links() {
+function bones_footer_links() {
 	// display the wp3 menu if available
 	wp_nav_menu(array(
 		'container' => '',                              // remove nav container
 		'container_class' => 'footer-links group',   // class of container (should you choose to use it)
-		'menu' => __( 'Footer Links', 'dropshoptheme' ),   // nav name
+		'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
 		'menu_class' => 'nav footer-nav group',      // adding custom nav class
 		'theme_location' => 'footer-links',             // where it's located in the theme
 		'before' => '',                                 // before the menu
@@ -159,12 +159,12 @@ function dropshop_footer_links() {
 		'link_before' => '',                            // before each link
 		'link_after' => '',                             // after each link
 		'depth' => 1,                                   // limit the depth of the nav
-		'fallback_cb' => 'dropshop_footer_links_fallback'  // fallback function
+		'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
 	));
-} /* end dropshop footer link */
+} /* end bones footer link */
 
 // this is the fallback for header menu
-function dropshop_main_nav_fallback() {
+function bones_main_nav_fallback() {
 	wp_page_menu( array(
 		'show_home' => true,
 		'menu_class' => 'nav top-nav group',      // adding custom nav class
@@ -177,7 +177,7 @@ function dropshop_main_nav_fallback() {
 }
 
 // this is the fallback for footer menu
-function dropshop_footer_links_fallback() {
+function bones_footer_links_fallback() {
 	/* you can put a default here if you like */
 }
 
@@ -185,9 +185,9 @@ function dropshop_footer_links_fallback() {
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using dropshop_related_posts(); )
-function dropshop_related_posts() {
-	echo '<ul id="dropshop-related-posts">';
+// Related Posts Function (call using bones_related_posts(); )
+function bones_related_posts() {
+	echo '<ul id="bones-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
@@ -205,19 +205,19 @@ function dropshop_related_posts() {
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'dropshoptheme' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'bonestheme' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_query();
 	echo '</ul>';
-} /* end dropshop related posts function */
+} /* end bones related posts function */
 
 /*********************
 PAGE NAVI
 *********************/
 
 // Numeric Page Navi (built into the theme by default)
-function dropshop_page_navi() {
+function bones_page_navi() {
 	global $wp_query;
 	$bignum = 999999999;
 	if ( $wp_query->max_num_pages <= 1 )
@@ -247,15 +247,15 @@ RANDOM CLEANUP ITEMS
 add_filter('show_admin_bar', '__return_false');
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function dropshop_filter_ptags_on_images($content){
+function bones_filter_ptags_on_images($content){
 	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
 // This removes the annoying […] to a Read More link
-function dropshop_excerpt_more($more) {
+function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'dropshoptheme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'dropshoptheme' ) .'</a>';
+	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'bonestheme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
 
 

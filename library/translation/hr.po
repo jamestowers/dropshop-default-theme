@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp theme dropshop\n"
+"Project-Id-Version: wp theme bones\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-10-01 19:37+0100\n"
 "PO-Revision-Date: \n"
@@ -323,34 +323,34 @@ msgstr "Najnovije sa Themble (Prilagodi u admin.php)"
 msgid ""
 "<span id=\"footer-thankyou\">Developed by <a href=\"http://yoursite.com\" "
 "target=\"_blank\">Your Site Name</a></span>. Built using <a href=\"http://"
-"themble.com/dropshop\" target=\"_blank\">dropshop</a>."
+"themble.com/bones\" target=\"_blank\">Bones</a>."
 msgstr ""
 "<span id=\"footer-thankyou\">Razvio <a href=\"http://jurica-zuanovic.from.hr"
 "\" target=\"_blank\">juricazuanovic</a></span>. Izgrađeno koristeći <a href="
 "\"http://hr.wordpress.org\" target=\"_blank\">WordPress</a> i <a href="
-"\"http://themble.com/dropshop\" target=\"_blank\">dropshop</a>."
+"\"http://themble.com/bones\" target=\"_blank\">Bones</a>."
 
-#: library/dropshop.php:217 library/dropshop.php:234
+#: library/bones.php:217 library/bones.php:234
 msgid "The Main Menu"
 msgstr "Glavni Izbornik"
 
-#: library/dropshop.php:218 library/dropshop.php:252
+#: library/bones.php:218 library/bones.php:252
 msgid "Footer Links"
 msgstr "Poveznice Podnožja"
 
-#: library/dropshop.php:296
+#: library/bones.php:296
 msgid "No Related Posts Yet!"
 msgstr "Još nema srodnih postova!"
 
-#: library/dropshop.php:340
+#: library/bones.php:340
 msgid "First"
 msgstr "Prva"
 
-#: library/dropshop.php:357
+#: library/bones.php:357
 msgid "Last"
 msgstr "Posljednja"
 
-#: library/dropshop.php:391
+#: library/bones.php:391
 #, php-format
 msgid "Posts by %s"
 msgstr "Postovi od %s"
