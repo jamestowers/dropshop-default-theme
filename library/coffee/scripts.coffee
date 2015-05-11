@@ -1,6 +1,8 @@
 # Fix IE consol.log bug
 if !window.console
-  console = log: ->
+  window.console = {}
+if !window.console.log
+  window.console.log = ->
 
 window.latestKnownScrollY = 0
 

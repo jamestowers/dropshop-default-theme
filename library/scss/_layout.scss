@@ -228,6 +228,11 @@ div#wrapper {
   clear:both;
   position: relative;
   padding-bottom: 140px;
+  transition: all 0.2s ease;
+  &.load-out{
+    transform: translateY(140px);//scale(0.9);
+    opacity:0;
+  }
 }
 
 .sidebar{

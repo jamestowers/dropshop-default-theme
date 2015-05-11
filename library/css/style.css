@@ -896,15 +896,24 @@ div#wrapper {
   clear: both;
   position: relative;
   padding-bottom: 140px;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+/* line 232, ../scss/_layout.scss */
+#content.load-out {
+  -webkit-transform: translateY(140px);
+      -ms-transform: translateY(140px);
+          transform: translateY(140px);
+  opacity: 0;
 }
 
-/* line 233, ../scss/_layout.scss */
+/* line 238, ../scss/_layout.scss */
 .sidebar {
   background: #E8E8E8;
   height: 100%;
 }
 
-/* line 237, ../scss/_layout.scss */
+/* line 242, ../scss/_layout.scss */
 aside {
   width: 100%;
   clear: both;
