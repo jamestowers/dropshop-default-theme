@@ -1,16 +1,22 @@
 <?php
+/********************************
 
+FUNCTIONS
+
+********************************/
 function dropshop_social_icons(){
 	$socials = get_option( 'dropshop_theme_social_links');
-	echo '<div class="social-icons">
-	        <ul>';
-	        foreach ($socials as $option => $url) {
-	        	if($url){
-		        	echo '<li><a href="' . $url . '" class="icon-' . $option . '" target="_blank"></a></li>';
-		        }
-	        };
-	echo '</ul>
-	</div>';
+	if(!empty( $socials) ){
+		echo '<div class="social-icons">
+		        <ul>';
+		        foreach ($socials as $option => $url) {
+		        	if($url){
+			        	echo '<li><a href="' . $url . '" class="icon-' . $option . '" target="_blank"></a></li>';
+			        }
+		        };
+		echo '</ul>
+		</div>';
+	}
 }
 
 function dropshop_share_buttons(){
@@ -24,9 +30,6 @@ function dropshop_share_buttons(){
 		</ul>
 	</div>';
 }
-
-
-
 
 
 
@@ -96,7 +99,7 @@ function dropshop_theme_display( $active_tab = '' ) {
 	<div class="wrap">
 	
 		<div id="icon-themes" class="icon32"></div>
-		<h2><?php _e( 'Contact info Options', 'dropshop' ); ?></h2>
+		<h2><?php _e( 'Contact Info', 'dropshop' ); ?></h2>
 		<?php settings_errors(); ?>
 		
 		<?php if( isset( $_GET[ 'tab' ] ) ) {
@@ -143,12 +146,6 @@ function dropshop_theme_display( $active_tab = '' ) {
 	</div><!-- /.wrap -->
 <?php
 } // end dropshop_theme_display
-
-
-
-
-
-
 
 
 
@@ -728,6 +725,8 @@ function dropshop_facebook_app_id_callback() {
 	echo '<input class="regular-text" type="text" id="facebook_app_id" name="dropshop_theme_social_options[facebook_app_id]" value="' . $value . '" />';
 	
 } // end dropshop_facebook_app_id_callback
+
+
 
 
 

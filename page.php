@@ -2,7 +2,7 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <?php dropshop_hero_image();?>
+    <?php dropshop_hero_image( $banner_text );?>
 
     <div class="inner">
 

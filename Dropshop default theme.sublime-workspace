@@ -523,7 +523,7 @@
 			"file": "page.php",
 			"settings":
 			{
-				"buffer_size": 513,
+				"buffer_size": 527,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,7 +555,7 @@
 			"file": "functions-hero.php",
 			"settings":
 			{
-				"buffer_size": 5481,
+				"buffer_size": 5510,
 				"line_ending": "Unix"
 			}
 		},
@@ -640,6 +640,7 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/footer.php",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/library/js/vendor/ajaxify-html5.js",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/library/js/vendor/ajaxify/ajaxify-html5.js",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/plugins/custom-featured-image-metabox/admin/class-custom-featured-image-metabox-admin.php",
@@ -649,7 +650,6 @@
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/plugins/dropshop-admin-theme/sass/wp-admin.scss",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/search.php",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/library/scss/_icons.scss",
-		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/footer.php",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/library/coffee/dropshop.coffee",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/library/scss/_type.scss",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/library/scss/_base.scss",
@@ -1082,15 +1082,15 @@
 					"file": "page.php",
 					"settings":
 					{
-						"buffer_size": 513,
+						"buffer_size": 527,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								122,
-								122
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1206,8 +1206,8 @@
 						"selection":
 						[
 							[
-								1540,
-								1540
+								294,
+								294
 							]
 						],
 						"settings":
@@ -1554,21 +1554,111 @@
 					"file": "functions-hero.php",
 					"settings":
 					{
-						"buffer_size": 5481,
+						"buffer_size": 5510,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1257,
-								1257
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
 							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": false,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1864,6 +1954,10 @@
 		"selected_items":
 		[
 			[
+				"footer",
+				"dropshop_default_theme/footer.php"
+			],
+			[
 				"ajax",
 				"dropshop_default_theme/library/js/vendor/ajaxify-html5.js"
 			],
@@ -1926,10 +2020,6 @@
 			[
 				"drops",
 				"library/coffee/dropshop.coffee"
-			],
-			[
-				"footer",
-				"footer.php"
 			],
 			[
 				"opti",
@@ -2385,7 +2475,7 @@
 		[
 			[
 				"",
-				"/Applications/MAMP/htdocs/twizoo/twizoo.sublime-project"
+				"/Applications/MAMP/htdocs/flock/flock.sublime-project"
 			],
 			[
 				"var",

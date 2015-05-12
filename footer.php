@@ -24,7 +24,7 @@
 
 		<!-- FACEBOOK -->
 		<?php $social_options = get_option("dropshop_theme_social_options");?>
-		<?php if( $social_options['facebook_app_id'] !== "" ){ ?>
+		<?php if( !empty($social_options) && $social_options['facebook_app_id'] !== "" ){ ?>
 
 			<script>
 			  window.fbAsyncInit = function() {

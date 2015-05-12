@@ -3,12 +3,11 @@
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'hero-image-tablet-retina', 2200, 720, true );
-add_image_size( 'hero-image-desktop', 1440, 380, true );
-add_image_size( 'hero-image-tablet', 1100, 340, true );
-add_image_size( 'hero-image-mobile-retina', 750, 1000, true );
-add_image_size( 'hero-image-mobile', 350, 500, true );
-add_image_size( 'hero-image-thumbnail', 400, 400, true );
+add_image_size( 'hero-image-xlarge-tablet', 2200, 1200, true );
+add_image_size( 'hero-image-large-desktop', 1440, 900, true );
+add_image_size( 'hero-image-desktop', 1100, 700, true );
+add_image_size( 'hero-image-table-portrait', 750, 1000, true );
+add_image_size( 'hero-image-mobile-portrait', 350, 500, true );
 
 
 /*
@@ -22,12 +21,11 @@ add_filter( 'image_size_names_choose', 'dropshop_custom_image_sizes' );
 
 function dropshop_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-      //'hero-image-tablet-retina' => __('2200px by 720px'),
-      'hero-image-desktop' => __('1440px by 380px'),
-      'hero-image-tablet-landscape' => __('1100px by 340px'),
-      'hero-image-mobile-retina' => __('750px by 1000px'),
-      'hero-image-mobile' => __('350px by 500px'),
-      'hero-image-thumbnail' => __('400px by 400px')
+      'hero-image-xlarge-tablet' => __('Very large desktop'),
+      'hero-image-large-desktop' => __('Large desktop'),
+      'hero-image-desktop' => __('Desktop'),
+      'hero-image-table-portrait' => __('Tablet portrait'),
+      'hero-image-mobile-portrait' => __('Mobile portrait')
     ) );
 }
 
@@ -93,7 +91,7 @@ function dropshop_using_custom_featured_image_metabox_plugin() {
   return method_exists('Custom_Featured_Image_Metabox', 'get_instance');
 }
 
-function dropshop_hero_image(){
+function dropshop_hero_image( $banner_text = "" ){
   global $post;
   // If we are using the custom-featured-image-metabox plugin we can check to see if the hero image has been enabled on this post/page
   if( dropshop_using_custom_featured_image_metabox_plugin() && get_post_meta($post->ID, 'enable_cover_image', true) !== '1'){
@@ -124,6 +122,10 @@ function dropshop_hero_image(){
         echo do_shortcode('[responsive imageid="'.$image_id.'"]');
       }
     ?>
+
+    <?php if( $banner_text ){
+      echo '<div class="hero-banner">' . $banner_text . '</div>';
+    }?>
 
     </div>
 

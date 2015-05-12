@@ -1,7 +1,8 @@
 <?php
 
 require ('functions-cleanup.php');
-require ('functions-options-page.php');
+require ('functions-theme-options.php');
+require ('functions-contact-options.php');
 require ('functions-hero.php');
 
 
