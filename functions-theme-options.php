@@ -1,12 +1,13 @@
 <?php 
 add_action('admin_menu', 'dropshop_add_appearance_menu');
 
-// ENABEL COLOR PICKER
-add_action( 'admin_enqueue_scripts', 'dropshop_enqueue_color_picker' );
-function dropshop_enqueue_color_picker( ) {
-    wp_enqueue_style( 'wp-color-picker' );
-    wp_enqueue_script( 'dropshop_admin_scripts', get_bloginfo('template_directory').'/library/js/admin/admin-scripts.js', array( 'wp-color-picker' ), false, true );
+function dropshop_load_admin_styles() {
+  wp_register_style( 'dropshop_admin_css', get_template_directory_uri() . '/library/css/admin-style.css', false, '1.0.0' );
+  wp_enqueue_style( 'dropshop_admin_css' );
 }
+add_action( 'admin_enqueue_scripts', 'dropshop_load_admin_styles' );
+
+
 
 function dropshop_add_appearance_menu(){
   add_theme_page( 
@@ -19,13 +20,6 @@ function dropshop_add_appearance_menu(){
 }
 
 
-function dropshop_background_colour_select_meta_box(){
-  $colors = get_option('dropshop_theme_colors');
-  echo 'Hello';
-}
-add_action('add_meta_boxes', function() { 
-  add_meta_box('dropshop_background-colour', 'Page background colour', 'dropshop_background_colour_select_meta_box', 'page', 'side', 'high');
-});
 
 
 function dropshop_render_theme_options_page( $active_tab = '' ){
@@ -89,6 +83,54 @@ function dropshop_add_theme_options_settings(){
   /* ------------------------------------------------------------------------ *
    * THEME COLOURS
    * ------------------------------------------------------------------------ */ 
+  // ENABLE COLOR PICKER CSS AND JS
+  add_action( 'admin_enqueue_scripts', 'dropshop_enqueue_color_picker' );
+  function dropshop_enqueue_color_picker( ) {
+      wp_enqueue_style( 'wp-color-picker' );
+      wp_enqueue_script( 'dropshop_admin_scripts', get_bloginfo('template_directory').'/library/js/admin/admin-scripts.js', array( 'wp-color-picker' ), false, true );
+  }
+
+
+  function dropshop_background_colour_select_meta_box(){
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+    $colors = get_option('dropshop_theme_colors');
+    $current_value = get_post_meta( $post_id, "dropshop_page_background_color", true );
+    echo '<ul>';
+    foreach ($colors as $key => $color) {
+      if( $color !== "" ){
+        $selected = $current_value == $key ? "selected" : "";
+        echo '<li><a href="#" class="' . $selected . '" id="' . $key . '" style="background: ' . $color . '" data-color="' . $key .'"></a></li>';
+      }
+    }
+    echo '</ul>';
+    echo '<input type="hidden" name="dropshop_page_background_color" value="' . $current_value . '" />';
+    echo '<br style="clear: both" />';
+  }
+
+  function dropshop_save_page_color_meta( $post_id, $post ) {
+    global $post, $type;
+    $post = get_post( $post_id );
+    if( $post->post_type == 'revision' )
+      return;
+    if( !current_user_can( 'edit_post', $post_id ))
+      return;
+    $curdata = $_POST['dropshop_page_background_color'];
+    $olddata = get_post_meta( $post_id, "dropshop_page_background_color", true );
+    if( $olddata == "" && $curdata != "" )
+      add_post_meta( $post_id, "dropshop_page_background_color", $curdata );
+    elseif( $curdata != $olddata )
+      update_post_meta( $post_id, "dropshop_page_background_color", $curdata);
+  }
+
+  add_action( 'save_post', 'dropshop_save_page_color_meta', 1, 2 );
+
+  function dropshop_add_color_chooser_meta_box(){
+    add_meta_box('dropshop-background-colour', 'Page background colour', 'dropshop_background_colour_select_meta_box', 'page', 'side', 'high');
+  }
+  add_action('add_meta_boxes', 'dropshop_add_color_chooser_meta_box');
+
+
+
 
   add_settings_section(
     'dropshop_theme_colors',  
