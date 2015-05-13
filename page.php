@@ -1,12 +1,11 @@
 <?php get_header(); ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <section <?php post_class( ); ?> >
+        
+        <?php dropshop_hero_image( $banner_text = "" );?>
 
-    <?php dropshop_hero_image( $banner_text );?>
-
-    <div class="inner">
-
-    	<section <?php post_class( 'pad group' ); ?> >
+        <div class="inner pad group">
 
     		<h1 class="page-title"><?php the_title(); ?></h1>
 
@@ -14,9 +13,9 @@
     			<?php the_content(); ?>
     		</div>
 
-    	</section>
+        </div> <!-- close inner -->
 
-    </div> <!-- close inner -->
+    </section>
 
 	<?php endwhile; ?>
 
