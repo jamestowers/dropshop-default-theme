@@ -26,7 +26,10 @@ function dropshop_add_appearance_menu(){
   );
 }
 
-
+function dropshop_colour_chooser_is_enabled(){
+  $options = get_option('dropshop_theme_options');
+  return isset( $options['enable_colour_chooser']) && $options['enable_colour_chooser'] == 1;
+}
 
 
 // RENDER OPTIONS PAGE
@@ -231,11 +234,14 @@ function dropshop_background_colour_select_meta_box(){
   echo '<br style="clear: both" />';
 }
 
-// Add colour chooser box to admin writr panel
-add_action('add_meta_boxes', 'dropshop_add_color_chooser_meta_box');
-function dropshop_add_color_chooser_meta_box(){
-  add_meta_box('dropshop-background-colour', 'Page background colour', 'dropshop_background_colour_select_meta_box', 'page', 'side', 'high');
+// Add colour chooser box to admin write panel
+if( dropshop_colour_chooser_is_enabled() ){
+  add_action('add_meta_boxes', 'dropshop_add_color_chooser_meta_box');
+  function dropshop_add_color_chooser_meta_box(){
+    add_meta_box('dropshop-background-colour', 'Page background colour', 'dropshop_background_colour_select_meta_box', 'page', 'side', 'high');
+  }
 }
+
 
 // Save meta data
 add_action( 'save_post', 'dropshop_save_page_color_meta', 1, 2 );
@@ -279,7 +285,5 @@ function dropshop_add_color_styles(){
   echo '</style>';
   //wp_reset_query();
 }
-
-
 
 ?>

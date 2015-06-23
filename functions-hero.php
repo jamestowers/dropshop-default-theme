@@ -6,7 +6,7 @@
 add_image_size( 'hero-image-xlarge-tablet', 2200, 1200, true );
 add_image_size( 'hero-image-large-desktop', 1440, 900, true );
 add_image_size( 'hero-image-desktop', 1100, 700, true );
-add_image_size( 'hero-image-table-portrait', 750, 1000, true );
+add_image_size( 'hero-image-tablet-portrait', 750, 1000, true );
 add_image_size( 'hero-image-mobile-portrait', 350, 500, true );
 
 
@@ -24,7 +24,7 @@ function dropshop_custom_image_sizes( $sizes ) {
       'hero-image-xlarge-tablet' => __('Very large desktop'),
       'hero-image-large-desktop' => __('Large desktop'),
       'hero-image-desktop' => __('Desktop'),
-      'hero-image-table-portrait' => __('Tablet portrait'),
+      'hero-image-tablet-portrait' => __('Tablet portrait'),
       'hero-image-mobile-portrait' => __('Mobile portrait')
     ) );
 }
@@ -62,13 +62,15 @@ function dropshop_responsive_shortcode( $atts ) {
         'size2' => 400,
         'size3' => 800,
         'size4' => 1200,
+        'size5' => 1600,
     ), $atts ) );
 
     $mappings = array(
-        $size1 => 'hero-image-mobile',
+        $size1 => 'hero-image-mobile-portrait',
         $size2 => 'hero-image-tablet-portrait',
-        $size3 => 'hero-image-tablet-landscape',
-        $size4 => 'hero-image-desktop',
+        $size3 => 'hero-image-desktop',
+        $size4 => 'hero-image-large-desktop',
+        $size5 => 'hero-image-xlarge-desktop',
     );
 
    return
@@ -91,7 +93,7 @@ function dropshop_using_custom_featured_image_metabox_plugin() {
   return method_exists('Custom_Featured_Image_Metabox', 'get_instance');
 }
 
-function dropshop_hero_image( $banner_text = "" ){
+function dropshop_hero_image( $headline_text = "" ){
   global $post;
   // If we are using the custom-featured-image-metabox plugin we can check to see if the hero image has been enabled on this post/page
   if( dropshop_using_custom_featured_image_metabox_plugin() && get_post_meta($post->ID, 'enable_cover_image', true) !== '1'){
@@ -123,8 +125,8 @@ function dropshop_hero_image( $banner_text = "" ){
       }
     ?>
 
-    <?php if( $banner_text ){
-      echo '<div class="hero-banner">' . $banner_text . '</div>';
+    <?php if( $headline_text ){
+      echo '<div class="hero-banner">' . $headline_text . '</div>';
     }?>
 
     </div>
