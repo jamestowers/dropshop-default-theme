@@ -2,10 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme"
-		},
-		{
-			"path": "/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/plugins/custom-featured-image-metabox"
+			"path": "."
 		}
 	]
 }
