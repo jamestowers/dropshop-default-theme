@@ -1,12 +1,6 @@
 # folders and files to be ignored by git
 
 ############
-## Bones
-############
-
-Bones.esproj/
-
-############
 ## IDEs
 ############
 
@@ -54,4 +48,4 @@ temp/
 
 .svn
 
-library/js/vendor/ajaxify/
+
