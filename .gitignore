@@ -53,3 +53,5 @@ temp/
 .Trashes
 
 .svn
+
+library/js/vendor/ajaxify/
