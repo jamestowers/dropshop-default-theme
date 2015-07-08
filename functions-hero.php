@@ -3,7 +3,7 @@
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'hero-image-xlarge-tablet', 2200, 1200, true );
+add_image_size( 'hero-image-xlarge-desktop', 2200, 1200, true );
 add_image_size( 'hero-image-large-desktop', 1440, 900, true );
 add_image_size( 'hero-image-desktop', 1100, 700, true );
 add_image_size( 'hero-image-tablet-portrait', 750, 1000, true );
@@ -21,7 +21,7 @@ add_filter( 'image_size_names_choose', 'dropshop_custom_image_sizes' );
 
 function dropshop_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-      'hero-image-xlarge-tablet' => __('Very large desktop'),
+      'hero-image-xlarge-desktop' => __('Very large desktop'),
       'hero-image-large-desktop' => __('Large desktop'),
       'hero-image-desktop' => __('Desktop'),
       'hero-image-tablet-portrait' => __('Tablet portrait'),
