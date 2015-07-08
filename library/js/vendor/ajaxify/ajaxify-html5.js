@@ -126,7 +126,10 @@
 						$data = $(documentHtml(data)),
 						$dataBody = $data.find('.document-body:first'),
 						$dataContent = $dataBody.find(contentSelector).filter(':first'),
-						$menuChildren, contentHtml, $scripts;
+						$menuChildren, contentHtml, $scripts,
+						// get body class from incoming page
+						matches = data.match(/<body.*class=["']([^"']*)["'].*>/),
+						bodyClasses = matches && matches[1];
 					
 					// Fetch the scripts
 					$scripts = $dataContent.find('.document-script');
@@ -178,7 +181,7 @@
 					else{
 						window.scrollTo(0, 0);
 					}
-					$body.removeClass('loading');
+					$body.removeClass('loading').attr('class', bodyClasses);
 					$window.trigger(completedEventName);
 	
 					// Inform Google Analytics of the change
