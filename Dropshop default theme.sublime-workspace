@@ -534,14 +534,6 @@
 				"buffer_size": 4268,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/scss/_type.scss",
-			"settings":
-			{
-				"buffer_size": 2610,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -623,6 +615,8 @@
 	],
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/scss/_type.scss",
+		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/.gitignore",
 		"/Applications/MAMP/htdocs/dropshop-default-theme/wp-content/themes/dropshop_default_theme/library/scss/_type.scss",
 		"/Applications/MAMP/htdocs/spotify-playlist-rater/library/scss/_layout.scss",
 		"/Users/jamestowers/Desktop/deploy.sh",
@@ -736,7 +730,6 @@
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/translation/zh_CN.po",
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/scss/_variables.scss",
 		"/Applications/MAMP/htdocs/wearyoursupport/app/assets/stylesheets/_typography.scss",
-		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/scss/_type.scss",
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/footer.php",
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/header.php",
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/page.php",
@@ -749,12 +742,11 @@
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/scss/_base.scss",
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/css/style.css",
 		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/scss/_nav.scss",
-		"/Applications/MAMP/htdocs/spintune-demo/assets/scss/_variables.scss",
-		"/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/css/ie.css"
+		"/Applications/MAMP/htdocs/spintune-demo/assets/scss/_variables.scss"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 76.0
 	},
 	"find_in_files":
 	{
@@ -804,6 +796,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"visual",
 			"double-quick",
 			"dropshop_colour_chooser_is_enabled()",
 			"$options['enable_colour_chooser']",
@@ -930,8 +923,7 @@
 			"bones_",
 			"bones-",
 			"box",
-			"first",
-			"wrap"
+			"first"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1057,7 +1049,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1176,7 +1168,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1206,44 +1198,9 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Applications/MAMP/htdocs/flock/wp-content/themes/flock/library/scss/_type.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2610,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								366,
-								366
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 0,
 					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -1264,18 +1221,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1829,7 +1779,7 @@
 		[
 			[
 				"",
-				"/Applications/MAMP/htdocs/spintune/spintune.sublime-project"
+				"/Applications/MAMP/htdocs/171tracks/171tracks.sublime-project"
 			],
 			[
 				"var",
