@@ -47,11 +47,12 @@
 						</nav>
 				<?php } ?>
 
-		<?php else : ?>
+		<?php else :
 
-				<?php not_found_message();?>
+				// If no content, include the "No posts found" template.
+        get_template_part( 'content', 'none' );
 
-		<?php endif; ?>
+		endif; ?>
 
 	<?php //get_sidebar();?>
 
