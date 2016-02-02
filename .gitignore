@@ -1,6 +1,12 @@
 # folders and files to be ignored by git
 
 ############
+## NPM
+############
+library/node_modules/*
+
+
+############
 ## IDEs
 ############
 
