@@ -1,6 +1,6 @@
 {
-  "name": "greenhousegroup",
-  "description": "Dependencies for Green House Group site",
+  "name": "dropshop",
+  "description": "Dependencies for Drtopshop Wordpress installs",
   "author": "James Towers <james@songdrop.com>",
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -15,6 +15,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://jamestowers@bitbucket.org/jamestowers/axetheescalator.git"
+    "url": "https://github.com/jamestowers/dropshop-default-theme.git"
   }
 }
