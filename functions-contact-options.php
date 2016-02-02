@@ -348,6 +348,14 @@ function dropshop_theme_intialize_social_links() {
 		'dropshop_theme_social_links',	
 		'social_settings_section'			
 	);
+
+	add_settings_field(	
+		'snapchat',						
+		'snapchat',							
+		'dropshop_snapchat_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
 	
 	add_settings_field(	
 		'instagram',						
@@ -361,6 +369,22 @@ function dropshop_theme_intialize_social_links() {
 		'googleplus',						
 		'Google+',							
 		'dropshop_googleplus_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+
+	add_settings_field(	
+		'vine',						
+		'Vine',							
+		'dropshop_vine_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+
+	add_settings_field(	
+		'twitch',						
+		'Twitch',							
+		'dropshop_twitch_callback',	
 		'dropshop_theme_social_links',	
 		'social_settings_section'			
 	);
@@ -666,6 +690,20 @@ function dropshop_pinterest_callback() {
 	
 } // end dropshop_pinterest_callback
 
+function dropshop_snapchat_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_links' );
+	
+	$url = '';
+	if( isset( $options['snapchat'] ) ) {
+		$url = esc_url( $options['snapchat'] );
+	} // end if
+	
+	// Render the output
+	echo '<input class="regular-text" type="text" id="snapchat" name="dropshop_theme_social_links[snapchat]" value="' . $url . '" />';
+	
+} // end dropshop_snapchat_callback
+
 function dropshop_linkedin_callback() {
 	
 	$options = get_option( 'dropshop_theme_social_links' );
@@ -693,6 +731,34 @@ function dropshop_googleplus_callback() {
 	echo '<input class="regular-text" type="text" id="googleplus" name="dropshop_theme_social_links[googleplus]" value="' . $url . '" />';
 	
 } // end dropshop_googleplus_callback
+
+function dropshop_vine_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_links' );
+	
+	$url = '';
+	if( isset( $options['vine'] ) ) {
+		$url = esc_url( $options['vine'] );
+	} // end if
+	
+	// Render the output
+	echo '<input class="regular-text" type="text" id="vine" name="dropshop_theme_social_links[vine]" value="' . $url . '" />';
+	
+} // end dropshop_vine_callback
+
+function dropshop_twitch_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_links' );
+	
+	$url = '';
+	if( isset( $options['twitch'] ) ) {
+		$url = esc_url( $options['twitch'] );
+	} // end if
+	
+	// Render the output
+	echo '<input class="regular-text" type="text" id="twitch" name="dropshop_theme_social_links[twitch]" value="' . $url . '" />';
+	
+} // end dropshop_twitch_callback
 
 
 

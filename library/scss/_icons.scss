@@ -26,31 +26,36 @@
 	}
 }
 
+.icon-twitch:before {
+	content: "\e60c";
+}
+.icon-vine_cirle:before {
+	content: "\e60b";
+}
+.icon-vine:before {
+	content: "\e60a";
+}
+.icon-snapchat:before {
+	content: "\e608";
+}
 .icon-email:before {
 	content: "\e607";
 }
-
-.icon-pinterest:before {
-	content: "\e600";
-}
-
 .icon-linkedin:before {
 	content: "\e601";
 }
-
 .icon-twitter:before {
 	content: "\e603";
 }
-
 .icon-instagram:before {
 	content: "\e604";
 }
-
 .icon-facebook:before {
 	content: "\e605";
 }
-
 .icon-googleplus:before {
 	content: "\e606";
 }
-
+.icon-arrow-down:before {
+	content: "\e602";
+}
