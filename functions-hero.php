@@ -108,20 +108,35 @@ function dropshop_hero_image( $headline_text = "" ){
       if(function_exists('get') && get('hero_video') != '' ){
         $vid_url = get('hero_video');
         if($vid_url != ''){
-
           echo '<div class="video-wrapper">';
-            echo '<iframe id="vimeo-player" data-video-id="' . dropshop_get_vimeoid_from_url($vid_url) . '" src="" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+          switch( get('hero_video_type') ) {
+            case 'Vimeo':
+              echo '<iframe id="vimeo-player" data-video-id="' . dropshop_get_vimeoid_from_url($vid_url) . '" src="" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+              break;
+
+            case 'YouTube':
+              echo '<iframe id="youtube-player" data-video-id="' . dropshop_get_youtubeid_from_url($vid_url) . '" src="" width="1000" height="562" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+              break;
+
+            default: 
+              echo '<video autoplay poster="" loop muted>';
+                // MP4 must be first for iPad!
+                echo '<source src="' . $vid_url . '" type="video/mp4">';
+                //echo '<source src="' . $vid_url . '.webm" type="video/webm">';
+              echo '</video>';
+              break;
+          }
           echo '</div>';
 
-          echo '<ul class="vimeo-controls">';
+          echo '<ul class="video-controls">';
             echo '<li><a href="" class="icon-unmute no-ajaxy" title="Unmute"></a></li>';
-            echo '<li><a href="' . $vid_url . '" class="icon-vimeo no-ajaxy" title="View on Vimeo" target="_blank"></a></li>';
           echo '</ul>';
         }
-      }
-      if ( has_post_thumbnail() ) {
-        $image_id = get_post_thumbnail_id( $post->ID );
-        echo do_shortcode('[responsive imageid="'.$image_id.'"]');
+      }else{
+        if ( has_post_thumbnail() ) {
+          $image_id = get_post_thumbnail_id( $post->ID );
+          echo do_shortcode('[responsive imageid="'.$image_id.'"]');
+        }
       }
     ?>
 
