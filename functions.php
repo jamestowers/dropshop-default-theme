@@ -4,13 +4,18 @@ require ('functions-cleanup.php');
 require ('functions-theme-options.php');
 require ('functions-contact-options.php');
 require ('functions-hero.php');
+//require ('functions-fields.php'); // UsesCMB2 "plugin" - see https://wordpress.org/plugins/cmb2/installation/
+// Also - wiki here: https://github.com/WebDevStudios/CMB2/wiki
 
 
 
 set_post_thumbnail_size( '400', '400', true ); 
-/*
-<?php the_post_thumbnail( 'dropshop-thumb-300' ); ?>
-*/
+// Remove max_srcset_image_width
+function remove_max_srcset_image_width( $max_width ) {
+  return false;
+}
+//add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
+
 
 
 
