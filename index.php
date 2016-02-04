@@ -49,7 +49,7 @@
 
 		<?php else :
 
-				// If no content, include the "No posts found" template.
+				// If no content, include the "No posts found" template: content-none.php
         get_template_part( 'content', 'none' );
 
 		endif; ?>

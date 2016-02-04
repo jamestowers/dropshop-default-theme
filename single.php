@@ -30,21 +30,12 @@
 
 			<?php endwhile; ?>
 
-			<?php else : ?>
+			<?php else :
 
-				<article id="post-not-found" class="hentry group">
-						<header class="article-header">
-							<h1><?php _e( 'Oops, Post Not Found!', 'dropshoptheme' ); ?></h1>
-						</header>
-						<section class="entry-content">
-							<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'dropshoptheme' ); ?></p>
-						</section>
-						<footer class="article-footer">
-								<p><?php _e( 'This is the error message in the single.php template.', 'dropshoptheme' ); ?></p>
-						</footer>
-				</article>
+					// If no content, include the "No posts found" template: content-none.php
+	        get_template_part( 'content', 'none' );
 
-			<?php endif; ?>
+			endif; ?>
 
 		</div>
 

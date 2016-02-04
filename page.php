@@ -19,11 +19,12 @@
 
 	<?php endwhile; ?>
 
-  <?php else : ?>
+  <?php else :
+    
+    // If no content, include the "No posts found" template: content-none.php
+    get_template_part( 'content', 'none' );
 
-    <?php not_found_message();?>
-
-  <?php endif; ?>
+    endif; ?>
 
 
 <?php get_footer(); ?>
