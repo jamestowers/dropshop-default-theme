@@ -332,6 +332,30 @@ function dropshop_theme_intialize_social_links() {
 		'dropshop_theme_social_links',	
 		'social_settings_section'			
 	);
+
+	add_settings_field(	
+		'youtube',						
+		'YouTube',							
+		'dropshop_youtube_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+
+	add_settings_field(	
+		'soundcloud',						
+		'Soundcloud',							
+		'dropshop_soundcloud_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'			
+	);
+
+	add_settings_field(	
+		'spotify',						
+		'Spotify',							
+		'dropshop_spotify_callback',	
+		'dropshop_theme_social_links',	
+		'social_settings_section'	
+	);
 	
 	add_settings_field(	
 		'linkedin',						
@@ -675,6 +699,48 @@ function dropshop_instagram_callback() {
 	echo '<input class="regular-text" type="text" id="instagram" name="dropshop_theme_social_links[instagram]" value="' . $url . '" />';
 	
 } // end dropshop_instagram_callback
+
+function dropshop_youtube_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_links' );
+	
+	$url = '';
+	if( isset( $options['youtube'] ) ) {
+		$url = esc_url( $options['youtube'] );
+	} // end if
+	
+	// Render the output
+	echo '<input class="regular-text" type="text" id="youtube" name="dropshop_theme_social_links[youtube]" value="' . $url . '" />';
+	
+} // end dropshop_youtube_callback
+
+function dropshop_soundcloud_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_links' );
+	
+	$url = '';
+	if( isset( $options['soundcloud'] ) ) {
+		$url = esc_url( $options['soundcloud'] );
+	} // end if
+	
+	// Render the output
+	echo '<input class="regular-text" type="text" id="soundcloud" name="dropshop_theme_social_links[soundcloud]" value="' . $url . '" />';
+	
+} // end dropshop_soundcloud_callback
+
+function dropshop_spotify_callback() {
+	
+	$options = get_option( 'dropshop_theme_social_links' );
+	
+	$url = '';
+	if( isset( $options['spotify'] ) ) {
+		$url = esc_url( $options['spotify'] );
+	} // end if
+	
+	// Render the output
+	echo '<input class="regular-text" type="text" id="spotify" name="dropshop_theme_social_links[spotify]" value="' . $url . '" />';
+	
+} // end dropshop_spotify_callback
 
 function dropshop_pinterest_callback() {
 	
