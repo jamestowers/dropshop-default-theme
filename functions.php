@@ -60,7 +60,7 @@ if ( !function_exists( 'dropshop_load_scripts' ) ) {
       wp_deregister_script( 'jquery' );
       wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/library/js/vendor/modernizr.custom.min.js', array(), '2.5.3', false );
       
-      wp_register_script( 'jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", '', '' , true);
+      wp_register_script( 'jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", '', '' , true);
       wp_register_script( 'picturefill', get_bloginfo('template_directory') . "/library/js/vendor/picturefill.min.js", 'jquery', '', true);
       wp_register_script( 'fastclick', get_bloginfo('template_directory') . "/library/js/vendor/fastclick.js", 'jquery', '', true);
       wp_register_script( 'history', get_bloginfo('template_directory') . "/library/js/vendor/ajaxify/jquery.history.js", array('jquery'), '', true);
