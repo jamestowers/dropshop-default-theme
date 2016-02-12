@@ -19,13 +19,13 @@ function dropshop_social_icons(){
 	}
 }
 
-function dropshop_share_buttons(){
+function dropshop_share_buttons($url = ''){
 	echo '<div class="social-icons pull-left">
 					Share this: 
 	        <ul>
-	         <li><a href="" class="icon-facebook share-fb no-ajaxy"></a></li>
-	         <li><a href="" class="icon-twitter share-twitter no-ajaxy"></a></li>
-	         <li><a href="" class="icon-email share-email no-ajaxy"></a></li>
+	         <li><a href="' . $url . '" class="icon-facebook share-fb no-ajax"></a></li>
+	         <li><a href="' . $url . '" class="icon-twitter share-twitter no-ajax"></a></li>
+	         <li><a href="' . $url . '" class="icon-email share-email no-ajax"></a></li>
 	        </ul>
 		</ul>
 	</div>';
