@@ -94,6 +94,10 @@ $(window).scroll ->
 $(window).resize ->
   dropshop.setWidths()
 
+$(window).on 'statechangestarted', ->
+  console.log '[scripts] stage change started'
+  dropshop.onPageFetch()
+  
 $(window).on 'statechangecomplete', ->
   console.log '[scripts] stage change complete'
   dropshop.onPageLoad()

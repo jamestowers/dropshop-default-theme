@@ -26,6 +26,7 @@
 			activeClass = 'current-menu-item',
 			activeSelector = '.current-menu-item',
 			menuChildrenSelector = '> li,> ul > li',
+			startEventName = 'statechangestarted',
 			completedEventName = 'statechangecomplete',
 			/* Application Generic Variables */
 			$window = $(window),
@@ -112,7 +113,7 @@
 			// Start Fade Out
 			// Animating to opacity to 0 still keeps the element's height intact
 			// Which prevents that annoying pop bang issue when loading in new content
-			$content.addClass('load-out');//
+			$window.trigger(startEventName);//
 			if( Modernizr && !Modernizr.csstransitions){	
 				$content.animate({opacity:0},200);
 			}

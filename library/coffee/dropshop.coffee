@@ -39,7 +39,8 @@ class @Dropshop
       popUp.focus()
       false
 
-
+  onPageFetch: ->
+    console.log '[Dropshop] Fetching page'
 
   onPageLoad: ->
     console.log '[Dropshop] onPageLoad'
