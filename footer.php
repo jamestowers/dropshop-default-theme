@@ -31,7 +31,7 @@
 			    FB.init({
 			      appId      : '<?php echo $social_options["facebook_app_id"];?>',
 			      xfbml      : true,
-			      version    : 'v2.2'
+			      version    : 'v2.5'
 			    });
 			  };
 
