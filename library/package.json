@@ -1,9 +1,10 @@
 {
-  "name": "dropshop",
-  "description": "Dependencies for Drtopshop Wordpress installs",
+  "name": "greenhousegroup",
+  "description": "Dependencies for Green House Group site",
   "author": "James Towers <james@songdrop.com>",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "browser-sync": "^2.11.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-coffee": "^2.3.1",
     "gulp-concat": "^2.6.0",
@@ -15,6 +16,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jamestowers/dropshop-default-theme.git"
+    "url": ""
   }
 }

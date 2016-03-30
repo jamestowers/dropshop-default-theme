@@ -5,9 +5,12 @@ var gulp = require('gulp');
     coffee = require('gulp-coffee');
     sourcemaps = require('gulp-sourcemaps');
     notify = require("gulp-notify");
+    browserSync = require('browser-sync').create();
+    reload = browserSync.reload;
 
 gulp.task('sass', function () {
   gulp.src('./scss/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass())
       .on('error', notify.onError(function (error) {
         return error;
@@ -28,15 +31,20 @@ gulp.task('coffee', function () {
     .pipe(gulp.dest('./js'));
 });
 
-gulp.task('concat-js', function() {
-  return gulp.src(['./js/dropshop.js', './js/scripts.js'])
+gulp.task('concat-js', ['coffee'], function() {
+  return gulp.src(['./js/youtube.js', './js/dropshop.js', './js/scripts.js'])
     .pipe(concat('all.js'))
     .pipe(gulp.dest('./js/'));
 });
  
 //Watch task
 gulp.task('default',function() {
+    browserSync.init({
+        host: "localhost:3000",
+        proxy: "soul-asylum.local",
+        browser: "firefoxdeveloperedition"
+    });
     gulp.watch('./scss/*.scss',['sass']);
-    gulp.watch('./coffee/*.coffee',['coffee']);
-    //gulp.watch('./js/*.js',['concat-js']);
+    gulp.watch('./coffee/*.coffee',['concat-js']);
+    gulp.watch("../**/*.php").on("change", reload);
 });
