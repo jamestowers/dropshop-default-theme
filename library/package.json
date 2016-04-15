@@ -1,6 +1,6 @@
 {
-  "name": "greenhousegroup",
-  "description": "Dependencies for Green House Group site",
+  "name": "dropshop",
+  "description": "Dependencies for dropshop wp theme",
   "author": "James Towers <james@songdrop.com>",
   "devDependencies": {
     "gulp": "^3.9.0",

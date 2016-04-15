@@ -41,7 +41,7 @@ gulp.task('concat-js', ['coffee'], function() {
 gulp.task('default',function() {
     browserSync.init({
         host: "localhost:3000",
-        proxy: "soul-asylum.local",
+        proxy: "SITE_DOMAIN.local",
         browser: "firefoxdeveloperedition"
     });
     gulp.watch('./scss/*.scss',['sass']);
